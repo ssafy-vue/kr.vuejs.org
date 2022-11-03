@@ -1,5 +1,6 @@
 # 안내
 
+
 > 이 문서는 **Vue.js 2** 버전을 다루고 있습니다. **Vue.js 3** 가 정식 출시를 앞두고 있는 상태이며, [docs-next](https://github.com/vuejs/docs-next) 저장소에서 Vue.js 3 버전을 준비하고 있습니다.
 >
 > [docs-next](https://github.com/vuejs/docs-next) 저장소에 기여하는 것을 강력하게 권장합니다. 이 저장소는 Vue.js 3가 정식 출시되면 아카이브할 예정입니다.
