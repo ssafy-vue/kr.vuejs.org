@@ -1,0 +1,1275 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Style Guide — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/style-guide/index.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Style Guide — Vue.js">
+    <meta property="og:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta property="og:image" content="https://vuejs.org//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Style Guide — Vue.js">
+    <meta name="twitter:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    
+<link rel="stylesheet" href="/css/page.css">
+
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "style-guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-89623208-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+</head>
+  <body class="docs">
+    <div id="mobile-bar" style="pointer-events: none;" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    
+
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    
+<li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">배우기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>문서</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link">가이드</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link current">스타일 가이드</a></li>
+        <li><a href="/v2/examples/" class="nav-link">예시</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">쿡북</a></li>
+        <li><a target="_blank" rel="noopener" href="https://v3.vuejs-korea.org/ko-KR/" class="nav-lin>">Vue.js 3 한국어문서</a></li>
+      </ul>
+    </li>
+    <li><h4>영상 강의</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">생태계</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>도움</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org/" class="nav-link"  target="_blank" rel="noopener">포럼</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link"  target="_blank" rel="noopener">채팅</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">모임</a></li>
+    </ul></li>
+    <li><h4>도구</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">개발도구</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>코어 라이브러리</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 라우터</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 서버 렌더러</a></li>
+    </ul></li>
+    <li><h4>뉴스</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">주간 뉴스</a></li>
+      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank" rel="noopener">로드맵</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">이벤트</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">트위터</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">블로그</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">구인</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">개발 커뮤니티</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">팀</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">리소스</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">파트너</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">테마</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">쩌는 Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue 후원하기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">1회 후원하기</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">정기후원</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">티셔츠 샵</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">다른 언어로 보기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://br.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank" rel="noopener">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/style-guide/index.html" class="nav-link" target="_blank" rel="noopener" rel="noopener">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>스페셜 스폰서</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Standard Library">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          스타일 가이드<sup class="beta">beta</sup>
+          
+        </h2>
+        <ul class="menu-root">
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+
+<div class="content style-guide with-sidebar ">
+  
+    
+      
+<div id="ad">
+  <script
+    async
+    type="text/javascript"
+    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Style Guide</h1>
+  
+  
+    <h1 id="스타일-가이드"><a href="#스타일-가이드" class="headerlink" title="스타일 가이드"></a>스타일 가이드</h1><p>이 문서는 Vue 코드에 대한 공식 스타일 가이드입니다. 만약 현재 Vue를 사용하여 프로젝트를 진행중이라면 이 문서는 에러와 바이크쉐딩(bikeshedding), 안티패턴을 피하는 좋은 참조가 될것 입니다. 그러나 이 문서에서 제시하는 스타일 가이드가 당신의 프로젝트에 무조건 적합한 것은 아닙니다. 그러므로 당신의 경험과 기술스택, 개인적 통찰력을 바탕으로 이 스타일 가이드가 적용되는 것을 권장해드립니다.</p>
+<p>대부분의 경우 우리는 HTML과 자바스크립트에 대한 제안은 일반적으로 피합니다. 우리는 당신이 세미콜론이나 쉼표(trailing commas)에 대한 사용여부는 신경쓰지 않습니다. 우리는 당신이 HTML의 속성값을 위해 작음따옴표를 사용하지는 큰따옴표를 사용하는지 신경쓰지 않습니다. 그러나 특정 패턴이 뷰 컨텍스트에서 유용하다고 발견된 경우 예외가 존재합니다.</p>
+<blockquote>
+<p><strong>Soon, we’ll also provide tips for enforcement.</strong> Sometimes you’ll simply have to be disciplined, but wherever possible, we’ll try to show you how to use ESLint and other automated processes to make enforcement simpler.</p>
+</blockquote>
+<p>마지막으로, 우리는 규칙을 4가지 범주로 분류하였습니다.</p>
+<h2 id="규칙-분류"><a href="#규칙-분류" class="headerlink" title="규칙 분류"></a>규칙 분류</h2><h3 id="우선순위-A-필수"><a href="#우선순위-A-필수" class="headerlink" title="우선순위 A: 필수"></a>우선순위 A: 필수</h3><p>이 규칙은 오류를 예방하는데 도움을 주기 때문에 모든 비용을 통해서 학습하고 준수하여야 합니다. 예외상황이 존재하겠지만 매우 드물며 자바스크립트와 뷰에 대한 전문 지식이 있어야 만들 수 있습니다.</p>
+<h3 id="우선순위-B-매우-추천함"><a href="#우선순위-B-매우-추천함" class="headerlink" title="우선순위 B: 매우 추천함"></a>우선순위 B: 매우 추천함</h3><p>이 규칙은 대부분의 프로젝트에서 가독성 그리고 개발자경험을 향상시키는 것으로 발견되었습니다. 해당 규칙을 위반해도 코드는 여전히 실행되지만 위반은 드물고 정당합니다.</p>
+<h3 id="우선순위-C-추천함"><a href="#우선순위-C-추천함" class="headerlink" title="우선순위 C: 추천함"></a>우선순위 C: 추천함</h3><p>동일하게 좋은 여러가지 옵션이 존재하는 경우, 일관성을 보장하기 위해 임의의 선택을 할 수 있습니다. 이 규칙은 각각의 수용가능한 옵션을 설명하고 기본 선택을 제안합니다. 즉, 일관성 있고 좋은 이유가 있으면 당신의 코드베이스에서 자유롭게 다른 선택을 할 수 있습니다. 좋은 이유가 있어야 합니다! 커뮤니티 표준에 적응되기 위해서 당신은 다음과 같이 해야합니다.</p>
+<ol>
+<li>당신이 마주하는 대부분의 커뮤니티 코드를 더 쉽게 분석할 수 있도록 훈련하세요</li>
+<li>커뮤니티 코드 예제를 수정하기 한고 복사 그리고 붙혀넣기 할 수 있어야 합니다</li>
+<li>적어도 뷰에 있어서는 당신이 선호하는 코딩 스타일을 수용하는 새로운 직원을 자주 찾을 것입니다</li>
+</ol>
+<h3 id="우선순위-D-주의요함"><a href="#우선순위-D-주의요함" class="headerlink" title="우선순위 D: 주의요함"></a>우선순위 D: 주의요함</h3><p>뷰의 몇 가지 은 특성은 드문 엣지 케이스 또는 레거시 코드로의 부터 마이크레이션을 위해 존재합니다. 그러나 그것들을 남용하면 당신의 코드를 유지보수하기 어렵게만들거나 버그를 발생시키는 원인이 될 수 있습니다. 이 규칙은 잠재적 위험요소를 인식시켜주고 언제 그리고 왜 피해야되는지 설명해 줍니다.</p>
+<h2 id="우선순위-A-규칙-필수-에러-방지"><a href="#우선순위-A-규칙-필수-에러-방지" class="headerlink" title="우선순위 A 규칙: 필수 (에러 방지)"></a>우선순위 A 규칙: 필수 (에러 방지)</h2><h3 id="컴포넌트-이름에-합성어-사용-필수"><a href="#컴포넌트-이름에-합성어-사용-필수" class="headerlink" title="컴포넌트 이름에 합성어 사용 필수"></a>컴포넌트 이름에 합성어 사용 <sup data-p="a">필수</sup></h3><p><strong>root 컴포넌트인 <code>App</code> 과 <code>&lt;transition&gt;</code>, <code>&lt;component&gt;</code>등 Vue에서 제공되는 빌트인 컴포넌트를 제외하고 컴포넌트의 이름은 항상 합성어를 사용해야한다.</strong></p>
+<p>모든 HTML 엘리먼트의 이름은 한 단어이기 때문에 합성어를 사용하는 것은 기존 그리고 향후 HTML엘리먼트와의 <a target="_blank" rel="noopener" href="http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name">충돌을 방지해줍니다</a>.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨"><a href="#나쁨" class="headerlink" title="나쁨"></a>나쁨</h4><p>Vue.component(‘todo’, {<br>  // …<br>})</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"><br>&#96;&#96;&#96; js<br>export default &#123;<br>  name: &#39;Todo&#39;,<br>  &#x2F;&#x2F; ...<br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음"><a href="#좋음" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;todo-item&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  name: <span class="hljs-string">&#x27;TodoItem&#x27;</span>,<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="컴포넌트-데이터-필수"><a href="#컴포넌트-데이터-필수" class="headerlink" title="컴포넌트 데이터 필수"></a>컴포넌트 데이터 <sup data-p="a">필수</sup></h3><p><strong>컴포넌트의 <code>data</code> 는 반드시 함수여야 합니다.</strong></p>
+<p>컴포넌트(i.e. <code>new Vue</code>를 제외한 모든곳)의 <code>data</code> 프로퍼티의 값은 반드시 객체(object)를 반환하는 함수여야 한다.</p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p><code>data</code> 의 값이 오브젝트일 경우, 컴포넌트의 모든 인스턴스가 공유한다. 예를 들어, 다음 data 를 가진 <code>TodoList</code> 컴포넌트를 상상해보자.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">data: &#123;<br>  listTitle: <span class="hljs-string">&#x27;&#x27;</span>,<br>  todos: []<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>이 컴포넌트는 재사용하여 사용자가 여러 목록(e.g. 쇼핑, 소원, 오늘 할일 등)을 유지할 수 있도록 해야 할 수 있다. 컴포넌트의 모든 인스턴스가 동일한 data 객체를 참조하므로, 하나의 목록의 타이틀을 변경할 때 다른 모든 리스트의 타이틀도 변경될 것이다. Todo를 추가/수정/삭제하는 경우에도 마찬가지다.</p>
+<p>대신 우리는 각 컴포넌트의 인스턴스 자체 data만을 관리하기를 원한다. 이렇게 하려면 각 인스턴스는 고유한 data 객체를 생성해야 한다. JavaScript에서는 함수안에서 객체를 반환하는 방법으로 해결할 수 있다:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> &#123;<br>    listTitle: <span class="hljs-string">&#x27;&#x27;</span>,<br>    todos: []<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-1"><a href="#나쁨-1" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;some-comp&#x27;</span>, &#123;<br>  data: &#123;<br>    foo: <span class="hljs-string">&#x27;bar&#x27;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  data: &#123;<br>    foo: <span class="hljs-string">&#x27;bar&#x27;</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-1"><a href="#좋음-1" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;some-comp&#x27;</span>, &#123;<br>  data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      foo: <span class="hljs-string">&#x27;bar&#x27;</span><br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// In a .vue file</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  data () &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      foo: <span class="hljs-string">&#x27;bar&#x27;</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// It&#x27;s OK to use an object directly in a root</span><br><span class="hljs-comment">// Vue instance, since only a single instance</span><br><span class="hljs-comment">// will ever exist.</span><br><span class="hljs-keyword">new</span> Vue(&#123;<br>  data: &#123;<br>    foo: <span class="hljs-string">&#x27;bar&#x27;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="Props-정의-필수"><a href="#Props-정의-필수" class="headerlink" title="Props 정의 필수"></a>Props 정의 <sup data-p="a">필수</sup></h3><p><strong>Prop은 가능한 상세하게 정의되어야 합니다.</strong></p>
+<p>커밋 된 코드에서, prop 정의는 적어도 타입은 명시되도록 가능한 상세하게 정의되어야 합니다.</p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>자세한 <a href="https://vuejs.org/v2/guide/components.html#Prop-Validation">prop definitions</a> 두 가지 이점을 갖는다:</p>
+<ul>
+<li>이 API는 컴포넌트의 API를 문서화하므로 컴포넌트의 사용 방법을 쉽게 알 수 있다.</li>
+<li>개발 중에, Vue는 컴포넌트의 타입이 잘못 지정된 props를 전달하면 경고 메시지를 표시하여 오류의 잠재적 원인을 파악할 수 있도록 도와준다.</li>
+</ul>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-2"><a href="#나쁨-2" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// This is only OK when prototyping</span><br>props: [<span class="hljs-string">&#x27;status&#x27;</span>]<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-2"><a href="#좋음-2" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">props: &#123;<br>  status: <span class="hljs-built_in">String</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Even better!</span><br>props: &#123;<br>  status: &#123;<br>    type: <span class="hljs-built_in">String</span>,<br>    required: <span class="hljs-literal">true</span>,<br>    validator: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> [<br>        <span class="hljs-string">&#x27;syncing&#x27;</span>,<br>        <span class="hljs-string">&#x27;synced&#x27;</span>,<br>        <span class="hljs-string">&#x27;version-conflict&#x27;</span>,<br>        <span class="hljs-string">&#x27;error&#x27;</span><br>      ].indexOf(value) !== <span class="hljs-number">-1</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="v-for-에-key-지정-필수"><a href="#v-for-에-key-지정-필수" class="headerlink" title="v-for 에 key 지정  필수"></a><code>v-for</code> 에 <code>key</code> 지정  <sup data-p="a">필수</sup></h3><p><strong><code>v-for</code>는 <code>key</code>와 항상 함께 사용합니다.</strong></p>
+<p>서브트리의 내부 컴포넌트 상태를 유지하기 위해 <code>v-for</code>는 <em>항상</em> <code>key</code>와 함께 요구됩니다. 비록 엘리먼트이긴 하지만 에니메이션의 <a target="_blank" rel="noopener" href="https://bost.ocks.org/mike/constancy/">객체 불변성</a>과 같이 예측 가능한 행동을 유지하는것은 좋은 습관입니다.</p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>할일 목록이 있다고 가정 해보자:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> &#123;<br>    todos: [<br>      &#123;<br>        id: <span class="hljs-number">1</span>,<br>        text: <span class="hljs-string">&#x27;Learn to use v-for&#x27;</span><br>      &#125;,<br>      &#123;<br>        id: <span class="hljs-number">2</span>,<br>        text: <span class="hljs-string">&#x27;Learn to use key&#x27;</span><br>      &#125;<br>    ]<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>그 다음 알파벳순으로 정렬한다. DOM 이 업데이트될 때, Vue는 가능한 적은 DOM 전이(mutations)를 수행하기 위해 렌더링을 최적화한다. 즉, 첫번째 할일 엘리먼트를 지우고, 리스트의 마지막에 다시 추가한다.</p>
+<p>The problem is, there are cases where it’s important not to delete elements that will remain in the DOM. For example, you may want to use <code>&lt;transition-group&gt;</code> to animate list sorting, or maintain focus if the rendered element is an <code>&lt;input&gt;</code>. In these cases, adding a unique key for each item (e.g. <code>:key=&quot;todo.id&quot;</code>) will tell Vue how to behave more predictably.</p>
+<p>In our experience, it’s better to <em>always</em> add a unique key, so that you and your team simply never have to worry about these edge cases. Then in the rare, performance-critical scenarios where object constancy isn’t necessary, you can make a conscious exception.</p>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-3"><a href="#나쁨-3" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;todo in todos&quot;</span>&gt;</span><br>    &#123;&#123; todo.text &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-3"><a href="#좋음-3" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;todo in todos&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;todo.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; todo.text &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="v-if와-v-for를-동시에-사용하지-마세요-필수"><a href="#v-if와-v-for를-동시에-사용하지-마세요-필수" class="headerlink" title="v-if와 v-for를 동시에 사용하지 마세요 필수"></a><code>v-if</code>와 <code>v-for</code>를 동시에 사용하지 마세요 <sup data-p="a">필수</sup></h3><p><strong><code>v-for</code>가 사용된 엘리먼트에 절대 <code>v-if</code>를 사용하지 마세요.</strong></p>
+<p>사용 가능해 보이는 두 가지 일반적인 경우가 있습니다:</p>
+<ul>
+<li><p>리스트 목록을 필터링하기 위해서 입니다 (e.g. <code>v-for=&quot;user in users&quot; v-if=&quot;user.isActive&quot;</code>).  이 경우 users을 새로운 computed 속성으로 필더링된 목록으로 대체하십시오(e.g. <code>activeUsers</code>).</p>
+</li>
+<li><p>숨기기 위해 리스트의 랜더링을 피할 때 입니다 (e.g. <code>v-for=&quot;user in users&quot; v-if=&quot;shouldShowUsers&quot;</code>). 이 경우 <code>v-if</code>를 컨테이너 엘리먼트로 옮기세요 (e.g. <code>ul</code>, <code>ol</code>).</p>
+</li>
+</ul>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>When Vue processes directives, <code>v-for</code> has a higher priority than <code>v-if</code>, so that this template:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;user in users&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;user.isActive&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;user.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; user.name &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>Will be evaluated similar to:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">this</span>.users.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>&#123;<br>  <span class="hljs-keyword">if</span> (user.isActive) &#123;<br>    <span class="hljs-keyword">return</span> user.name<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>So even if we only render elements for a small fraction of users, we have to iterate over the entire list every time we re-render, whether or not the set of active users has changed.</p>
+<p>By iterating over a computed property instead, like this:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">computed: &#123;<br>  activeUsers: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.users.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> user.isActive<br>    &#125;)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;user in activeUsers&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;user.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; user.name &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>다음과 같은 이점을 얻을 수 있다:</p>
+<ul>
+<li>The filtered list will <em>only</em> be re-evaluated if there are relevant changes to the <code>users</code> array, making filtering much more efficient.</li>
+<li>Using <code>v-for=&quot;user in activeUsers&quot;</code>, we <em>only</em> iterate over active users during render, making rendering much more efficient.</li>
+<li>Logic is now decoupled from the presentation layer, making maintenance (change/extension of logic) much easier.</li>
+</ul>
+<p>We get similar benefits from updating:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;user in users&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;shouldShowUsers&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;user.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; user.name &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>to:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;shouldShowUsers&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;user in users&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;user.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; user.name &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>By moving the <code>v-if</code> to a container element, we’re no longer checking <code>shouldShowUsers</code> for <em>every</em> user in the list. Instead, we check it once and don’t even evaluate the <code>v-for</code> if <code>shouldShowUsers</code> is false.</p>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-4"><a href="#나쁨-4" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;user in users&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;user.isActive&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;user.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; user.name &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;user in users&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;shouldShowUsers&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;user.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; user.name &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-4"><a href="#좋음-4" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;user in activeUsers&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;user.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; user.name &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;shouldShowUsers&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;user in users&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;user.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; user.name &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="컴포넌트-스타일-스코프-필수"><a href="#컴포넌트-스타일-스코프-필수" class="headerlink" title="컴포넌트 스타일 스코프 필수"></a>컴포넌트 스타일 스코프 <sup data-p="a">필수</sup></h3><p><strong>For applications, styles in a top-level <code>App</code> component and in layout components may be global, but all other components should always be scoped.</strong></p>
+<p>This is only relevant for <a href="../guide/single-file-components.html">single-file components</a>. It does <em>not</em> require that the <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/en/features/scoped-css.html"><code>scoped</code> attribute</a> be used. Scoping could be through <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/en/features/css-modules.html">CSS modules</a>, a class-based strategy such as <a target="_blank" rel="noopener" href="http://getbem.com/">BEM</a>, or another library/convention.</p>
+<p><strong>Component libraries, however, should prefer a class-based strategy instead of using the <code>scoped</code> attribute.</strong></p>
+<p>This makes overriding internal styles easier, with human-readable class names that don’t have too high specificity, but are still very unlikely to result in a conflict.</p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>If you are developing a large project, working with other developers, or sometimes include 3rd-party HTML/CSS (e.g. from Auth0), consistent scoping will ensure that your styles only apply to the components they are meant for.</p>
+<p>Beyond the <code>scoped</code> attribute, using unique class names can help ensure that 3rd-party CSS does not apply to your own HTML. For example, many projects use the <code>button</code>, <code>btn</code>, or <code>icon</code> class names, so even if not using a strategy such as BEM, adding an app-specific and/or component-specific prefix (e.g. <code>ButtonClose-icon</code>) can provide some protection.</p>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-5"><a href="#나쁨-5" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-close&quot;</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br><span class="css"><span class="hljs-selector-class">.btn-close</span> &#123;</span><br>  background-color: red;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-5"><a href="#좋음-5" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-close&quot;</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- Using the `scoped` attribute --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="css"><span class="hljs-selector-class">.button</span> &#123;</span><br>  border: none;<br>  border-radius: 2px;<br>&#125;<br><br><span class="css"><span class="hljs-selector-class">.button-close</span> &#123;</span><br>  background-color: red;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">&quot;[$style.button, $style.buttonClose]&quot;</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- Using CSS modules --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">module</span>&gt;</span><br><span class="css"><span class="hljs-selector-class">.button</span> &#123;</span><br>  border: none;<br>  border-radius: 2px;<br>&#125;<br><br><span class="css"><span class="hljs-selector-class">.buttonClose</span> &#123;</span><br>  background-color: red;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;c-Button c-Button--close&quot;</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- Using the BEM convention --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br><span class="css"><span class="hljs-selector-class">.c-Button</span> &#123;</span><br>  border: none;<br>  border-radius: 2px;<br>&#125;<br><br><span class="css"><span class="hljs-selector-class">.c-Button--close</span> &#123;</span><br>  background-color: red;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="Private-속성-이름-필수"><a href="#Private-속성-이름-필수" class="headerlink" title="Private 속성 이름 필수"></a>Private 속성 이름 <sup data-p="a">필수</sup></h3><p><strong>플러그인, mixin 등에서 커스텀 사용자 private 프로터피에는 항상 접두사 <code>$_</code>를 사용하라. 그 다음 다른 사람의 코드와 충돌을 피하려면 named scope를 포함하라. (e.g. <code>$_yourPluginName_</code>).</strong></p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>Vue uses the <code>_</code> prefix to define its own private properties, so using the same prefix (e.g. <code>_update</code>) risks overwriting an instance property. Even if you check and Vue is not currently using a particular property name, there is no guarantee a conflict won’t arise in a later version.</p>
+<p>As for the <code>$</code> prefix, its purpose within the Vue ecosystem is special instance properties that are exposed to the user, so using it for <em>private</em> properties would not be appropriate.</p>
+<p>Instead, we recommend combining the two prefixes into <code>$_</code>, as a convention for user-defined private properties that guarantee no conflicts with Vue.</p>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-6"><a href="#나쁨-6" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;<br>  <span class="hljs-comment">// ...</span><br>  methods: &#123;<br>    update: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-comment">// ...</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;<br>  <span class="hljs-comment">// ...</span><br>  methods: &#123;<br>    _update: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-comment">// ...</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;<br>  <span class="hljs-comment">// ...</span><br>  methods: &#123;<br>    $update: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-comment">// ...</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;<br>  <span class="hljs-comment">// ...</span><br>  methods: &#123;<br>    $_update: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-comment">// ...</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-6"><a href="#좋음-6" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;<br>  <span class="hljs-comment">// ...</span><br>  methods: &#123;<br>    $_myGreatMixin_update: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-comment">// ...</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Even better!</span><br><span class="hljs-keyword">var</span> myGreatMixin = &#123;<br>  <span class="hljs-comment">// ...</span><br>  methods: &#123;<br>    publicMethod() &#123;<br>      <span class="hljs-comment">// ...</span><br>      myPrivateFunction()<br>    &#125;<br>  &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myPrivateFunction</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> myGreatMixin<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h2 id="우선순위-B-규칙-매우-추천함-가독성-향상을-위함"><a href="#우선순위-B-규칙-매우-추천함-가독성-향상을-위함" class="headerlink" title="우선순위 B 규칙: 매우 추천함 (가독성 향상을 위함)"></a>우선순위 B 규칙: 매우 추천함 (가독성 향상을 위함)</h2><h3 id="컴포넌트-파일-매우-추천함"><a href="#컴포넌트-파일-매우-추천함" class="headerlink" title="컴포넌트 파일 매우 추천함"></a>컴포넌트 파일 <sup data-p="b">매우 추천함</sup></h3><p><strong>Whenever a build system is available to concatenate files, each component should be in its own file.</strong></p>
+<p>This helps you to more quickly find a component when you need to edit it or review how to use it.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-7"><a href="#나쁨-7" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;TodoList&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br><br>Vue.component(<span class="hljs-string">&#x27;TodoItem&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-7"><a href="#좋음-7" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- TodoList.js<br>|- TodoItem.js<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- TodoList.vue<br>|- TodoItem.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="싱글-파일-컴포넌트-이름-규칙-지정-casing-매우-추천함"><a href="#싱글-파일-컴포넌트-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="싱글 파일 컴포넌트 이름 규칙 지정(casing) 매우 추천함"></a>싱글 파일 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>Filenames of <a href="../guide/single-file-components.html">single-file components</a> should either be always PascalCase or always kebab-case.</strong></p>
+<p>PascalCase works best with autocompletion in code editors, as it’s consistent with how we reference components in JS(X) and templates, wherever possible. However, mixed case filenames can sometimes create issues on case-insensitive file systems, which is why kebab-case is also perfectly acceptable.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-8"><a href="#나쁨-8" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- mycomponent.vue<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- myComponent.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-8"><a href="#좋음-8" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- MyComponent.vue<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- my-component.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="베이스-컴포넌트-이름-매우-추천함"><a href="#베이스-컴포넌트-이름-매우-추천함" class="headerlink" title="베이스 컴포넌트 이름 매우 추천함"></a>베이스 컴포넌트 이름 <sup data-p="b">매우 추천함</sup></h3><p><strong>Base components (a.k.a. presentational, dumb, or pure components) that apply app-specific styling and conventions should all begin with a specific prefix, such as <code>Base</code>, <code>App</code>, or <code>V</code>.</strong></p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>These components lay the foundation for consistent styling and behavior in your application. They may <strong>only</strong> contain:</p>
+<ul>
+<li>HTML elements,</li>
+<li>other base components, and</li>
+<li>3rd-party UI components.</li>
+</ul>
+<p>But they’ll <strong>never</strong> contain global state (e.g. from a Vuex store).</p>
+<p>Their names often include the name of an element they wrap (e.g. <code>BaseButton</code>, <code>BaseTable</code>), unless no element exists for their specific purpose (e.g. <code>BaseIcon</code>). If you build similar components for a more specific context, they will almost always consume these components (e.g. <code>BaseButton</code> may be used in <code>ButtonSubmit</code>).</p>
+<p>Some advantages of this convention:</p>
+<ul>
+<li><p>When organized alphabetically in editors, your app’s base components are all listed together, making them easier to identify.</p>
+</li>
+<li><p>Since component names should always be multi-word, this convention prevents you from having to choose an arbitrary prefix for simple component wrappers (e.g. <code>MyButton</code>, <code>VueButton</code>).</p>
+</li>
+<li><p>Since these components are so frequently used, you may want to simply make them global instead of importing them everywhere. A prefix makes this possible with Webpack:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> requireComponent = <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&quot;./src&quot;</span>, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^Base[A-Z]/</span>)<br>requireComponent.keys().forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fileName</span>) </span>&#123;<br>  <span class="hljs-keyword">var</span> baseComponentConfig = requireComponent(fileName)<br>  baseComponentConfig = baseComponentConfig.default || baseComponentConfig<br>  <span class="hljs-keyword">var</span> baseComponentName = baseComponentConfig.name || (<br>    fileName<br>      .replace(<span class="hljs-regexp">/^.+\//</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br>      .replace(<span class="hljs-regexp">/\.\w+$/</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br>  )<br>  Vue.component(baseComponentName, baseComponentConfig)<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-9"><a href="#나쁨-9" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- MyButton.vue<br>|- VueTable.vue<br>|- Icon.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-9"><a href="#좋음-9" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- BaseButton.vue<br>|- BaseTable.vue<br>|- BaseIcon.vue<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- AppButton.vue<br>|- AppTable.vue<br>|- AppIcon.vue<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- VButton.vue<br>|- VTable.vue<br>|- VIcon.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="싱글-인스턴스-컴포넌트-이름-매우-추천함"><a href="#싱글-인스턴스-컴포넌트-이름-매우-추천함" class="headerlink" title="싱글 인스턴스 컴포넌트 이름 매우 추천함"></a>싱글 인스턴스 컴포넌트 이름 <sup data-p="b">매우 추천함</sup></h3><p><strong>Components that should only ever have a single active instance should begin with the <code>The</code> prefix, to denote that there can be only one.</strong></p>
+<p>This does not mean the component is only used in a single page, but it will only be used once <em>per page</em>. These components never accept any props, since they are specific to your app, not their context within your app. If you find the need to add props, it’s a good indication that this is actually a reusable component that is only used once per page <em>for now</em>.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-10"><a href="#나쁨-10" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- Heading.vue<br>|- MySidebar.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-10"><a href="#좋음-10" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- TheHeading.vue<br>|- TheSidebar.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="강한-연관성을-가진-컴포넌트-이름-매우-추천함"><a href="#강한-연관성을-가진-컴포넌트-이름-매우-추천함" class="headerlink" title="강한 연관성을 가진 컴포넌트 이름 매우 추천함"></a>강한 연관성을 가진 컴포넌트 이름 <sup data-p="b">매우 추천함</sup></h3><p><strong>Child components that are tightly coupled with their parent should include the parent component name as a prefix.</strong></p>
+<p>If a component only makes sense in the context of a single parent component, that relationship should be evident in its name. Since editors typically organize files alphabetically, this also keeps these related files next to each other.</p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>You might be tempted to solve this problem by nesting child components in directories named after their parent. For example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- TodoList&#x2F;<br>   |- Item&#x2F;<br>      |- index.vue<br>      |- Button.vue<br>   |- index.vue<br></code></pre></td></tr></table></figure>
+
+<p>or:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- TodoList&#x2F;<br>   |- Item&#x2F;<br>      |- Button.vue<br>   |- Item.vue<br>|- TodoList.vue<br></code></pre></td></tr></table></figure>
+
+<p>This isn’t recommended, as it results in:</p>
+<ul>
+<li>Many files with similar names, making rapid file switching in code editors more difficult.</li>
+<li>Many nested sub-directories, which increases the time it takes to browse components in an editor’s sidebar.</li>
+</ul>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-11"><a href="#나쁨-11" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- TodoList.vue<br>|- TodoItem.vue<br>|- TodoButton.vue<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- SearchSidebar.vue<br>|- NavigationForSearchSidebar.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-11"><a href="#좋음-11" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- TodoList.vue<br>|- TodoListItem.vue<br>|- TodoListItemButton.vue<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- SearchSidebar.vue<br>|- SearchSidebarNavigation.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="컴포넌트-이름의-단어-순서-정렬-매우-추천함"><a href="#컴포넌트-이름의-단어-순서-정렬-매우-추천함" class="headerlink" title="컴포넌트 이름의 단어 순서 정렬 매우 추천함"></a>컴포넌트 이름의 단어 순서 정렬 <sup data-p="b">매우 추천함</sup></h3><p><strong>Component names should start with the highest-level (often most general) words and end with descriptive modifying words.</strong></p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>You may be wondering:</p>
+<blockquote>
+<p>“Why would we force component names to use less natural language?”</p>
+</blockquote>
+<p>In natural English, adjectives and other descriptors do typically appear before the nouns, while exceptions require connector words. For example:</p>
+<ul>
+<li>Coffee <em>with</em> milk</li>
+<li>Soup <em>of the</em> day</li>
+<li>Visitor <em>to the</em> museum</li>
+</ul>
+<p>You can definitely include these connector words in component names if you’d like, but the order is still important.</p>
+<p>Also note that <strong>what’s considered “highest-level” will be contextual to your app</strong>. For example, imagine an app with a search form. It may include components like this one:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- ClearSearchButton.vue<br>|- ExcludeFromSearchInput.vue<br>|- LaunchOnStartupCheckbox.vue<br>|- RunSearchButton.vue<br>|- SearchInput.vue<br>|- TermsCheckbox.vue<br></code></pre></td></tr></table></figure>
+
+<p>As you might notice, it’s quite difficult to see which components are specific to the search. Now let’s rename the components according to the rule:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- SearchButtonClear.vue<br>|- SearchButtonRun.vue<br>|- SearchInputExcludeGlob.vue<br>|- SearchInputQuery.vue<br>|- SettingsCheckboxLaunchOnStartup.vue<br>|- SettingsCheckboxTerms.vue<br></code></pre></td></tr></table></figure>
+
+<p>Since editors typically organize files alphabetically, all the important relationships between components are now evident at a glance.</p>
+<p>You might be tempted to solve this problem differently, nesting all the search components under a “search” directory, then all the settings components under a “settings” directory. We only recommend considering this approach in very large apps (e.g. 100+ components), for these reasons:</p>
+<ul>
+<li>It generally takes more time to navigate through nested sub-directories, than scrolling through a single <code>components</code> directory.</li>
+<li>Name conflicts (e.g. multiple <code>ButtonDelete.vue</code> components) make it more difficult to quickly navigate to a specific component in a code editor.</li>
+<li>Refactoring becomes more difficult, because find-and-replace often isn’t sufficient to update relative references to a moved component.</li>
+</ul>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-12"><a href="#나쁨-12" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- ClearSearchButton.vue<br>|- ExcludeFromSearchInput.vue<br>|- LaunchOnStartupCheckbox.vue<br>|- RunSearchButton.vue<br>|- SearchInput.vue<br>|- TermsCheckbox.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-12"><a href="#좋음-12" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- SearchButtonClear.vue<br>|- SearchButtonRun.vue<br>|- SearchInputQuery.vue<br>|- SearchInputExcludeGlob.vue<br>|- SettingsCheckboxTerms.vue<br>|- SettingsCheckboxLaunchOnStartup.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="셀프-클로징-컴포넌트-매우-추천함"><a href="#셀프-클로징-컴포넌트-매우-추천함" class="headerlink" title="셀프 클로징 컴포넌트 매우 추천함"></a>셀프 클로징 컴포넌트 <sup data-p="b">매우 추천함</sup></h3><p><strong>Components with no content should be self-closing in <a href="../guide/single-file-components.html">single-file components</a>, string templates, and <a href="../guide/render-function.html#JSX">JSX</a> - but never in DOM templates.</strong></p>
+<p>Components that self-close communicate that they not only have no content, but are <strong>meant</strong> to have no content. It’s the difference between a blank page in a book and one labeled “This page intentionally left blank.” Your code is also cleaner without the unnecessary closing tag.</p>
+<p>Unfortunately, HTML doesn’t allow custom elements to be self-closing - only <a target="_blank" rel="noopener" href="https://www.w3.org/TR/html/syntax.html#void-elements">official “void” elements</a>. That’s why the strategy is only possible when Vue’s template compiler can reach the template before the DOM, then serve the DOM spec-compliant HTML.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-13"><a href="#나쁨-13" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In single-file components, string templates, and JSX --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">MyComponent</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In DOM templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-13"><a href="#좋음-13" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In single-file components, string templates, and JSX --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In DOM templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="템플릿에서-컴포넌트-이름-규칙-지정-casing-매우-추천함"><a href="#템플릿에서-컴포넌트-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="템플릿에서 컴포넌트 이름 규칙 지정(casing) 매우 추천함"></a>템플릿에서 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>In most projects, component names should always be PascalCase in <a href="../guide/single-file-components.html">single-file components</a> and string templates - but kebab-case in DOM templates.</strong></p>
+<p>PascalCase has a few advantages over kebab-case:</p>
+<ul>
+<li>Editors can autocomplete component names in templates, because PascalCase is also used in JavaScript.</li>
+<li><code>&lt;MyComponent&gt;</code> is more visually distinct from a single-word HTML element than <code>&lt;my-component&gt;</code>, because there are two character differences (the two capitals), rather than just one (a hyphen).</li>
+<li>If you use any non-Vue custom elements in your templates, such as a web component, PascalCase ensures that your Vue components remain distinctly visible.</li>
+</ul>
+<p>Unfortunately, due to HTML’s case insensitivity, DOM templates must still use kebab-case.</p>
+<p>Also note that if you’ve already invested heavily in kebab-case, consistency with HTML conventions and being able to use the same casing across all your projects may be more important than the advantages listed above. In those cases, <strong>using kebab-case everywhere is also acceptable.</strong></p>
+<div class="style-example example-bad">
+<h4 id="나쁨-14"><a href="#나쁨-14" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In single-file components and string templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">mycomponent</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In single-file components and string templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">myComponent</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In DOM templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">MyComponent</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-14"><a href="#좋음-14" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In single-file components and string templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In DOM templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>OR</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Everywhere --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="JS-JSX에서-컴포넌트-이름-규칙-지정-casing-매우-추천함"><a href="#JS-JSX에서-컴포넌트-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="JS/JSX에서 컴포넌트 이름 규칙 지정(casing) 매우 추천함"></a>JS/JSX에서 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>Component names in JS/<a href="../guide/render-function.html#JSX">JSX</a> should always be PascalCase, though they may be kebab-case inside strings for simpler applications that only use global component registration through <code>Vue.component</code>.</strong></p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>In JavaScript, PascalCase is the convention for classes and prototype constructors - essentially, anything that can have distinct instances. Vue components also have instances, so it makes sense to also use PascalCase. As an added benefit, using PascalCase within JSX (and templates) allows readers of the code to more easily distinguish between components and HTML elements.</p>
+<p>However, for applications that use <strong>only</strong> global component definitions via <code>Vue.component</code>, we recommend kebab-case instead. The reasons are:</p>
+<ul>
+<li>It’s rare that global components are ever referenced in JavaScript, so following a convention for JavaScript makes less sense.</li>
+<li>These applications always include many in-DOM templates, where <a href="#Component-name-casing-in-templates-strongly-recommended">kebab-case <strong>must</strong> be used</a>.</li>
+</ul>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-15"><a href="#나쁨-15" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;myComponent&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> myComponent <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./MyComponent.vue&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  name: <span class="hljs-string">&#x27;myComponent&#x27;</span>,<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  name: <span class="hljs-string">&#x27;my-component&#x27;</span>,<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-15"><a href="#좋음-15" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;MyComponent&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;my-component&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./MyComponent.vue&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  name: <span class="hljs-string">&#x27;MyComponent&#x27;</span>,<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="전체-이름-컴포넌트-이름-매우-추천함"><a href="#전체-이름-컴포넌트-이름-매우-추천함" class="headerlink" title="전체 이름 컴포넌트 이름 매우 추천함"></a>전체 이름 컴포넌트 이름 <sup data-p="b">매우 추천함</sup></h3><p><strong>Component names should prefer full words over abbreviations.</strong></p>
+<p>The autocompletion in editors make the cost of writing longer names very low, while the clarity they provide is invaluable. Uncommon abbreviations, in particular, should always be avoided.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-16"><a href="#나쁨-16" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- SdSettings.vue<br>|- UProfOpts.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-16"><a href="#좋음-16" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">components&#x2F;<br>|- StudentDashboardSettings.vue<br>|- UserProfileOptions.vue<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="Prop-이름-규칙-지정-casing-매우-추천함"><a href="#Prop-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="Prop 이름 규칙 지정(casing) 매우 추천함"></a>Prop 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>Prop names should always use camelCase during declaration, but kebab-case in templates and <a href="../guide/render-function.html#JSX">JSX</a>.</strong></p>
+<p>We’re simply following the conventions of each language. Within JavaScript, camelCase is more natural. Within HTML, kebab-case is.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-17"><a href="#나쁨-17" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">props: &#123;<br>  <span class="hljs-string">&#x27;greeting-text&#x27;</span>: <span class="hljs-built_in">String</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">WelcomeMessage</span> <span class="hljs-attr">greetingText</span>=<span class="hljs-string">&quot;hi&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-17"><a href="#좋음-17" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">props: &#123;<br>  greetingText: <span class="hljs-built_in">String</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">WelcomeMessage</span> <span class="hljs-attr">greeting-text</span>=<span class="hljs-string">&quot;hi&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="다중-속성-엘리먼트-매우-추천함"><a href="#다중-속성-엘리먼트-매우-추천함" class="headerlink" title="다중 속성 엘리먼트 매우 추천함"></a>다중 속성 엘리먼트 <sup data-p="b">매우 추천함</sup></h3><p><strong>Elements with multiple attributes should span multiple lines, with one attribute per line.</strong></p>
+<p>In JavaScript, splitting objects with multiple properties over multiple lines is widely considered a good convention, because it’s much easier to read. Our templates and <a href="../guide/render-function.html#JSX">JSX</a> deserve the same consideration.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-18"><a href="#나쁨-18" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://vuejs.org/images/logo.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Vue Logo&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> <span class="hljs-attr">foo</span>=<span class="hljs-string">&quot;a&quot;</span> <span class="hljs-attr">bar</span>=<span class="hljs-string">&quot;b&quot;</span> <span class="hljs-attr">baz</span>=<span class="hljs-string">&quot;c&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-18"><a href="#좋음-18" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span></span><br><span class="hljs-tag">  <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://vuejs.org/images/logo.png&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Vue Logo&quot;</span></span><br><span class="hljs-tag">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span></span><br><span class="hljs-tag">  <span class="hljs-attr">foo</span>=<span class="hljs-string">&quot;a&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">bar</span>=<span class="hljs-string">&quot;b&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">baz</span>=<span class="hljs-string">&quot;c&quot;</span></span><br><span class="hljs-tag">/&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="템플릿에서-단순한-표현식-매우-추천함"><a href="#템플릿에서-단순한-표현식-매우-추천함" class="headerlink" title="템플릿에서 단순한 표현식 매우 추천함"></a>템플릿에서 단순한 표현식 <sup data-p="b">매우 추천함</sup></h3><p><strong>Component templates should only include simple expressions, with more complex expressions refactored into computed properties or methods.</strong></p>
+<p>Complex expressions in your templates make them less declarative. We should strive to describe <em>what</em> should appear, not <em>how</em> we’re computing that value. Computed properties and methods also allow the code to be reused.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-19"><a href="#나쁨-19" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">&#123;&#123;<br>  fullName.split(&#x27; &#x27;).map(function (word) &#123;<br>    return word[0].toUpperCase() + word.slice(1)<br>  &#125;).join(&#x27; &#x27;)<br>&#125;&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-19"><a href="#좋음-19" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In a template --&gt;</span><br>&#123;&#123; normalizedFullName &#125;&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// The complex expression has been moved to a computed property</span><br>computed: &#123;<br>  normalizedFullName: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.fullName.split(<span class="hljs-string">&#x27; &#x27;</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">word</span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> word[<span class="hljs-number">0</span>].toUpperCase() + word.slice(<span class="hljs-number">1</span>)<br>    &#125;).join(<span class="hljs-string">&#x27; &#x27;</span>)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="단순한-계산된-속성-매우-추천함"><a href="#단순한-계산된-속성-매우-추천함" class="headerlink" title="단순한 계산된 속성 매우 추천함"></a>단순한 계산된 속성 <sup data-p="b">매우 추천함</sup></h3><p><strong>Complex computed properties should be split into as many simpler properties as possible.</strong></p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>Simpler, well-named computed properties are:</p>
+<ul>
+<li><p><strong>Easier to test</strong></p>
+<p>When each computed property contains only a very simple expression, with very few dependencies, it’s much easier to write tests confirming that it works correctly.</p>
+</li>
+<li><p><strong>Easier to read</strong></p>
+<p>Simplifying computed properties forces you to give each value a descriptive name, even if it’s not reused. This makes it much easier for other developers (and future you) to focus in on the code they care about and figure out what’s going on.</p>
+</li>
+<li><p><strong>More adaptable to changing requirements</strong></p>
+<p>Any value that can be named might be useful to the view. For example, we might decide to display a message telling the user how much money they saved. We might also decide to calculate sales tax, but perhaps display it separately, rather than as part of the final price.</p>
+<p>Small, focused computed properties make fewer assumptions about how information will be used, so require less refactoring as requirements change.</p>
+</li>
+</ul>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-20"><a href="#나쁨-20" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">computed: &#123;<br>  price: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">var</span> basePrice = <span class="hljs-built_in">this</span>.manufactureCost / (<span class="hljs-number">1</span> - <span class="hljs-built_in">this</span>.profitMargin)<br>    <span class="hljs-keyword">return</span> (<br>      basePrice -<br>      basePrice * (<span class="hljs-built_in">this</span>.discountPercent || <span class="hljs-number">0</span>)<br>    )<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-20"><a href="#좋음-20" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">computed: &#123;<br>  basePrice: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.manufactureCost / (<span class="hljs-number">1</span> - <span class="hljs-built_in">this</span>.profitMargin)<br>  &#125;,<br>  discount: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.basePrice * (<span class="hljs-built_in">this</span>.discountPercent || <span class="hljs-number">0</span>)<br>  &#125;,<br>  finalPrice: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.basePrice - <span class="hljs-built_in">this</span>.discount<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="속성-값에-따옴표-매우-추천함"><a href="#속성-값에-따옴표-매우-추천함" class="headerlink" title="속성 값에 따옴표 매우 추천함"></a>속성 값에 따옴표 <sup data-p="b">매우 추천함</sup></h3><p><strong>Non-empty HTML attribute values should always be inside quotes (single or double, whichever is not used in JS).</strong></p>
+<p>While attribute values without any spaces are not required to have quotes in HTML, this practice often leads to <em>avoiding</em> spaces, making attribute values less readable.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-21"><a href="#나쁨-21" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">text</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">AppSidebar</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&#123;width:sidebarWidth+</span>&#x27;<span class="hljs-attr">px</span>&#x27;&#125;&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-21"><a href="#좋음-21" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">AppSidebar</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;&#123; width: sidebarWidth + &#x27;px&#x27; &#125;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="축약형-디렉티브-매우-추천함"><a href="#축약형-디렉티브-매우-추천함" class="headerlink" title="축약형 디렉티브 매우 추천함"></a>축약형 디렉티브 <sup data-p="b">매우 추천함</sup></h3><p><strong>Directive shorthands (<code>:</code> for <code>v-bind:</code>, <code>@</code> for <code>v-on:</code> and <code>#</code> for <code>v-slot</code>) should be used always or never.</strong></p>
+<div class="style-example example-bad">
+<h4 id="나쁨-22"><a href="#나쁨-22" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;newTodoText&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">:placeholder</span>=<span class="hljs-string">&quot;newTodoInstructions&quot;</span></span><br><span class="hljs-tag">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">&quot;onInput&quot;</span></span><br><span class="hljs-tag">  @<span class="hljs-attr">focus</span>=<span class="hljs-string">&quot;onFocus&quot;</span></span><br><span class="hljs-tag">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-22"><a href="#좋음-22" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">:value</span>=<span class="hljs-string">&quot;newTodoText&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">:placeholder</span>=<span class="hljs-string">&quot;newTodoInstructions&quot;</span></span><br><span class="hljs-tag">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;newTodoText&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-bind:placeholder</span>=<span class="hljs-string">&quot;newTodoInstructions&quot;</span></span><br><span class="hljs-tag">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">  @<span class="hljs-attr">input</span>=<span class="hljs-string">&quot;onInput&quot;</span></span><br><span class="hljs-tag">  @<span class="hljs-attr">focus</span>=<span class="hljs-string">&quot;onFocus&quot;</span></span><br><span class="hljs-tag">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">&quot;onInput&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-on:focus</span>=<span class="hljs-string">&quot;onFocus&quot;</span></span><br><span class="hljs-tag">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:footer</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h2 id="우선순위-C-규칙-추천함-선택의-혼란-또는-판단-오버헤드-최소화"><a href="#우선순위-C-규칙-추천함-선택의-혼란-또는-판단-오버헤드-최소화" class="headerlink" title="우선순위 C 규칙: 추천함 (선택의 혼란 또는 판단 오버헤드 최소화)"></a>우선순위 C 규칙: 추천함 (선택의 혼란 또는 판단 오버헤드 최소화)</h2><h3 id="컴포넌트-인스턴스-옵션-순서-추천함"><a href="#컴포넌트-인스턴스-옵션-순서-추천함" class="headerlink" title="컴포넌트/인스턴스 옵션 순서 추천함"></a>컴포넌트/인스턴스 옵션 순서 <sup data-p="c">추천함</sup></h3><p><strong>컴포넌트/인스턴스 옵션의 순서는 언제나 일정한 순서로 정렬되어야 합니다.</strong></p>
+<p>아래는 권장하는 컴포넌트 옵션 순서입니다. 유형별로 나누어 놓았으므로, 플러그인으로 추가되는 새로운 옵션들 역시 이에 맞추어 정렬하면 됩니다.</p>
+<ol>
+<li><p><strong>사이드 이펙트(Side Effects)</strong> (컴포넌트 외부에 효과가 미치는 옵션)</p>
+<ul>
+<li><code>el</code></li>
+</ul>
+</li>
+<li><p><strong>전역 인지(Global Awareness)</strong> (컴포넌트 바깥의 지식을 필요로 하는 옵션)</p>
+<ul>
+<li><code>name</code></li>
+<li><code>parent</code></li>
+</ul>
+</li>
+<li><p><strong>컴포넌트 유형(Component Type)</strong> (컴포넌트의 유형을 바꾸는 옵션)</p>
+<ul>
+<li><code>functional</code></li>
+</ul>
+</li>
+<li><p><strong>템플릿 변경자(Template Modifiers)</strong> (템플릿이 컴파일되는 방식을 바꾸는 옵션)</p>
+<ul>
+<li><code>delimiters</code></li>
+<li><code>comments</code></li>
+</ul>
+</li>
+<li><p><strong>템플릿 의존성(Template Dependencies)</strong> (템플릿에 이용되는 요소들을 지정하는 옵션)</p>
+<ul>
+<li><code>components</code></li>
+<li><code>directives</code></li>
+<li><code>filters</code></li>
+</ul>
+</li>
+<li><p><strong>컴포지션(Composition)</strong> (다른 컴포넌트의 속성을 가져와 합치는 옵션)</p>
+<ul>
+<li><code>extends</code></li>
+<li><code>mixins</code></li>
+</ul>
+</li>
+<li><p><strong>인터페이스(Interface)</strong> (컴포넌트의 인터페이스를 지정하는 옵션)</p>
+<ul>
+<li><code>inheritAttrs</code></li>
+<li><code>model</code></li>
+<li><code>props</code>/<code>propsData</code></li>
+</ul>
+</li>
+<li><p><strong>지역 상태(Local State)</strong> (반응적인 지역 속성들을 설정하는 옵션)</p>
+<ul>
+<li><code>data</code></li>
+<li><code>computed</code></li>
+</ul>
+</li>
+<li><p><strong>이벤트(Events)</strong> (반응적인 이벤트에 의해 실행되는 콜백을 지정하는 옵션)</p>
+<ul>
+<li><code>watch</code></li>
+<li>라이프사이클 이벤트 (호출 순서대로 정렬)<ul>
+<li><code>beforeCreate</code></li>
+<li><code>created</code></li>
+<li><code>beforeMount</code></li>
+<li><code>mounted</code></li>
+<li><code>beforeUpdate</code></li>
+<li><code>updated</code></li>
+<li><code>activated</code></li>
+<li><code>deactivated</code></li>
+<li><code>beforeDestroy</code></li>
+<li><code>destroyed</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>비반응적 속성(Non-Reactive Properties)</strong> (시스템의 반응성과 관계 없는 인스턴스 속성을 지정하는 옵션)</p>
+<ul>
+<li><code>methods</code></li>
+</ul>
+</li>
+<li><p><strong>렌더링(Rendering)</strong> (컴포넌트 출력을 선언적으로 지정하는 옵션)</p>
+<ul>
+<li><code>template</code>/<code>render</code></li>
+<li><code>renderError</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="엘리먼트-속성-순서-추천함"><a href="#엘리먼트-속성-순서-추천함" class="headerlink" title="엘리먼트 속성 순서 추천함"></a>엘리먼트 속성 순서 <sup data-p="c">추천함</sup></h3><p><strong>엘리먼트 및 컴포넌트의 속성은 언제나 일정한 순서로 정렬되어야 합니다.</strong></p>
+<p>아래는 권장하는 엘리먼트 속성 순서입니다. 유형별로 나누어 놓았으므로, 커스텀 속성이나 directive 역시 이에 맞추어 정렬하면 됩니다.</p>
+<ol>
+<li><p><strong>정의(Definition)</strong> (컴포넌트 옵션을 제공하는 속성)</p>
+<ul>
+<li><code>is</code></li>
+</ul>
+</li>
+<li><p><strong>리스트 렌더링(List Rendering)</strong> (같은 엘리먼트의 변형을 여러 개 생성하는 속성)</p>
+<ul>
+<li><code>v-for</code></li>
+</ul>
+</li>
+<li><p><strong>조건부(Conditionals)</strong> (엘리먼트가 렌더링되는지 혹은 보여지는지 여부를 결정하는 속성)</p>
+<ul>
+<li><code>v-if</code></li>
+<li><code>v-else-if</code></li>
+<li><code>v-else</code></li>
+<li><code>v-show</code></li>
+<li><code>v-cloak</code></li>
+</ul>
+</li>
+<li><p><strong>렌더 변경자(Render Modifiers)</strong> (엘리먼트의 렌더링 방식을 변경하는 속성)</p>
+<ul>
+<li><code>v-pre</code></li>
+<li><code>v-once</code></li>
+</ul>
+</li>
+<li><p><strong>전역 인지(Global Awareness)</strong> (컴포넌트 바깥의 지식을 요구하는 속성)</p>
+<ul>
+<li><code>id</code></li>
+</ul>
+</li>
+<li><p><strong>유일한 속성(Unique Attributes)</strong> (유일한 값을 가질 것을 요구하는 속성)</p>
+<ul>
+<li><code>ref</code></li>
+<li><code>key</code></li>
+<li><code>slot</code></li>
+</ul>
+</li>
+<li><p><strong>양방향 바인딩(Two-Way Binding)</strong> (바인딩과 이벤트를 결합하는 속성)</p>
+<ul>
+<li><code>v-model</code></li>
+</ul>
+</li>
+<li><p><strong>기타 속성</strong> (따로 언급하지 않은 속성들)</p>
+</li>
+<li><p><strong>이벤트(Events)</strong> (컴포넌트 이벤트 리스너를 지정하는 속성)</p>
+<ul>
+<li><code>v-on</code></li>
+</ul>
+</li>
+<li><p><strong>내용(Content)</strong> (엘리먼트의 내용을 덮어쓰는 속성)</p>
+<ul>
+<li><code>v-html</code></li>
+<li><code>v-text</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="컴포넌트-인스턴스-옵션간-빈-줄-추천함"><a href="#컴포넌트-인스턴스-옵션간-빈-줄-추천함" class="headerlink" title="컴포넌트/인스턴스 옵션간 빈 줄 추천함"></a>컴포넌트/인스턴스 옵션간 빈 줄 <sup data-p="c">추천함</sup></h3><p><strong>You may want to add one empty line between multi-line properties, particularly if the options can no longer fit on your screen without scrolling.</strong></p>
+<p>When components begin to feel cramped or difficult to read, adding spaces between multi-line properties can make them easier to skim again. In some editors, such as Vim, formatting options like this can also make them easier to navigate with the keyboard.</p>
+<div class="style-example example-good">
+<h4 id="좋음-23"><a href="#좋음-23" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">props: &#123;<br>  value: &#123;<br>    type: <span class="hljs-built_in">String</span>,<br>    required: <span class="hljs-literal">true</span><br>  &#125;,<br><br>  focused: &#123;<br>    type: <span class="hljs-built_in">Boolean</span>,<br>    <span class="hljs-keyword">default</span>: <span class="hljs-literal">false</span><br>  &#125;,<br><br>  label: <span class="hljs-built_in">String</span>,<br>  icon: <span class="hljs-built_in">String</span><br>&#125;,<br><br>computed: &#123;<br>  formattedValue: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">// ...</span><br>  &#125;,<br><br>  inputClasses: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">// ...</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// No spaces are also fine, as long as the component</span><br><span class="hljs-comment">// is still easy to read and navigate.</span><br>props: &#123;<br>  value: &#123;<br>    type: <span class="hljs-built_in">String</span>,<br>    required: <span class="hljs-literal">true</span><br>  &#125;,<br>  focused: &#123;<br>    type: <span class="hljs-built_in">Boolean</span>,<br>    <span class="hljs-keyword">default</span>: <span class="hljs-literal">false</span><br>  &#125;,<br>  label: <span class="hljs-built_in">String</span>,<br>  icon: <span class="hljs-built_in">String</span><br>&#125;,<br>computed: &#123;<br>  formattedValue: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">// ...</span><br>  &#125;,<br>  inputClasses: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">// ...</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="싱글-파일-컴포넌트-최상위-엘리먼트-순서-추천함"><a href="#싱글-파일-컴포넌트-최상위-엘리먼트-순서-추천함" class="headerlink" title="싱글 파일 컴포넌트 최상위 엘리먼트 순서 추천함"></a>싱글 파일 컴포넌트 최상위 엘리먼트 순서 <sup data-p="c">추천함</sup></h3><p><strong><a href="../guide/single-file-components.html">Single-file components</a> should always order <code>&lt;script&gt;</code>, <code>&lt;template&gt;</code>, and <code>&lt;style&gt;</code> tags consistently, with <code>&lt;style&gt;</code> last, because at least one of the other two is always necessary.</strong></p>
+<div class="style-example example-bad">
+<h4 id="나쁨-23"><a href="#나쁨-23" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-24"><a href="#좋음-24" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h2 id="우선순위-D-규칙-주의요함-잠재적인-위험을-내포한-패턴"><a href="#우선순위-D-규칙-주의요함-잠재적인-위험을-내포한-패턴" class="headerlink" title="우선순위 D 규칙: 주의요함 (잠재적인 위험을 내포한 패턴)"></a>우선순위 D 규칙: 주의요함 (잠재적인 위험을 내포한 패턴)</h2><h3 id="key가-없는-v-if-v-if-else-v-else-주의요함"><a href="#key가-없는-v-if-v-if-else-v-else-주의요함" class="headerlink" title="key가 없는 v-if/v-if-else/v-else 주의요함"></a><code>key</code>가 없는 <code>v-if</code>/<code>v-if-else</code>/<code>v-else</code> <sup data-p="d">주의요함</sup></h3><p><strong>It’s usually best to use <code>key</code> with <code>v-if</code> + <code>v-else</code>, if they are the same element type (e.g. both <code>&lt;div&gt;</code> elements).</strong></p>
+<p>By default, Vue updates the DOM as efficiently as possible. That means when switching between elements of the same type, it simply patches the existing element, rather than removing it and adding a new one in its place. This can have <a target="_blank" rel="noopener" href="https://jsfiddle.net/chrisvfritz/bh8fLeds/">unintended consequences</a> if these elements should not actually be considered the same.</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-24"><a href="#나쁨-24" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;error&quot;</span>&gt;</span><br>  Error: &#123;&#123; error &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else</span>&gt;</span><br>  &#123;&#123; results &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-25"><a href="#좋음-25" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;error&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;search-status&quot;</span></span><br><span class="hljs-tag">&gt;</span><br>  Error: &#123;&#123; error &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-else</span></span><br><span class="hljs-tag">  <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;search-results&quot;</span></span><br><span class="hljs-tag">&gt;</span><br>  &#123;&#123; results &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="scoped에서-엘리먼트-셀렉터-사용-주의요함"><a href="#scoped에서-엘리먼트-셀렉터-사용-주의요함" class="headerlink" title="scoped에서 엘리먼트 셀렉터 사용 주의요함"></a><code>scoped</code>에서 엘리먼트 셀렉터 사용 <sup data-p="d">주의요함</sup></h3><p><strong>Element selectors should be avoided with <code>scoped</code>.</strong></p>
+<p>Prefer class selectors over element selectors in <code>scoped</code> styles, because large numbers of element selectors are slow.</p>
+
+<details>
+<summary>
+  <h4>자세한 설명</h4>
+</summary>
+
+
+<p>To scope styles, Vue adds a unique attribute to component elements, such as <code>data-v-f3f3eg9</code>. Then selectors are modified so that only matching elements with this attribute are selected (e.g. <code>button[data-v-f3f3eg9]</code>).</p>
+<p>The problem is that large numbers of <a target="_blank" rel="noopener" href="http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&sel=a%5Bhref%5D&body=background:+%23CFD&ne=1000">element-attribute selectors</a> (e.g. <code>button[data-v-f3f3eg9]</code>) will be considerably slower than <a target="_blank" rel="noopener" href="http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&sel=.class%5Bhref%5D&body=background:+%23CFD&ne=1000">class-attribute selectors</a> (e.g. <code>.btn-close[data-v-f3f3eg9]</code>), so class selectors should be preferred whenever possible.</p>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-25"><a href="#나쁨-25" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><br>button &#123;<br>  background-color: red;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-26"><a href="#좋음-26" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-close&quot;</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="css"><span class="hljs-selector-class">.btn-close</span> &#123;</span><br>  background-color: red;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="부모-자식간-의사소통-주의요함"><a href="#부모-자식간-의사소통-주의요함" class="headerlink" title="부모-자식간 의사소통 주의요함"></a>부모-자식간 의사소통 <sup data-p="d">주의요함</sup></h3><p><strong>Props and events should be preferred for parent-child component communication, instead of <code>this.$parent</code> or mutating props.</strong></p>
+<p>An ideal Vue application is props down, events up. Sticking to this convention makes your components much easier to understand. However, there are edge cases where prop mutation or <code>this.$parent</code> can simplify two components that are already deeply coupled.</p>
+<p>The problem is, there are also many <em>simple</em> cases where these patterns may offer convenience. Beware: do not be seduced into trading simplicity (being able to understand the flow of your state) for short-term convenience (writing less code).</p>
+<div class="style-example example-bad">
+<h4 id="나쁨-26"><a href="#나쁨-26" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;TodoItem&#x27;</span>, &#123;<br>  props: &#123;<br>    todo: &#123;<br>      type: <span class="hljs-built_in">Object</span>,<br>      required: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;,<br>  template: <span class="hljs-string">&#x27;&lt;input v-model=&quot;todo.text&quot;&gt;&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;TodoItem&#x27;</span>, &#123;<br>  props: &#123;<br>    todo: &#123;<br>      type: <span class="hljs-built_in">Object</span>,<br>      required: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;,<br>  methods: &#123;<br>    removeTodo () &#123;<br>      <span class="hljs-keyword">var</span> vm = <span class="hljs-built_in">this</span><br>      vm.$parent.todos = vm.$parent.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;<br>        <span class="hljs-keyword">return</span> todo.id !== vm.todo.id<br>      &#125;)<br>    &#125;<br>  &#125;,<br>  template: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;span&gt;</span><br><span class="hljs-string">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="hljs-string">      &lt;button @click=&quot;removeTodo&quot;&gt;</span><br><span class="hljs-string">        X</span><br><span class="hljs-string">      &lt;/button&gt;</span><br><span class="hljs-string">    &lt;/span&gt;</span><br><span class="hljs-string">  `</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-27"><a href="#좋음-27" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;TodoItem&#x27;</span>, &#123;<br>  props: &#123;<br>    todo: &#123;<br>      type: <span class="hljs-built_in">Object</span>,<br>      required: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;,<br>  template: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;input</span><br><span class="hljs-string">      :value=&quot;todo.text&quot;</span><br><span class="hljs-string">      @input=&quot;$emit(&#x27;input&#x27;, $event.target.value)&quot;</span><br><span class="hljs-string">    &gt;</span><br><span class="hljs-string">  `</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;TodoItem&#x27;</span>, &#123;<br>  props: &#123;<br>    todo: &#123;<br>      type: <span class="hljs-built_in">Object</span>,<br>      required: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;,<br>  template: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;span&gt;</span><br><span class="hljs-string">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="hljs-string">      &lt;button @click=&quot;$emit(&#x27;delete&#x27;)&quot;&gt;</span><br><span class="hljs-string">        X</span><br><span class="hljs-string">      &lt;/button&gt;</span><br><span class="hljs-string">    &lt;/span&gt;</span><br><span class="hljs-string">  `</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+<h3 id="전역-상태-관리-주의요함"><a href="#전역-상태-관리-주의요함" class="headerlink" title="전역 상태 관리 주의요함"></a>전역 상태 관리 <sup data-p="d">주의요함</sup></h3><p><strong>전역 상태 관리에는 <code>this.$root</code> 나 글로벌 이벤트 버스(global event bus)보다는 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vuex">Vuex</a>를 이용하는 것이 좋습니다.</strong></p>
+<p>전역 상태 관리에 <code>this.$root</code>나 <a href="https://vuejs.org/v2/guide/migration.html#dispatch-and-broadcast-replaced">글로벌 이벤트 버스</a>를 이용하는 것은 아주 단순한 경우에는 편리할 수 있지만 대부분의 Application에는 부적절합니다. Vuex는 상태를 관리하는 중앙 저장소를 제공하는 것만이 아니라 상태 변화를 체계화하고, 추적하며, 디버깅을 용이하게 하는 도구들을 제공합니다.</p>
+</details>
+
+<div class="style-example example-bad">
+<h4 id="나쁨-27"><a href="#나쁨-27" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// main.js</span><br><span class="hljs-keyword">new</span> Vue(&#123;<br>  data: &#123;<br>    todos: []<br>  &#125;,<br>  created: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">this</span>.$on(<span class="hljs-string">&#x27;remove-todo&#x27;</span>, <span class="hljs-built_in">this</span>.removeTodo)<br>  &#125;,<br>  methods: &#123;<br>    removeTodo: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;<br>      <span class="hljs-keyword">var</span> todoIdToRemove = todo.id<br>      <span class="hljs-built_in">this</span>.todos = <span class="hljs-built_in">this</span>.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;<br>        <span class="hljs-keyword">return</span> todo.id !== todoIdToRemove<br>      &#125;)<br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+</div>
+
+<div class="style-example example-good">
+<h4 id="좋음-28"><a href="#좋음-28" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// store/modules/todos.js</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  state: &#123;<br>    list: []<br>  &#125;,<br>  mutations: &#123;<br>    REMOVE_TODO (state, todoId) &#123;<br>      state.list = state.list.filter(<span class="hljs-function"><span class="hljs-params">todo</span> =&gt;</span> todo.id !== todoId)<br>    &#125;<br>  &#125;,<br>  actions: &#123;<br>    removeTodo (&#123; commit, state &#125;, todo) &#123;<br>      commit(<span class="hljs-string">&#x27;REMOVE_TODO&#x27;</span>, todo.id)<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- TodoItem.vue --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br>    &#123;&#123; todo.text &#125;&#125;<br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;removeTodo(todo)&quot;</span>&gt;</span><br>      X<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br><span class="javascript"><span class="hljs-keyword">import</span> &#123; mapActions &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span></span><br><br><span class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br>  props: &#123;<br>    todo: &#123;<br><span class="javascript">      type: <span class="hljs-built_in">Object</span>,</span><br><span class="javascript">      required: <span class="hljs-literal">true</span></span><br>    &#125;<br>  &#125;,<br><span class="javascript">  methods: mapActions([<span class="hljs-string">&#x27;removeTodo&#x27;</span>])</span><br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</div>
+
+
+
+
+<script>
+(function () {
+  var enforcementTypes = {
+    none: '<span title="There is unfortunately no way to automatically enforce this rule.">self-discipline</span>',
+    runtime: 'runtime error',
+    linter: '<a href="https://github.com/vuejs/eslint-plugin-vue#eslint-plugin-vue" target="_blank" rel="noopener noreferrer">plugin:vue/recommended</a>'
+  }
+  Vue.component('sg-enforcement', {
+    template: '\
+      <span>\
+        <strong>Enforcement</strong>:\
+        <span class="style-rule-tag" v-html="humanType"/>\
+      </span>\
+    ',
+    props: {
+      type: {
+        type: String,
+        required: true,
+        validate: function (value) {
+          Object.keys(enforcementTypes).indexOf(value) !== -1
+        }
+      }
+    },
+    computed: {
+      humanType: function () {
+        return enforcementTypes[this.type]
+      }
+    }
+  })
+
+  // new Vue({
+  //  el: '#main'
+  // })
+})()
+</script>
+
+
+  
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    이 문서에 문제를 제보하거나 기여하고 싶은 부분이 있으십니까?
+    <a href="https://github.com/vuejs-kr/kr.vuejs.org/blob/master/src/v2/style-guide/index.md" rel="noopener" target="_blank">
+      Github에서 이 페이지를 수정하세요!
+    </a>
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>
