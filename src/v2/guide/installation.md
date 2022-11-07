@@ -2,8 +2,8 @@
 title: 설치방법
 type: guide
 order: 1
-vue_version: 2.6.12
-gz_size: "33.30"
+vue_version: 2.7.13
+gz_size: "37.48"
 ---
 
 ### 호환성 정보
@@ -44,14 +44,14 @@ Vue를 사용할 때, 브라우저에 [Vue Devtools](https://github.com/vuejs/vu
 프로덕션 환경인 경우 새 버전에서 예상치 못한 오류를 방지하려면 특정 버전의 빌드 파일을 추가하는것을 추천합니다.
 
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.13"></script>
 ```
 
 기본 ES 모듈을 사용하는 경우 이를 지원 하는 ES 모듈 호환 빌드 파일도 있습니다.
 
 ``` html
 <script type="module">
-  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.esm.browser.js'
+  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.esm.browser.js'
 </script>
 ```
 

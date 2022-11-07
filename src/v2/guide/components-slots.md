@@ -166,7 +166,7 @@ Vue에 있는 컨텐트 배포 API는 `<slot>` 요소를 컨텐트 배포 통로
 
 `name`이 지정되지 않은 `<slot>`에는 암묵적으로 "default" 값이 사용됩니다.
 
-이름이 있는 슬롯에 내용을 전달하려면 `<template>`에 `v-slot` 디렉티브를 쓰고 그 속성에 앞에서 지정한 'name'을 넣으면 됩니다.
+이름(`name`)이 있는 슬롯에 내용을 전달하려면 `<template>`에 `v-slot` 디렉티브를 쓰고, `v-slot`의 인자로 슬롯의 이름(`name`)을 전달하면 됩니다.
 
 ```html
 <base-layout>
@@ -255,7 +255,7 @@ Vue에 있는 컨텐트 배포 API는 `<slot>` 요소를 컨텐트 배포 통로
 </span>
 ```
 
-`<slot>` 요소에 연결된 속성을 **슬롯 속성(slot props)**라고 합니다. 이제 부모 컴포넌트의 범위(scope)에서 `v-slot`에 연결한 '슬롯 속성(slotProps)'를 쓸 수 있습니다.
+`<slot>` 요소에 연결된 속성을 **슬롯 속성(slot props)**라고 합니다. 이제 부모 컴포넌트의 범위(scope)에서 `v-slot`에 연결한 슬롯 속성(slot props)을 쓸 수 있습니다.
 
 ``` html
 <current-user>
@@ -265,11 +265,11 @@ Vue에 있는 컨텐트 배포 API는 `<slot>` 요소를 컨텐트 배포 통로
 </current-user>
 ```
 
-이번 사례에서 모든 '슬롯 속성'의 이름을 'slotProps'라고 썼는데 이 이름은 당연히 사용자가 원하는 대로 바꿀 수 있습니다.
+이번 사례에서 모든 슬롯 속성(slot props)의 이름을 `slotProps`라고 썼는데 이 이름은 당연히 사용자가 원하는 대로 바꿀 수 있습니다.
 
 ### 단독 디폴트 슬롯을 위한 축약 문법(Abbreviated Syntax for Lone Default Slots)
 
-위의 사례와 같이 제공된 내용이 디폴트 슬롯 *밖에* 없으면 컴포넌트의 태그를 슬롯의 템플릿으로 바로 쓸 수 있습니다. 즉 `v-slot`을 컴포넌트에다 쓸 수 있다는 것입니다.(역자 주: 바로 위의 <current-user> 컴포넌트 코드와 비교하세요.)
+위의 사례와 같이 제공된 내용이 디폴트 슬롯 *밖에* 없으면 컴포넌트의 태그를 슬롯의 템플릿으로 바로 쓸 수 있습니다. 즉 `v-slot`을 컴포넌트에다 쓸 수 있다는 것입니다.(역자 주: 바로 위의 `<current-user>` 컴포넌트 코드와 비교하세요.)
 
 ``` html
 <current-user v-slot:default="slotProps">
@@ -277,7 +277,7 @@ Vue에 있는 컨텐트 배포 API는 `<slot>` 요소를 컨텐트 배포 통로
 </current-user>
 ```
 
-더 짧게도 만들 수 있습니다. 앞에서 다뤘듯이 특정되지 않은 내용은 디폴트 슬롯에 해당하는 것으로 간주하기 때문에, 속성이 없는 `v-slot`도 디폴트 슬롯으로 간주합니다.(역자 주: 위의 코드에서는 'default'가 'name'속성입니다.)
+더 짧게도 만들 수 있습니다. 앞에서 다뤘듯이 특정되지 않은 내용은 디폴트 슬롯에 해당하는 것으로 간주하기 때문에, 속성이 없는 `v-slot`도 디폴트 슬롯으로 간주합니다.(역자 주: 위의 코드에서는 `default`가 `name`속성입니다.)
 
 ``` html
 <current-user v-slot="slotProps">
@@ -321,7 +321,7 @@ function (slotProps) {
 }
 ```
 
-`v-slot`의 값은 함수 정의식의 인수 위치에서 가능한 어떤 종류의 자바스크립트 표현식도 다 가능합니다. 그러므로 ([싱글 파일 컴포넌트](single-file-components.html)나 [모던 브라우저](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Browser_compatibility)처럼) 지원되는 모든 환경에서 아래와 같이 특정 슬롯 속성을 추출하는 [ES2015 구조분해](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)를 할 수 있다는 뜻입니다.
+`v-slot`의 값은 함수 정의식의 인수 위치에서 가능한 어떤 종류의 자바스크립트 표현식도 다 가능합니다. 그러므로 ([싱글 파일 컴포넌트](single-file-components.html)나 [모던 브라우저](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80_%ED%98%B8%ED%99%98%EC%84%B1)처럼) 지원되는 모든 환경에서 아래와 같이 특정 슬롯 속성을 추출하는 [ES2015 구조분해](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%EA%B0%9D%EC%B2%B4_%EA%B5%AC%EC%A1%B0_%EB%B6%84%ED%95%B4)를 할 수 있다는 뜻입니다.
 
 ``` html
 <current-user v-slot="{ user }">
@@ -329,7 +329,7 @@ function (slotProps) {
 </current-user>
 ```
 
-이를 통해서 템플릿을 더 깨끗하게 만들 수 있습니다. 특히 슬롯에서 다양한 슬롯 속성들을 쓸 경우에 그렇습니다. 또 다른 기능으로 `user`를 `person`으로 바꾸는 것처럼 속성의 이름을 다시 정할 수도 있죠.
+이를 통해서 템플릿을 더 깨끗하게 만들 수 있습니다. 특히 슬롯에서 다양한 슬롯 속성들을 쓸 경우에 그렇습니다. 또 다른 기능으로 `user`를 `person`으로 바꾸는 것처럼 속성의 이름을 다시 정할 수도 있습니다.
 
 ``` html
 <current-user v-slot="{ user: person }">
@@ -337,7 +337,7 @@ function (slotProps) {
 </current-user>
 ```
 
-속성이 undefined이면 슬롯 슬롯에 들어갈 기본값을 정할 수도 있습니다.
+속성이 `undefined`이면 슬롯 슬롯에 들어갈 기본값을 정할 수도 있습니다.
 
 ``` html
 <current-user v-slot="{ user = { firstName: 'Guest' } }">
@@ -427,7 +427,7 @@ function (slotProps) {
     `todo` 객체를 슬롯 속성으로 보냅니다.
     -->
     <slot name="todo" v-bind:todo="todo">
-      <!-- 기본값 -->
+      <!-- 기본값(fallback content) -->
       {{ todo.text }}
     </slot>
   </li>
@@ -538,7 +538,7 @@ function (slotProps) {
 </slot-example>
 ```
 
-`v-slot`의 값은 함수 정의식의 인수 위치에서 가능한 어떤 종류의 자바스크립트 표현식도 다 가능합니다. 그러므로 ([싱글 파일 컴포넌트](single-file-components.html)나 [모던 브라우저](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Browser_compatibility)처럼) 지원되는 모든 환경에서 아래와 같이 특정 슬롯 속성을 추출하는 [ES2015 구조분해](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)를 할 수 있다는 뜻입니다.
+`v-slot`의 값은 함수 정의식의 인수 위치에서 가능한 어떤 종류의 자바스크립트 표현식도 다 가능합니다. 그러므로 ([싱글 파일 컴포넌트](single-file-components.html)나 [모던 브라우저](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80_%ED%98%B8%ED%99%98%EC%84%B1)처럼) 지원되는 모든 환경에서 아래와 같이 특정 슬롯 속성을 추출하는 [ES2015 구조분해](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%EA%B0%9D%EC%B2%B4_%EA%B5%AC%EC%A1%B0_%EB%B6%84%ED%95%B4)를 할 수 있다는 뜻입니다.
 
 ``` html
 <slot-example>

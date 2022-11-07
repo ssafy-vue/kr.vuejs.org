@@ -1,20 +1,12 @@
-# 안내
+﻿# v2.vuejs.org
 
-
-> 이 문서는 **Vue.js 2** 버전을 다루고 있습니다. **Vue.js 3** 가 정식 출시를 앞두고 있는 상태이며, [docs-next](https://github.com/vuejs/docs-next) 저장소에서 Vue.js 3 버전을 준비하고 있습니다.
->
-> [docs-next](https://github.com/vuejs/docs-next) 저장소에 기여하는 것을 강력하게 권장합니다. 이 저장소는 Vue.js 3가 정식 출시되면 아카이브할 예정입니다.
-> 한국어 문서는 더이상 이 저장소에서 관리되지 않을 예정입니다.
-
-
-
-# vuejs.org
+> Important: This repository is for Vue 1.x and 2.x only. Issues and pull requests related to 3.x are managed in the [v3 doc repo](https://github.com/vuejs/docs-next).
 
 This site is built with [hexo](http://hexo.io/). Site content is written in Markdown format located in `src`. Pull requests welcome!
 
 ## Writing
 
-See the [Vue Docs Writing Guide](https://github.com/vuejs/vuejs.org/blob/master/writing-guide.md) for our rules and recommendations on writing and maintaining documentation.
+See the [Vue Docs Writing Guide](https://github.com/vuejs/v2.vuejs.org/blob/master/writing-guide.md) for our rules and recommendations on writing and maintaining documentation.
 
 ## Developing
 
@@ -122,14 +114,16 @@ Vietnamese translation is maintained by [Vue.js Vietnam User group](https://gith
 * Translation Repo: [/vuejs-vn/vuejs.org](https://github.com/vuejs-vn/vuejs.org)
 * Primary maintainer - [phanan](https://github.com/phanan)
 
+### Bahasa Indonesia
+
+Bahasa Indonesia translation is maintained by [Vue.js Indonesia](https://github.com/vuejs-id/).
+
+* Translation Repo: [/vuejs-id/docs](https://github.com/vuejs-id/docs)
+
 ### Want to help with the translation?
 
-If you feel okay with translating quite alone, you can fork the repo, post a comment on the [Community Translation Announcements](https://github.com/vuejs/vuejs.org/issues/2015) issue page to inform others that you're doing the translation and go for it.
+If you feel okay with translating quite alone, you can fork the repo, post a comment on the [Community Translation Announcements](https://github.com/vuejs/v2.vuejs.org/issues/2015) issue page to inform others that you're doing the translation and go for it.
 
 If you are more of a team player, Translation Gang might be for you. Let us know somehow that you're ready to join this international open-source translators community. Feel free to contact [Grigoriy Beziuk](https://gbezyuk.github.io) or anybody else from [the team](https://github.com/orgs/translation-gang/people).
 
 And thank you in advance ;)
-
-
-* Translation Repo - [/vuejs-kr/kr.vuejs.org](https://github.com/vuejs-kr/kr.vuejs.org)
-* Primary maintainer - [ChangJoo Park](https://github.com/ChangJoo-Park)

@@ -1,3 +1,4 @@
+@import "_settings"
 $header-height = 40px
 
 red-dot-before(leftPos = -8px)
@@ -12,27 +13,41 @@ red-dot-before(leftPos = -8px)
 
 #header
   background-color: #fff
-  height: $header-height
-  padding: $heading-padding-vertical 60px
+  padding: $heading-padding-vertical 30px $heading-padding-vertical 60px
   position: relative
   z-index: $z-header
+  display: flex
+  justify-content: space-between
+  box-sizing: border-box
+
+#v3-banner
+  background-color: $green
+  min-height: 40px
+  padding: $heading-padding-vertical 60px
+  z-index: $z-header - 1
+  box-sizing: border-box
+  text-align: center
+  color: #d6ffec
+  display: none
+
+  a
+    color: #fff
+    font-weight: bold
+
+  @media screen and (max-width: 900px)
+    .hidden-sm
+      display: none
 
 body.docs
   #header
     position: fixed
     width: 100%
     top: 0
-  #nav
-    position: fixed
 
 #nav
   list-style-type: none
   margin: 0
   padding: 0
-  position: absolute
-  right: 30px
-  top: $heading-padding-vertical
-  height: $header-height
   line-height: $header-height
   .break
     display: none
@@ -60,7 +75,7 @@ body.docs
           border-bottom: 3px solid transparent
           position: absolute
           top: 50%
-          margin-top: -4px
+          transform: translateY(-50%)
           left: 8px
       &.new::before
         red-dot-before(8px)
@@ -127,6 +142,10 @@ body.docs
   z-index: $z-header
   display: none
   box-shadow: 0 0 2px rgba(0,0,0,.25)
+  pointer-events: none
+  transition: background-color 0.25s ease-in
+  > *
+    pointer-events: auto
   .menu-button
     position: absolute
     width: 24px
@@ -135,12 +154,11 @@ body.docs
     left: 12px
     background: url(../images/menu.png) center center no-repeat
     background-size: 24px
-    pointer-events: auto
   .logo
     position: absolute
     width: 30px
     height: 30px
-    background: url(../images/logo.png) center center no-repeat
+    background: url(../images/logo.svg) center center no-repeat
     top: 5px
     left: 50%
     margin-left: -15px

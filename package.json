@@ -1,32 +1,31 @@
 {
-  "name": "vuejs.org",
+  "name": "v2.vuejs.org",
   "private": true,
   "hexo": {
-    "version": "5.3.0"
+    "version": "6.2.0"
   },
   "scripts": {
-    "start": "hexo server",
-    "build": "node pre-deploy.js && hexo clean && hexo generate",
+    "dev": "node _scripts/sync-sponsors.js && hexo server",
+    "build": "node _scripts/pre-deploy.js && hexo clean && hexo generate",
     "deploy": "npm run build && hexo deploy"
   },
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">=14.0.0"
   },
   "dependencies": {
-    "hexo": "^5.0.2",
-    "hexo-deployer-git": "2.1.0",
+    "axios": "^0.27.2",
+    "hexo": "^6.2.0",
     "hexo-generator-alias": "git+https://github.com/chrisvfritz/vuejs.org-hexo-generator-alias.git",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^2.0.0",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-offline": "^1.0.0",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^3.0.0",
-    "hexo-renderer-stylus": "^1.1.0",
-    "hexo-server": "^2.0.0",
-    "hoek": "^6.1.3",
-    "request": "^2.88.2"
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^0.3.2",
+    "hexo-renderer-stylus": "^2.1.0",
+    "hexo-server": "^3.0.0",
+    "hoek": "^6.1.2",
+    "js-yaml": "^4.1.0"
   }
 }
