@@ -13,12 +13,12 @@ This site is built with [hexo](http://hexo.io/). Site content is written in Mark
 ### Issue 포멧
 
 #### Title
-작업애 대한 간략한 설명을 작성합니다
+작업에 대한 간략한 설명을 작성합니다.
 
 > 메뉴 순서 변경
 
 #### Label
-작업의 종류에 따라 적절히 선택하여 라벨을 추가합니다.
+작업 내용에 따라 라벨을 적절히 선택합니다.
 
 - 번역 개선
 - 번역 추가
@@ -34,7 +34,7 @@ This site is built with [hexo](http://hexo.io/). Site content is written in Mark
 Title과 Label은 Issue와 동일하게 작성합니다.
 
 #### Comment
-작업 동기와 작업 결과 변경된 파일 목록을 작성합니다.
+작업 동기와 변경된 파일 목록을 작성합니다.
 
 - example
 ``` text
