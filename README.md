@@ -20,6 +20,7 @@ This site is built with [hexo](http://hexo.io/). Site content is written in Mark
 > 메뉴 순서 변경
 
 #### Label
+
 작업 내용에 따라 라벨을 적절히 선택합니다.
 
 - 번역 개선
