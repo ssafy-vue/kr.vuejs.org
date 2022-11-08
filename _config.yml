@@ -12,7 +12,7 @@ language:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://v2.vuejs.org
+url: https://ssafy-vue.xyz/
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -85,6 +85,8 @@ exclude:
 
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
+plugins: hexo-generator-cname
+
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
 theme: vue
 exclude_generator:
