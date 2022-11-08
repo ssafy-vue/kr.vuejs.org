@@ -28,7 +28,6 @@ This site is built with [hexo](http://hexo.io/). Site content is written in Mark
 #### Comment
 중복 작업을 방지하기 위해 작업 과정에서 변경이 예상되는 파일 목록을 작성합니다.
 
-
 ### Pull Request 양식
 
 Title과 Label은 Issue와 동일하게 작성합니다.
