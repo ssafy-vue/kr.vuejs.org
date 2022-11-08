@@ -13,7 +13,6 @@ This site is built with [hexo](http://hexo.io/). Site content is written in Mark
 3. 코드 리뷰가 끝나면 [ssafy-vue/kr.vuejs.org](https://github.com/ssafy-vue/kr.vuejs.org)에 `merge` 되고, 자동으로 사이트에 배포됩니다.
 
 ### Issue 양식
-
 #### Title
 작업에 대한 간략한 설명을 작성합니다.
 
