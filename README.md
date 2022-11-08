@@ -4,7 +4,50 @@
 
 This site is built with [hexo](http://hexo.io/). Site content is written in Markdown format located in `src`. Pull requests welcome!
 
-## Developing
+## 기여 가이드
+
+1. [ssafy-vue/kr.vuejs.org issue](https://github.com/ssafy-vue/kr.vuejs.org/issues)에서 번역 or 개선할 파일에 대한 이슈를 발행합니다.
+2. 변경 내용 추적을 위해, 가급적 Pull Request 전 Draft로 먼저 등록하고 리뷰 준비가 완료되면 Rull Request 로 변환하여 리뷰 요청을 합니다.
+3. 코드 리뷰가 끝나면 [ssafy-vue/kr.vuejs.org](https://github.com/ssafy-vue/kr.vuejs.org)에 merge 되고, 자동으로 사이트에 배포됩니다.
+
+### Issue 포멧
+
+#### Title
+작업애 대한 간략한 설명을 작성합니다
+
+> 메뉴 순서 변경
+
+#### Label
+작업의 종류에 따라 적절히 선택하여 라벨을 추가합니다.
+
+- 번역 개선
+- 번역 추가
+- 성능 개선
+- 레이아웃 개선
+
+#### Comment
+중복 작업을 방지하기 위해 작업 과정에서 변경이 예상되는 파일을 작성합니다.
+
+
+### Pull Request 포멧
+
+Title과 Label은 Issue와 동일하게 작성합니다.
+
+#### Comment
+작업 동기와 작업 결과 변경된 파일 목록을 작성합니다.
+
+- example
+``` text
+### 동기
+UI 접근성 향상을 위해 메뉴 순서를 변경
+
+### 결과
+Add : /src/v2/foo.md
+Update : /src/v2/index.md
+Delete : /src/v1/**
+```
+
+## Development
 
 ### 최초 클론시 1회 실행
 ``` bash
@@ -16,8 +59,8 @@ npm install
 ``` bash
 npm run dev
 ```
-서버 주소 : http://localhost:4000/ 
-서버 종료 : 실행시킨 shell 에서 Ctrl + C 를 입력하여 종료합니다.
+* 서버 주소 : http://localhost:4000/ 
+* 서버 종료 : 실행시킨 shell 에서 Ctrl + C 를 입력하여 종료합니다.
 
 ## On Translations
 
