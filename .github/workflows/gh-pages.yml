@@ -14,8 +14,8 @@ jobs:
       - name: Grammar Check
         uses: Kangdyu/korean-grammar-check-action@v1
         with:
-          path: "src/v2"
-          check: "all"
+          path: "."
+          check: "updated"
   pages:
     runs-on: ubuntu-latest
     steps:
