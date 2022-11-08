@@ -10,7 +10,7 @@ This site is built with [hexo](http://hexo.io/). Site content is written in Mark
 2. 변경 내용 추적을 위해, 가급적 Pull Request 전 Draft로 먼저 등록하고 리뷰 준비가 완료되면 Rull Request 로 변환하여 리뷰 요청을 합니다.
 3. 코드 리뷰가 끝나면 [ssafy-vue/kr.vuejs.org](https://github.com/ssafy-vue/kr.vuejs.org)에 merge 되고, 자동으로 사이트에 배포됩니다.
 
-### Issue 포멧
+### Issue 양식
 
 #### Title
 작업에 대한 간략한 설명을 작성합니다.
@@ -26,10 +26,10 @@ This site is built with [hexo](http://hexo.io/). Site content is written in Mark
 - 레이아웃 개선
 
 #### Comment
-중복 작업을 방지하기 위해 작업 과정에서 변경이 예상되는 파일을 작성합니다.
+중복 작업을 방지하기 위해 작업 과정에서 변경이 예상되는 파일 목록을 작성합니다.
 
 
-### Pull Request 포멧
+### Pull Request 양식
 
 Title과 Label은 Issue와 동일하게 작성합니다.
 
