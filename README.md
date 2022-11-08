@@ -1,5 +1,5 @@
-[![gh-pages](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/gh-pages.yml)
-[![pages-build-deployment](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/pages/pages-build-deployment)
+[![gh-pages](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/gh-pages.yml/badge.svg?branch=master)](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/gh-pages.yml)
+[![pages-build-deployment](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/pages/pages-build-deployment)
 
 # v2.vuejs.org
 
