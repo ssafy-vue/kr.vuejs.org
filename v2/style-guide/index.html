@@ -710,8 +710,8 @@
 <div class="style-example example-good">
 <h4 id="좋음-16"><a href="#좋음-16" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">components/<br>|- StudentDashboardSettings.vue<br>|- UserProfileOptions.vue<br></code></pre></td></tr></table></figure>
 </div>
-<h3 id="Prop-이름-규칙-지정-casing-매우-추천함"><a href="#Prop-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="Prop 이름 규칙 지정(casing) 매우 추천함"></a>Prop 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>Prop names should always use camelCase during declaration, but kebab-case in templates and <a href="../guide/render-function.html#JSX">JSX</a>.</strong></p>
-<p>We’re simply following the conventions of each language. Within JavaScript, camelCase is more natural. Within HTML, kebab-case is.</p>
+<h3 id="Prop-이름-규칙-지정-casing-매우-추천함"><a href="#Prop-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="Prop 이름 규칙 지정(casing) 매우 추천함"></a>Prop 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>Prop 이름은 선언하는 경우에는 항상 camelCase를 사용해야 하고, templates와 <a href="../guide/render-function.html#JSX"> JSX </a>에서는 kebab-case를 사용해야 합니다.</strong></p>
+<p>우리는 단순히 각 언어의 규칙을 따릅니다. JavaScript 코드 내부에서는 camelCase, HTML 코드 내부에서는 kebab-case가 더 자연스럽습니다.</p>
 <div class="style-example example-bad">
 <h4 id="나쁨-17"><a href="#나쁨-17" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">props</span>: &#123;<br>  <span class="hljs-string">&#x27;greeting-text&#x27;</span>: <span class="hljs-title class_">String</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">WelcomeMessage</span> <span class="hljs-attr">greetingText</span>=<span class="hljs-string">&quot;hi&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
