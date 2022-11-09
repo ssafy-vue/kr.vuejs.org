@@ -1,3 +1,6 @@
+[![gh-pages](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/gh-pages.yml/badge.svg?branch=master)](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/gh-pages.yml)
+[![pages-build-deployment](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/pages/pages-build-deployment)
+
 # v2.vuejs.org
 
 > Important: This repository is for Vue 1.x and 2.x only. Issues and pull requests related to 3.x are managed in the [v3 doc repo](https://github.com/vuejs/docs-next).
@@ -10,13 +13,13 @@ This site is built with [hexo](http://hexo.io/). Site content is written in Mark
 3. 코드 리뷰가 끝나면 [ssafy-vue/kr.vuejs.org](https://github.com/ssafy-vue/kr.vuejs.org)에 `merge` 되고, 자동으로 사이트에 배포됩니다.
 
 ### Issue 양식
-
 #### Title
 작업에 대한 간략한 설명을 작성합니다.
 
 > 메뉴 순서 변경
 
 #### Label
+
 작업 내용에 따라 라벨을 적절히 선택합니다.
 
 - 번역 개선
