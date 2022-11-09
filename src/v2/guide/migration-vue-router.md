@@ -4,7 +4,7 @@ type: guide
 order: 702
 ---
 
-> Vue 2는 Vue 2와 호환되므로 Vue를 업데이트하는 경우 Vue Router도 함께 업데이트해야합니다. 이것이 주요 문서에서 마이그레이션 경로에 대한 세부 정보를 포함시킨 이유입니다. 새 Vue Router 사용에 대한 전체 안내서는 [Vue Router 문서](http://router.vuejs.org/en/)를 참조하십시오.
+> Vue 2는 Vue 2와 호환되므로 Vue를 업데이트하는 경우 Vue Router도 함께 업데이트해야합니다. 이것이 주요 문서에서 마이그레이션 경로에 대한 세부 정보를 포함시킨 이유입니다. 새 Vue Router 사용에 대한 전체 안내서는 [Vue Router 문서](http://v3.router.vuejs.org/kr/)를 참조하십시오.
 
 ## 라우터 초기화
 
@@ -49,7 +49,7 @@ new Vue({
 
 ### `router.map` <sup>변경</sup>
 
-이제 라우트는 라우터 인스턴스화시 [`routes` 옵션](http://router.vuejs.org/en/essentials/getting-started.html#javascript)에 배열로 정의됩니다. 따라서 예를 들어 이러한 라우트는 다음과 같습니다.
+이제 라우트는 라우터 인스턴스화시 [`routes` 옵션](http://v3.router.vuejs.org/kr/essentials/getting-started.html#javascript)에 배열로 정의됩니다. 따라서 예를 들어 이러한 라우트는 다음과 같습니다.
 
 ``` js
 router.map({
@@ -154,7 +154,7 @@ router.beforeEach(function (to, from, next) {
 
 ### `subRoutes` <sup>이름 변경</sup>
 
-Vue 및 다른 라우팅 라이브러리와의 일관성을 위해 [자식으로 이름이 변경](http://router.vuejs.org/en/essentials/nested-routes.html) 되었습니다.
+Vue 및 다른 라우팅 라이브러리와의 일관성을 위해 [자식으로 이름이 변경](http://v3.router.vuejs.org/kr/essentials/nested-routes.html) 되었습니다.
 
 {% raw %}
 <div class="upgrade-path">
@@ -165,7 +165,7 @@ Vue 및 다른 라우팅 라이브러리와의 일관성을 위해 [자식으로
 
 ### `router.redirect` <sup>변경</sup>
 
-[경로 정의에 대한 옵션](http://router.vuejs.org/en/essentials/redirect-and-alias.html)입니다. 예를 들어 다음과 같이 업데이트 할 것입니다.
+[경로 정의에 대한 옵션](http://v3.router.vuejs.org/kr/essentials/redirect-and-alias.html)입니다. 예를 들어 다음과 같이 업데이트 할 것입니다.
 
 ``` js
 router.redirect({
@@ -191,7 +191,7 @@ router.redirect({
 
 ### `router.alias` <sup>변경</sup>
 
-별칭을 지정하려는 [경로 정의 옵션](http://router.vuejs.org/en/essentials/redirect-and-alias.html)입니다. 예를 들어 다음과 같이 업데이트 할 것입니다.
+별칭을 지정하려는 [경로 정의 옵션](http://v3.router.vuejs.org/kr/essentials/redirect-and-alias.html)입니다. 예를 들어 다음과 같이 업데이트 할 것입니다.
 
 ``` js
 router.alias({
@@ -298,7 +298,7 @@ export default {
 
 ### `v-link` <sup>변경</sup>
 
-`v-link` 디렉티브는 새로운[`<router-link>` 컴포넌트](http://router.vuejs.org/en/api/router-link.html)로 대체되었습니다.이 일은 이제 Vue 2의 컴포넌트의 책임입니다.
+`v-link` 디렉티브는 새로운[`<router-link>` 컴포넌트](http://v3.router.vuejs.org/kr/api/router-link.html)로 대체되었습니다.이 일은 이제 Vue 2의 컴포넌트의 책임입니다.
 
 ``` html
 <a v-link="'/about'">About</a>
@@ -321,7 +321,7 @@ export default {
 
 ### `v-link-active` <sup>변경</sup>
 
-`v-link-active` 디렉티브는 [`<router-link>` 컴포넌트](http://router.vuejs.org/en/api/router-link.html)의`tag` 속성으로 대체되었습니다. 예를 들어 다음과 같이 업데이트 할 것입니다.
+`v-link-active` 디렉티브는 [`<router-link>` 컴포넌트](http://v3.router.vuejs.org/kr/api/router-link.html)의`tag` 속성으로 대체되었습니다. 예를 들어 다음과 같이 업데이트 할 것입니다.
 
 ``` html
 <li v-link-active>
@@ -350,7 +350,7 @@ export default {
 
 ### `router.go` <sup>변경</sup>
 
-[HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)와의 일관성을 위해 `router.go`는 [뒤로 / 앞으로 탐색](https://router.vuejs.org/en/essentials/navigation.html#routergon)에만 사용되며 [`router.push`](http://router.vuejs.org/en/essentials/navigation.html#routerpushlocation)는 특정 페이지로 이동하는 데 사용됩니다.
+[HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)와의 일관성을 위해 `router.go`는 [뒤로 / 앞으로 탐색](https://v3.router.vuejs.org/kr/essentials/navigation.html#routergon)에만 사용되며 [`router.push`](http://v3.router.vuejs.org/kr/essentials/navigation.html#routerpushlocation)는 특정 페이지로 이동하는 데 사용됩니다.
 
 {% raw %}
 <div class="upgrade-path">
@@ -374,7 +374,7 @@ Hashbang은 더 이상 Google이 URL을 크롤링하는 데 필요하지 않으�
 
 ### `history: true` <sup>변경</sup>
 
-모든 라우팅 모드 옵션은 단일 [모드](http://router.vuejs.org/en/api/options.html#mode) 옵션으로 압축되었습니다.
+모든 라우팅 모드 옵션은 단일 [모드](http://v3.router.vuejs.org/kr/api/options.html#mode) 옵션으로 압축되었습니다.
 
 ``` js
 var router = new VueRouter({
@@ -399,7 +399,7 @@ var router = new VueRouter({
 
 ### `abstract: true` <sup>변경</sup>
 
-모든 라우팅 모드 옵션은 단일 [`mode` 옵션](http://router.vuejs.org/en/api/options.html#mode)으로 압축되었습니다.
+모든 라우팅 모드 옵션은 단일 [`mode` 옵션](http://v3.router.vuejs.org/kr/api/options.html#mode)으로 압축되었습니다.
 
 ``` js
 var router = new VueRouter({
@@ -426,7 +426,7 @@ var router = new VueRouter({
 
 ### `saveScrollPosition` <sup>변경</sup>
 
-이것은 함수를 받아들이는 [`scrollBehavior` 옵션](http://router.vuejs.org/en/advanced/scroll-behavior.html)으로 대체되었으므로 라우트마다 스크롤 동작을 완벽하게 사용자 정의 할 수 있습니다 . 이것은 많은 새로운 가능성을 열어 놓았지만 단순히 다음과 같은 예전의 행동을 그대로 재현할 수 있습니다.
+이것은 함수를 받아들이는 [`scrollBehavior` 옵션](http://v3.router.vuejs.org/kr/advanced/scroll-behavior.html)으로 대체되었으므로 라우트마다 스크롤 동작을 완벽하게 사용자 정의 할 수 있습니다 . 이것은 많은 새로운 가능성을 열어 놓았지만 단순히 다음과 같은 예전의 행동을 그대로 재현할 수 있습니다.
 
 ``` js
 saveScrollPosition: true
@@ -484,7 +484,7 @@ Vue의 트랜지션 시스템에 명시적인 [`appear` 트랜지션 제어](tra
 
 ### `activate` <sup>변경</sup>
 
-대신 컴포넌트에서 [`beforeRouteEnter`](http://router.vuejs.org/en/advanced/navigation-guards.html#incomponent-guards)를 사용하십시오.
+대신 컴포넌트에서 [`beforeRouteEnter`](http://v3.router.vuejs.org/kr/advanced/navigation-guards.html#incomponent-guards)를 사용하십시오.
 
 {% raw %}
 <div class="upgrade-path">
@@ -495,7 +495,7 @@ Vue의 트랜지션 시스템에 명시적인 [`appear` 트랜지션 제어](tra
 
 ### `canActivate` <sup>변경</sup>
 
-라우터에서 [`beforeEnter`](http://router.vuejs.org/en/advanced/navigation-guards.html#perroute-guard)을 대신 사용하십시오.
+라우터에서 [`beforeEnter`](http://v3.router.vuejs.org/kr/advanced/navigation-guards.html#perroute-guard)을 대신 사용하십시오.
 
 {% raw %}
 <div class="upgrade-path">
@@ -517,7 +517,7 @@ Vue의 트랜지션 시스템에 명시적인 [`appear` 트랜지션 제어](tra
 
 ### `canDeactivate` <sup>대체됨</sup>
 
-컴포넌트의 [`beforeRouteLeave`](http://router.vuejs.org/en/advanced/navigation-guards.html#incomponent-guards)을 대신 사용하십시오.
+컴포넌트의 [`beforeRouteLeave`](http://v3.router.vuejs.org/kr/advanced/navigation-guards.html#incomponent-guards)을 대신 사용하십시오.
 
 {% raw %}
 <div class="upgrade-path">
