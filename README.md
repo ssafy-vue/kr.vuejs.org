@@ -2,7 +2,6 @@
 [![pages-build-deployment](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/ssafy-vue/kr.vuejs.org/actions/workflows/pages/pages-build-deployment)
 
 # v2.vuejs.org
-
 > Important: This repository is for Vue 1.x and 2.x only. Issues and pull requests related to 3.x are managed in the [v3 doc repo](https://github.com/vuejs/docs-next).
 
 This site is built with [hexo](http://hexo.io/). Site content is written in Markdown format located in `src`. Pull requests welcome!
