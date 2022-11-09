@@ -1018,7 +1018,7 @@
   
   
     <blockquote>
-<p>Vue 2는 Vue 2와 호환되므로 Vue를 업데이트하는 경우 Vue Router도 함께 업데이트해야합니다. 이것이 주요 문서에서 마이그레이션 경로에 대한 세부 정보를 포함시킨 이유입니다. 새 Vue Router 사용에 대한 전체 안내서는 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/">Vue Router 문서</a>를 참조하십시오.</p>
+<p>Vue 2는 Vue 2와 호환되므로 Vue를 업데이트하는 경우 Vue Router도 함께 업데이트해야합니다. 이것이 주요 문서에서 마이그레이션 경로에 대한 세부 정보를 포함시킨 이유입니다. 새 Vue Router 사용에 대한 전체 안내서는 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/">Vue Router 문서</a>를 참조하십시오.</p>
 </blockquote>
 <h2 id="라우터-초기화"><a href="#라우터-초기화" class="headerlink" title="라우터 초기화"></a>라우터 초기화</h2><h3 id="router-start-변경"><a href="#router-start-변경" class="headerlink" title="router.start 변경"></a><code>router.start</code> <sup>변경</sup></h3><p>Vue Router로 앱을 초기화하는 특별한 API는 더 이상 존재하지 않습니다. 그 대신에 다음을 의미합니다:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">router.<span class="hljs-title function_">start</span>(&#123;<br>  <span class="hljs-attr">template</span>: <span class="hljs-string">&#x27;&lt;router-view&gt;&lt;/router-view&gt;&#x27;</span><br>&#125;, <span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
@@ -1032,7 +1032,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 호출되는 <code>router.start</code>의 예를 찾으십시오.</p>
 </div>
 
-<h2 id="라우터-정의"><a href="#라우터-정의" class="headerlink" title="라우터 정의"></a>라우터 정의</h2><h3 id="router-map-변경"><a href="#router-map-변경" class="headerlink" title="router.map 변경"></a><code>router.map</code> <sup>변경</sup></h3><p>이제 라우트는 라우터 인스턴스화시 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/essentials/getting-started.html#javascript"><code>routes</code> 옵션</a>에 배열로 정의됩니다. 따라서 예를 들어 이러한 라우트는 다음과 같습니다.</p>
+<h2 id="라우터-정의"><a href="#라우터-정의" class="headerlink" title="라우터 정의"></a>라우터 정의</h2><h3 id="router-map-변경"><a href="#router-map-변경" class="headerlink" title="router.map 변경"></a><code>router.map</code> <sup>변경</sup></h3><p>이제 라우트는 라우터 인스턴스화시 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/essentials/getting-started.html#javascript"><code>routes</code> 옵션</a>에 배열로 정의됩니다. 따라서 예를 들어 이러한 라우트는 다음과 같습니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">router.<span class="hljs-title function_">map</span>(&#123;<br>  <span class="hljs-string">&#x27;/foo&#x27;</span>: &#123;<br>    <span class="hljs-attr">component</span>: <span class="hljs-title class_">Foo</span><br>  &#125;,<br>  <span class="hljs-string">&#x27;/bar&#x27;</span>: &#123;<br>    <span class="hljs-attr">component</span>: <span class="hljs-title class_">Bar</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 <p>대신 다음과 같이 정의됩니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VueRouter</span>(&#123;<br>  <span class="hljs-attr">routes</span>: [<br>    &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/foo&#x27;</span>, <span class="hljs-attr">component</span>: <span class="hljs-title class_">Foo</span> &#125;,<br>    &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/bar&#x27;</span>, <span class="hljs-attr">component</span>: <span class="hljs-title class_">Bar</span> &#125;<br>  ]<br>&#125;)<br></code></pre></td></tr></table></figure>
@@ -1056,14 +1056,14 @@
 <h3 id="router-beforeEach-changed"><a href="#router-beforeEach-changed" class="headerlink" title="router.beforeEach changed"></a><code>router.beforeEach</code> <sup>changed</sup></h3><p><code>router.beforeEach</code>는 이제 비동기적으로 작동하며 세번째 전달인자로 <code>next</code> 함수를 받습니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">router.<span class="hljs-title function_">beforeEach</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">transition</span>) &#123;<br>  <span class="hljs-keyword">if</span> (transition.<span class="hljs-property">to</span>.<span class="hljs-property">path</span> === <span class="hljs-string">&#x27;/forbidden&#x27;</span>) &#123;<br>    transition.<span class="hljs-title function_">abort</span>()<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    transition.<span class="hljs-title function_">next</span>()<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">router.<span class="hljs-title function_">beforeEach</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">to, <span class="hljs-keyword">from</span>, next</span>) &#123;<br>  <span class="hljs-keyword">if</span> (to.<span class="hljs-property">path</span> === <span class="hljs-string">&#x27;/forbidden&#x27;</span>) &#123;<br>    <span class="hljs-title function_">next</span>(<span class="hljs-literal">false</span>)<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title function_">next</span>()<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
-<h3 id="subRoutes-이름-변경"><a href="#subRoutes-이름-변경" class="headerlink" title="subRoutes 이름 변경"></a><code>subRoutes</code> <sup>이름 변경</sup></h3><p>Vue 및 다른 라우팅 라이브러리와의 일관성을 위해 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/essentials/nested-routes.html">자식으로 이름이 변경</a> 되었습니다.</p>
+<h3 id="subRoutes-이름-변경"><a href="#subRoutes-이름-변경" class="headerlink" title="subRoutes 이름 변경"></a><code>subRoutes</code> <sup>이름 변경</sup></h3><p>Vue 및 다른 라우팅 라이브러리와의 일관성을 위해 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/essentials/nested-routes.html">자식으로 이름이 변경</a> 되었습니다.</p>
 
 <div class="upgrade-path">
   <h4>업그레이드 방법</h4>
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>subRoutes</code> 옵션의 예를 찾으십시오.</p>
 </div>
 
-<h3 id="router-redirect-변경"><a href="#router-redirect-변경" class="headerlink" title="router.redirect 변경"></a><code>router.redirect</code> <sup>변경</sup></h3><p><a target="_blank" rel="noopener" href="http://router.vuejs.org/en/essentials/redirect-and-alias.html">경로 정의에 대한 옵션</a>입니다. 예를 들어 다음과 같이 업데이트 할 것입니다.</p>
+<h3 id="router-redirect-변경"><a href="#router-redirect-변경" class="headerlink" title="router.redirect 변경"></a><code>router.redirect</code> <sup>변경</sup></h3><p><a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/essentials/redirect-and-alias.html">경로 정의에 대한 옵션</a>입니다. 예를 들어 다음과 같이 업데이트 할 것입니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">router.<span class="hljs-title function_">redirect</span>(&#123;<br>  <span class="hljs-string">&#x27;/tos&#x27;</span>: <span class="hljs-string">&#x27;/terms-of-service&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
 <p><code>routes</code> 설정에서 아래와 같은 정의로 바꿉니다:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">&#123;<br>  <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/tos&#x27;</span>,<br>  <span class="hljs-attr">redirect</span>: <span class="hljs-string">&#x27;/terms-of-service&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure>
@@ -1073,7 +1073,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>router.redirect</code>가 호출되는지 확인하십시오.</p>
 </div>
 
-<h3 id="router-alias-변경"><a href="#router-alias-변경" class="headerlink" title="router.alias 변경"></a><code>router.alias</code> <sup>변경</sup></h3><p>별칭을 지정하려는 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/essentials/redirect-and-alias.html">경로 정의 옵션</a>입니다. 예를 들어 다음과 같이 업데이트 할 것입니다.</p>
+<h3 id="router-alias-변경"><a href="#router-alias-변경" class="headerlink" title="router.alias 변경"></a><code>router.alias</code> <sup>변경</sup></h3><p>별칭을 지정하려는 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/essentials/redirect-and-alias.html">경로 정의 옵션</a>입니다. 예를 들어 다음과 같이 업데이트 할 것입니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">router.<span class="hljs-title function_">alias</span>(&#123;<br>  <span class="hljs-string">&#x27;/manage&#x27;</span>: <span class="hljs-string">&#x27;/admin&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
 <p><code>routes</code> 설정에서 아래와 같은 정의로 바꿉니다:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">&#123;<br>  <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/admin&#x27;</span>,<br>  <span class="hljs-attr">component</span>: <span class="hljs-title class_">AdminPanel</span>,<br>  <span class="hljs-attr">alias</span>: <span class="hljs-string">&#x27;/manage&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure>
@@ -1107,7 +1107,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 더 이상 사용되지 않는 경로 구문의 예를 찾으십시오.</p>
 </div>
 
-<h2 id="링크"><a href="#링크" class="headerlink" title="링크"></a>링크</h2><h3 id="v-link-변경"><a href="#v-link-변경" class="headerlink" title="v-link 변경"></a><code>v-link</code> <sup>변경</sup></h3><p><code>v-link</code> 디렉티브는 새로운<a target="_blank" rel="noopener" href="http://router.vuejs.org/en/api/router-link.html"><code>&lt;router-link&gt;</code> 컴포넌트</a>로 대체되었습니다.이 일은 이제 Vue 2의 컴포넌트의 책임입니다.</p>
+<h2 id="링크"><a href="#링크" class="headerlink" title="링크"></a>링크</h2><h3 id="v-link-변경"><a href="#v-link-변경" class="headerlink" title="v-link 변경"></a><code>v-link</code> <sup>변경</sup></h3><p><code>v-link</code> 디렉티브는 새로운<a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/api/router-link.html"><code>&lt;router-link&gt;</code> 컴포넌트</a>로 대체되었습니다.이 일은 이제 Vue 2의 컴포넌트의 책임입니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-link</span>=<span class="hljs-string">&quot;&#x27;/about&#x27;&quot;</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>다음과 같이 업데이트해야합니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/about&quot;</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -1118,7 +1118,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>v-link</code> 디렉티브의 예를 찾으십시오.</p>
 </div>
 
-<h3 id="v-link-active-변경"><a href="#v-link-active-변경" class="headerlink" title="v-link-active 변경"></a><code>v-link-active</code> <sup>변경</sup></h3><p><code>v-link-active</code> 디렉티브는 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/api/router-link.html"><code>&lt;router-link&gt;</code> 컴포넌트</a>의<code>tag</code> 속성으로 대체되었습니다. 예를 들어 다음과 같이 업데이트 할 것입니다.</p>
+<h3 id="v-link-active-변경"><a href="#v-link-active-변경" class="headerlink" title="v-link-active 변경"></a><code>v-link-active</code> <sup>변경</sup></h3><p><code>v-link-active</code> 디렉티브는 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/api/router-link.html"><code>&lt;router-link&gt;</code> 컴포넌트</a>의<code>tag</code> 속성으로 대체되었습니다. 예를 들어 다음과 같이 업데이트 할 것입니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-link-active</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-link</span>=<span class="hljs-string">&quot;&#x27;/about&#x27;&quot;</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>이는 아래와 같이 변경 되었습니다.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">&quot;li&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/about&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -1129,7 +1129,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>v-link-active</code> 디렉티브의 예를 찾으십시오.</p>
 </div>
 
-<h2 id="프로그래밍-방식의-네비게이션"><a href="#프로그래밍-방식의-네비게이션" class="headerlink" title="프로그래밍 방식의 네비게이션"></a>프로그래밍 방식의 네비게이션</h2><h3 id="router-go-변경"><a href="#router-go-변경" class="headerlink" title="router.go 변경"></a><code>router.go</code> <sup>변경</sup></h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">HTML5 History API</a>와의 일관성을 위해 <code>router.go</code>는 <a target="_blank" rel="noopener" href="https://router.vuejs.org/en/essentials/navigation.html#routergon">뒤로 / 앞으로 탐색</a>에만 사용되며 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/essentials/navigation.html#routerpushlocation"><code>router.push</code></a>는 특정 페이지로 이동하는 데 사용됩니다.</p>
+<h2 id="프로그래밍-방식의-네비게이션"><a href="#프로그래밍-방식의-네비게이션" class="headerlink" title="프로그래밍 방식의 네비게이션"></a>프로그래밍 방식의 네비게이션</h2><h3 id="router-go-변경"><a href="#router-go-변경" class="headerlink" title="router.go 변경"></a><code>router.go</code> <sup>변경</sup></h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">HTML5 History API</a>와의 일관성을 위해 <code>router.go</code>는 <a target="_blank" rel="noopener" href="https://v3.router.vuejs.org/kr/essentials/navigation.html#routergon">뒤로 / 앞으로 탐색</a>에만 사용되며 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/essentials/navigation.html#routerpushlocation"><code>router.push</code></a>는 특정 페이지로 이동하는 데 사용됩니다.</p>
 
 <div class="upgrade-path">
   <h4>업그레이드 방법</h4>
@@ -1143,7 +1143,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>hashbang: false</code> 옵션을 사용하는 예를 찾으십시오.</p>
 </div>
 
-<h3 id="history-true-변경"><a href="#history-true-변경" class="headerlink" title="history: true 변경"></a><code>history: true</code> <sup>변경</sup></h3><p>모든 라우팅 모드 옵션은 단일 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/api/options.html#mode">모드</a> 옵션으로 압축되었습니다.</p>
+<h3 id="history-true-변경"><a href="#history-true-변경" class="headerlink" title="history: true 변경"></a><code>history: true</code> <sup>변경</sup></h3><p>모든 라우팅 모드 옵션은 단일 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/api/options.html#mode">모드</a> 옵션으로 압축되었습니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VueRouter</span>(&#123;<br>  <span class="hljs-attr">history</span>: <span class="hljs-string">&#x27;true&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
 <p>위를 아래 코드로 변경합니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VueRouter</span>(&#123;<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;history&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
@@ -1153,7 +1153,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>history: true</code> 옵션이 사용되는 예를 찾으십시오.</p>
 </div>
 
-<h3 id="abstract-true-변경"><a href="#abstract-true-변경" class="headerlink" title="abstract: true 변경"></a><code>abstract: true</code> <sup>변경</sup></h3><p>모든 라우팅 모드 옵션은 단일 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/api/options.html#mode"><code>mode</code> 옵션</a>으로 압축되었습니다.</p>
+<h3 id="abstract-true-변경"><a href="#abstract-true-변경" class="headerlink" title="abstract: true 변경"></a><code>abstract: true</code> <sup>변경</sup></h3><p>모든 라우팅 모드 옵션은 단일 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/api/options.html#mode"><code>mode</code> 옵션</a>으로 압축되었습니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VueRouter</span>(&#123;<br>  <span class="hljs-attr">abstract</span>: <span class="hljs-string">&#x27;true&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
 <p>위를 아래 코드로 변경합니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VueRouter</span>(&#123;<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;abstract&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
@@ -1163,7 +1163,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>abstract: true</code> 옵션이 사용되는 예를 찾으십시오.</p>
 </div>
 
-<h2 id="Route-옵션-기타"><a href="#Route-옵션-기타" class="headerlink" title="Route 옵션: 기타"></a>Route 옵션: 기타</h2><h3 id="saveScrollPosition-변경"><a href="#saveScrollPosition-변경" class="headerlink" title="saveScrollPosition 변경"></a><code>saveScrollPosition</code> <sup>변경</sup></h3><p>이것은 함수를 받아들이는 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/advanced/scroll-behavior.html"><code>scrollBehavior</code> 옵션</a>으로 대체되었으므로 라우트마다 스크롤 동작을 완벽하게 사용자 정의 할 수 있습니다 . 이것은 많은 새로운 가능성을 열어 놓았지만 단순히 다음과 같은 예전의 행동을 그대로 재현할 수 있습니다.</p>
+<h2 id="Route-옵션-기타"><a href="#Route-옵션-기타" class="headerlink" title="Route 옵션: 기타"></a>Route 옵션: 기타</h2><h3 id="saveScrollPosition-변경"><a href="#saveScrollPosition-변경" class="headerlink" title="saveScrollPosition 변경"></a><code>saveScrollPosition</code> <sup>변경</sup></h3><p>이것은 함수를 받아들이는 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/advanced/scroll-behavior.html"><code>scrollBehavior</code> 옵션</a>으로 대체되었으므로 라우트마다 스크롤 동작을 완벽하게 사용자 정의 할 수 있습니다 . 이것은 많은 새로운 가능성을 열어 놓았지만 단순히 다음과 같은 예전의 행동을 그대로 재현할 수 있습니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">saveScrollPosition</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 <p>위를 아래 코드로 변경합니다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">scrollBehavior</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">to, <span class="hljs-keyword">from</span>, savedPosition</span>) &#123;<br>  <span class="hljs-keyword">return</span> savedPosition || &#123; <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span> &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -1194,14 +1194,14 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>suppressTransitionError: true</code> 옵션이 사용되는 예를 찾으십시오.</p>
 </div>
 
-<h2 id="라우트-훅"><a href="#라우트-훅" class="headerlink" title="라우트 훅"></a>라우트 훅</h2><h3 id="activate-변경"><a href="#activate-변경" class="headerlink" title="activate 변경"></a><code>activate</code> <sup>변경</sup></h3><p>대신 컴포넌트에서 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/advanced/navigation-guards.html#incomponent-guards"><code>beforeRouteEnter</code></a>를 사용하십시오.</p>
+<h2 id="라우트-훅"><a href="#라우트-훅" class="headerlink" title="라우트 훅"></a>라우트 훅</h2><h3 id="activate-변경"><a href="#activate-변경" class="headerlink" title="activate 변경"></a><code>activate</code> <sup>변경</sup></h3><p>대신 컴포넌트에서 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/advanced/navigation-guards.html#incomponent-guards"><code>beforeRouteEnter</code></a>를 사용하십시오.</p>
 
 <div class="upgrade-path">
   <h4>업그레이드 방법</h4>
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>beforeRouteEnter</code> 훅이 사용되는 예를 찾으십시오.</p>
 </div>
 
-<h3 id="canActivate-변경"><a href="#canActivate-변경" class="headerlink" title="canActivate 변경"></a><code>canActivate</code> <sup>변경</sup></h3><p>라우터에서 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/advanced/navigation-guards.html#perroute-guard"><code>beforeEnter</code></a>을 대신 사용하십시오.</p>
+<h3 id="canActivate-변경"><a href="#canActivate-변경" class="headerlink" title="canActivate 변경"></a><code>canActivate</code> <sup>변경</sup></h3><p>라우터에서 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/advanced/navigation-guards.html#perroute-guard"><code>beforeEnter</code></a>을 대신 사용하십시오.</p>
 
 <div class="upgrade-path">
   <h4>업그레이드 방법</h4>
@@ -1215,7 +1215,7 @@
   <p>코드베이스에서 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-migration-helper">마이그레이션 도우미</a>를 실행하여 <code>deactivate</code> 훅이 사용되는 예를 찾으십시오.</p>
 </div>
 
-<h3 id="canDeactivate-대체됨"><a href="#canDeactivate-대체됨" class="headerlink" title="canDeactivate 대체됨"></a><code>canDeactivate</code> <sup>대체됨</sup></h3><p>컴포넌트의 <a target="_blank" rel="noopener" href="http://router.vuejs.org/en/advanced/navigation-guards.html#incomponent-guards"><code>beforeRouteLeave</code></a>을 대신 사용하십시오.</p>
+<h3 id="canDeactivate-대체됨"><a href="#canDeactivate-대체됨" class="headerlink" title="canDeactivate 대체됨"></a><code>canDeactivate</code> <sup>대체됨</sup></h3><p>컴포넌트의 <a target="_blank" rel="noopener" href="http://v3.router.vuejs.org/kr/advanced/navigation-guards.html#incomponent-guards"><code>beforeRouteLeave</code></a>을 대신 사용하십시오.</p>
 
 <div class="upgrade-path">
   <h4>업그레이드 방법</h4>

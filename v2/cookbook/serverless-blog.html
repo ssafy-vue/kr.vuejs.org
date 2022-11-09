@@ -465,7 +465,7 @@
 <p><img src="https://user-images.githubusercontent.com/160873/36868506-218c86b6-1d5e-11e8-8691-0409d91366d6.png" alt="buttercms-blogdetail"></p>
 <p>Now our app is pulling all blog posts and we can navigate to individual posts. However, our next/previous post buttons are not working.</p>
 <p>One thing to note when using routes with params is that when the user navigates from <code>/blog/foo</code> to <code>/blog/bar</code>, the same component instance will be reused. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one.</p>
-<p class="tip">Be aware, that using the component this way will mean that the lifecycle hooks of the component will not be called. Visit the Vue Router’s docs to learn more about <a target="_blank" rel="noopener" href="https://router.vuejs.org/en/essentials/dynamic-matching.html">Dynamic Route Matching</a></p>
+<p class="tip">Be aware, that using the component this way will mean that the lifecycle hooks of the component will not be called. Visit the Vue Router’s docs to learn more about <a target="_blank" rel="noopener" href="https://v3.router.vuejs.org/kr/essentials/dynamic-matching.html">Dynamic Route Matching</a></p>
 
 <p>To fix this we need to watch the <code>$route</code> object and call <code>getPost()</code> when the route changes.</p>
 <p>Updated <code>&lt;script&gt;</code> section in <code>components/BlogPost.vue</code>:</p>
