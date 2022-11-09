@@ -1222,9 +1222,9 @@ components/
 
 ### Prop 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup>
 
-**Prop names should always use camelCase during declaration, but kebab-case in templates and [JSX](../guide/render-function.html#JSX).**
+**Prop 이름은 선언하는 경우에는 항상 camelCase를 사용해야 하고, templates와 [ JSX ](../guide/render-function.html#JSX)에서는 kebab-case를 사용해야 합니다.**
 
-We're simply following the conventions of each language. Within JavaScript, camelCase is more natural. Within HTML, kebab-case is.
+우리는 단순히 각 언어의 규칙을 따릅니다. JavaScript에서는 camelCase, HTML에서는 kebab-case가 더 자연스럽습니다.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
