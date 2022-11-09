@@ -217,7 +217,7 @@ Now our app is pulling all blog posts and we can navigate to individual posts. H
 
 One thing to note when using routes with params is that when the user navigates from `/blog/foo` to `/blog/bar`, the same component instance will be reused. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one.
 
-<p class="tip">Be aware, that using the component this way will mean that the lifecycle hooks of the component will not be called. Visit the Vue Router's docs to learn more about [Dynamic Route Matching](https://router.vuejs.org/en/essentials/dynamic-matching.html)</p>
+<p class="tip">Be aware, that using the component this way will mean that the lifecycle hooks of the component will not be called. Visit the Vue Router's docs to learn more about [Dynamic Route Matching](https://v3.router.vuejs.org/kr/essentials/dynamic-matching.html)</p>
 
 To fix this we need to watch the `$route` object and call `getPost()` when the route changes.
 
