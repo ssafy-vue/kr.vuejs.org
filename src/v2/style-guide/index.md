@@ -673,9 +673,9 @@ export default myGreatMixin
 
 ### 컴포넌트 파일 <sup data-p="b">매우 추천함</sup>
 
-**Whenever a build system is available to concatenate files, each component should be in its own file.**
+**언제든지 빌드 시스템이 파일들을 하나로 합치는 것이 가능하기에, 컴포넌트마다 파일을 생성해서 관리해야합니다.**
 
-This helps you to more quickly find a component when you need to edit it or review how to use it.
+이 과정은 당신이 수정하거나, 어떻게 사용하는 지 리뷰가 필요한 컴포넌트를 찾아낼 때 큰 도움이 됩니다.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
