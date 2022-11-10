@@ -5,9 +5,9 @@ type: style-guide
 
 # 스타일 가이드
 
-이 문서는 Vue 코드에 대한 공식 스타일 가이드입니다. 만약 현재 Vue를 사용하여 프로젝트를 진행중이라면 이 문서는 에러와 바이크쉐딩(bikeshedding), 안티패턴을 피하는 좋은 참조가 될것 입니다. 그러나 이 문서에서 제시하는 스타일 가이드가 당신의 프로젝트에 무조건 적합한 것은 아닙니다. 그러므로 당신의 경험과 기술스택, 개인적 통찰력을 바탕으로 이 스타일 가이드가 적용되는 것을 권장해드립니다.
+이 문서는 Vue 코드에 대한 공식 스타일 가이드입니다. 만약 현재 Vue를 사용하여 프로젝트를 진행 중이라면 이 문서는 에러와 바이크쉐딩 (bikeshedding), 안티패턴을 피하는 좋은 참조가 될 것 입니다. 그러나 이 문서에서 제시하는 스타일 가이드가 당신의 프로젝트에 무조건 적합한 것은 아닙니다. 그러므로 당신의 경험과 기술 스택, 개인적 통찰력을 바탕으로 이 스타일 가이드가 적용되는 것을 권장해드립니다.
 
-대부분의 경우 우리는 HTML과 자바스크립트에 대한 제안은 일반적으로 피합니다. 우리는 당신이 세미콜론이나 쉼표(trailing commas)에 대한 사용여부는 신경쓰지 않습니다. 우리는 당신이 HTML의 속성값을 위해 작음따옴표를 사용하지는 큰따옴표를 사용하는지 신경쓰지 않습니다. 그러나 특정 패턴이 뷰 컨텍스트에서 유용하다고 발견된 경우 예외가 존재합니다.
+대부분의 경우 우리는 HTML과 자바스크립트에 대한 제안은 일반적으로 피합니다. 우리는 당신이 세미콜론이나 쉼표(trailing commas)에 대한 사용 여부는 신경 쓰지 않습니다. 우리는 당신이 HTML의 속성값을 위해 작은따옴표를 사용하지는 큰따옴표를 사용하는지 신경 쓰지 않습니다. 그러나 특정 패턴이 뷰 컨텍스트에서 유용하다고 발견된 경우 예외가 존재합니다.
 
 > **Soon, we'll also provide tips for enforcement.** Sometimes you'll simply have to be disciplined, but wherever possible, we'll try to show you how to use ESLint and other automated processes to make enforcement simpler.
 
@@ -19,23 +19,24 @@ type: style-guide
 
 ### 우선순위 A: 필수
 
-이 규칙은 오류를 예방하는데 도움을 주기 때문에 모든 비용을 통해서 학습하고 준수하여야 합니다. 예외상황이 존재하겠지만 매우 드물며 자바스크립트와 뷰에 대한 전문 지식이 있어야 만들 수 있습니다.
+이 규칙은 오류를 예방하는데 도움을 주기 때문에 모든 비용을 통해서 학습하고 준수하여야 합니다. 예외 상황이 존재하겠지만 매우 드물며 자바스크립트와 뷰에 대한 전문 지식이 있어야 만들 수 있습니다.
 
 ### 우선순위 B: 매우 추천함
 
-이 규칙은 대부분의 프로젝트에서 가독성 그리고 개발자경험을 향상시키는 것으로 발견되었습니다. 해당 규칙을 위반해도 코드는 여전히 실행되지만 위반은 드물고 정당합니다.
+이 규칙은 대부분의 프로젝트에서 가독성 그리고 개발자 경험을 향상시키는 것으로 발견되었습니다. 해당 규칙을 위반해도 코드는 여전히 실행되지만 위반은 드물고 정당합니다.
 
 ### 우선순위 C: 추천함
 
-동일하게 좋은 여러가지 옵션이 존재하는 경우, 일관성을 보장하기 위해 임의의 선택을 할 수 있습니다. 이 규칙은 각각의 수용가능한 옵션을 설명하고 기본 선택을 제안합니다. 즉, 일관성 있고 좋은 이유가 있으면 당신의 코드베이스에서 자유롭게 다른 선택을 할 수 있습니다. 좋은 이유가 있어야 합니다! 커뮤니티 표준에 적응되기 위해서 당신은 다음과 같이 해야합니다.
+동일하게 좋은 여러 가지 옵션이 존재하는 경우, 일관성을 보장하기 위해 임의의 선택을 할 수 있습니다. 이 규칙은 각각의 수용 가능한 옵션을 설명하고 기본 선택을 제안합니다. 즉, 일관성 있고 좋은 이유가 있으면 당신의 코드베이스에서 자유롭게 다른 선택을 할 수 있습니다. 좋은 이유가 있어야 합니다! 커뮤니티 표준에 적응되기 위해서 당신은 다음과 같이 해야 합니다.
 
 1. 당신이 마주하는 대부분의 커뮤니티 코드를 더 쉽게 분석할 수 있도록 훈련하세요
 2. 커뮤니티 코드 예제를 수정하기 한고 복사 그리고 붙혀넣기 할 수 있어야 합니다
 3. 적어도 뷰에 있어서는 당신이 선호하는 코딩 스타일을 수용하는 새로운 직원을 자주 찾을 것입니다
 
-### 우선순위 D: 주의요함
+### 우선순위 D: 주의 요함
 
-뷰의 몇 가지 은 특성은 드문 엣지 케이스 또는 레거시 코드로의 부터 마이크레이션을 위해 존재합니다. 그러나 그것들을 남용하면 당신의 코드를 유지보수하기 어렵게만들거나 버그를 발생시키는 원인이 될 수 있습니다. 이 규칙은 잠재적 위험요소를 인식시켜주고 언제 그리고 왜 피해야되는지 설명해 줍니다.
+뷰의 몇 가지 은 특성은 드문 엣지 케이스 또는 레거시 코드로의부터 마이그레이션을 위해 존재합니다. 그러나 그것들을 남용하면 당신의 코드를 유지 보수하기 
+  어렵게 만들거나 버그를 발생시키는 원인이 될 수 있습니다. 이 규칙은 잠재적 위험요소를 인식시켜주고 언제 그리고 왜 피해야 하는지 설명해 줍니다.
 
 
 
@@ -45,9 +46,9 @@ type: style-guide
 
 ### 컴포넌트 이름에 합성어 사용 <sup data-p="a">필수</sup>
 
-**root 컴포넌트인 `App` 과 `<transition>`, `<component>`등 Vue에서 제공되는 빌트인 컴포넌트를 제외하고 컴포넌트의 이름은 항상 합성어를 사용해야한다.**
+**root 컴포넌트인 `App` 과 `<transition>`, `<component>`등 Vue에서 제공되는 빌트인 컴포넌트를 제외하고 컴포넌트의 이름은 항상 합성어를 사용해야 한다.**
 
-모든 HTML 엘리먼트의 이름은 한 단어이기 때문에 합성어를 사용하는 것은 기존 그리고 향후 HTML엘리먼트와의 [충돌을 방지해줍니다](http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name).
+모든 HTML 엘리먼트의 이름은 한 단어이기 때문에 합성어를 사용하는 것은 기존 그리고 향후 HTML 엘리먼트와의 [충돌을 방지해줍니다](http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name).
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
@@ -88,7 +89,7 @@ export default {
 
 **컴포넌트의 `data` 는 반드시 함수여야 합니다.**
 
-컴포넌트(i.e. `new Vue`를 제외한 모든곳)의 `data` 프로퍼티의 값은 반드시 객체(object)를 반환하는 함수여야 한다.
+컴포넌트(i.e. `new Vue`를 제외한 모든 곳)의 `data` 프로퍼티의 값은 반드시 객체(object)를 반환하는 함수여야 한다.
 
 {% raw %}
 <details>
@@ -106,7 +107,7 @@ data: {
 }
 ```
 
-이 컴포넌트는 재사용하여 사용자가 여러 목록(e.g. 쇼핑, 소원, 오늘 할일 등)을 유지할 수 있도록 해야 할 수 있다. 컴포넌트의 모든 인스턴스가 동일한 data 객체를 참조하므로, 하나의 목록의 타이틀을 변경할 때 다른 모든 리스트의 타이틀도 변경될 것이다. Todo를 추가/수정/삭제하는 경우에도 마찬가지다.
+이 컴포넌트는 재사용하여 사용자가 여러 목록(e.g. 쇼핑, 소원, 오늘 할 일 등)을 유지할 수 있도록 해야 할 수 있다. 컴포넌트의 모든 인스턴스가 동일한 data 객체를 참조하므로, 하나의 목록의 타이틀을 변경할 때 다른 모든 리스트의 타이틀도 변경될 것이다. Todo를 추가/수정/삭제하는 경우에도 마찬가지다.
 
 대신 우리는 각 컴포넌트의 인스턴스 자체 data만을 관리하기를 원한다. 이렇게 하려면 각 인스턴스는 고유한 data 객체를 생성해야 한다. JavaScript에서는 함수안에서 객체를 반환하는 방법으로 해결할 수 있다:
 
@@ -240,7 +241,7 @@ props: {
 
 **`v-for`는 `key`와 항상 함께 사용합니다.**
 
-서브트리의 내부 컴포넌트 상태를 유지하기 위해 `v-for`는 _항상_ `key`와 함께 요구됩니다. 비록 엘리먼트이긴 하지만 에니메이션의 [객체 불변성](https://bost.ocks.org/mike/constancy/)과 같이 예측 가능한 행동을 유지하는것은 좋은 습관입니다.
+서브트리의 내부 컴포넌트 상태를 유지하기 위해 `v-for`는 _항상_ `key`와 함께 요구됩니다. 비록 엘리먼트이긴 하지만 에니메이션의 [객체 불변성](https://bost.ocks.org/mike/constancy/)과 같이 예측 가능한 행동을 유지하는 것은 좋은 습관입니다.
 
 {% raw %}
 <details>
@@ -249,7 +250,7 @@ props: {
 </summary>
 {% endraw %}
 
-할일 목록이 있다고 가정 해보자:
+할 일 목록이 있다고 가정 해보자:
 
 ``` js
 data: function () {
@@ -268,7 +269,7 @@ data: function () {
 }
 ```
 
-그 다음 알파벳순으로 정렬한다. DOM 이 업데이트될 때, Vue는 가능한 적은 DOM 전이(mutations)를 수행하기 위해 렌더링을 최적화한다. 즉, 첫번째 할일 엘리먼트를 지우고, 리스트의 마지막에 다시 추가한다.
+그다음 알파벳순으로 정렬한다. DOM 이 업데이트될 때, Vue는 가능한 적은 DOM 전이(mutations)를 수행하기 위해 렌더링을 최적화한다. 즉, 첫 번째 할 일 엘리먼트를 지우고, 리스트의 마지막에 다시 추가한다.
 
 The problem is, there are cases where it's important not to delete elements that will remain in the DOM. For example, you may want to use `<transition-group>` to animate list sorting, or maintain focus if the rendered element is an `<input>`. In these cases, adding a unique key for each item (e.g. `:key="todo.id"`) will tell Vue how to behave more predictably.
 
@@ -309,11 +310,11 @@ In our experience, it's better to _always_ add a unique key, so that you and you
 
 **`v-for`가 사용된 엘리먼트에 절대 `v-if`를 사용하지 마세요.**
 
-사용 가능해 보이는 두 가지 일반적인 경우가 있습니다:
+일반적으로 다음과 같은 상황에서 이러한 오류를 범합니다:
 
-- 리스트 목록을 필터링하기 위해서 입니다 (e.g. `v-for="user in users" v-if="user.isActive"`).  이 경우 users을 새로운 computed 속성으로 필더링된 목록으로 대체하십시오(e.g. `activeUsers`).
+- 리스트 목록을 필터링 하려는 경우(e.g. `v-for="user in users" v-if="user.isActive"`).  이 경우 users을 새로운 computed 속성으로 필터링된 목록으로 대체하십시오(e.g. `activeUsers`).
 
-- 숨기기 위해 리스트의 랜더링을 피할 때 입니다 (e.g. `v-for="user in users" v-if="shouldShowUsers"`). 이 경우 `v-if`를 컨테이너 엘리먼트로 옮기세요 (e.g. `ul`, `ol`).
+- 리스트의 일부 요소의 렌더링을 회피하려는 경우(e.g. `v-for="user in users" v-if="shouldShowUsers"`). 이 경우 `v-if`를 컨테이너 엘리먼트로 옮기세요 (e.g. `ul`, `ol`).
 
 {% raw %}
 <details>
@@ -322,7 +323,7 @@ In our experience, it's better to _always_ add a unique key, so that you and you
 </summary>
 {% endraw %}
 
-When Vue processes directives, `v-for` has a higher priority than `v-if`, so that this template:
+Vue는 디렉티브를 처리할 때, `v-for`를 `v-if`보다 높은 우선 순위로 처리합니다. 아래 내용에 따르면,
 
 ``` html
 <ul>
@@ -336,7 +337,7 @@ When Vue processes directives, `v-for` has a higher priority than `v-if`, so tha
 </ul>
 ```
 
-Will be evaluated similar to:
+위 내용은 아래와 비슷합니다.
 
 ``` js
 this.users.map(function (user) {
@@ -345,11 +346,10 @@ this.users.map(function (user) {
   }
 })
 ```
+위와 같은 로직은 `users`중 `isActive`값을 기준으로 일부 유저만 렌더링 하려는 상황에서, 유저의 `isActive`상태 변화가 없더라도 `users`의 모든 요소를 다시 렌더링하는 문제가 있습니다.
+( 역주 : `users`중 한 엘리먼트의 `isActive`값이 변하면, 그 변경사항을 화면에 반영하기 위해 `isActive`값의 변화가 없는 엘리먼트까지 전부 다시 렌더링하므로 무의미한 프로세싱이 발생함 )
 
-So even if we only render elements for a small fraction of users, we have to iterate over the entire list every time we re-render, whether or not the set of active users has changed.
-
-By iterating over a computed property instead, like this:
-
+아래와 같이 computed 속성을 활용하여 계산을 진행하면,
 ``` js
 computed: {
   activeUsers: function () {
@@ -371,14 +371,13 @@ computed: {
 </ul>
 ```
 
-다음과 같은 이점을 얻을 수 있다:
+다음과 같은 이점을 얻을 수 있습니다.
 
-- The filtered list will _only_ be re-evaluated if there are relevant changes to the `users` array, making filtering much more efficient.
-- Using `v-for="user in activeUsers"`, we _only_ iterate over active users during render, making rendering much more efficient.
-- Logic is now decoupled from the presentation layer, making maintenance (change/extension of logic) much easier.
+- 필터링된 리스트는 `users` 배열에 관련된 변경 사항이 있는 경우에만 다시 계산되므로, 필터링이 더 효율적입니다.
+- `v-for="user in activeUsers"`를 활용하는 것은, 렌더링을 하는 동안 _active 상태의 유저만_ 계산하기에, 좀 더 효율적으로 렌더링합니다.
+- 로직이 표현 계층과 분리되어, 유지 보수(변경/확장) 작업이 좀 더 쉬워집니다.
 
-We get similar benefits from updating:
-
+아래 내용처럼 업데이트를 통해 비슷한 효과를 볼 수 있습니다.
 ``` html
 <ul>
   <li
@@ -391,7 +390,7 @@ We get similar benefits from updating:
 </ul>
 ```
 
-to:
+를 아래 내용으로 변경합니다.
 
 ``` html
 <ul v-if="shouldShowUsers">
@@ -404,8 +403,8 @@ to:
 </ul>
 ```
 
-By moving the `v-if` to a container element, we're no longer checking `shouldShowUsers` for _every_ user in the list. Instead, we check it once and don't even evaluate the `v-for` if `shouldShowUsers` is false.
 
+`v-if`를 컨테이너 요소로 이동함으로써, 더 이상 매번 리스트의 _모든 유저_에서 `shouldShowUsers`를 체크할 필요가 없어졌습니다. 대신에, 우리는 `shouldShowUsers`가 거짓일 때, `v-for`를 한번만 체크하거나 심지어 전혀 계산할 필요가 없습니다!
 {% raw %}</details>{% endraw %}
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
@@ -565,7 +564,7 @@ Beyond the `scoped` attribute, using unique class names can help ensure that 3rd
 
 ### Private 속성 이름 <sup data-p="a">필수</sup>
 
-**플러그인, mixin 등에서 커스텀 사용자 private 프로터피에는 항상 접두사 `$_`를 사용하라. 그 다음 다른 사람의 코드와 충돌을 피하려면 named scope를 포함하라. (e.g. `$_yourPluginName_`).**
+**플러그인, mixin 등에서 커스텀 사용자 private 프로터피에는 항상 접두사 `$_`를 사용하라. 그다음 다른 사람의 코드와 충돌을 피하려면 named scope를 포함하라. (e.g. `$_yourPluginName_`).**
 
 {% raw %}
 <details>
@@ -673,9 +672,9 @@ export default myGreatMixin
 
 ### 컴포넌트 파일 <sup data-p="b">매우 추천함</sup>
 
-**Whenever a build system is available to concatenate files, each component should be in its own file.**
+**언제든지 빌드 시스템이 파일들을 하나로 합치는 것이 가능하기에, 컴포넌트마다 파일을 생성해서 관리해야합니다.**
 
-This helps you to more quickly find a component when you need to edit it or review how to use it.
+이 과정은 당신이 수정하거나, 어떻게 사용하는 지 리뷰가 필요한 컴포넌트를 찾아낼 때 큰 도움이 됩니다.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
@@ -1402,9 +1401,9 @@ computed: {
 
 ### 속성 값에 따옴표 <sup data-p="b">매우 추천함</sup>
 
-**Non-empty HTML attribute values should always be inside quotes (single or double, whichever is not used in JS).**
+**HTML 속성 값이 존재할 때에는 반드시 따옴표 구문을 사용해야 합니다. (작은 따옴표나 큰 따옴표, 혹은 JS에서 쓰이지 않는 것이라도)**
 
-While attribute values without any spaces are not required to have quotes in HTML, this practice often leads to _avoiding_ spaces, making attribute values less readable.
+공백이 필요없는 속성 값에 따옴표를 쓰지 않아도 되지만, _공백을 쓰지 않는 습관_은 가독성을 떨어뜨립니다.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
@@ -1574,7 +1573,7 @@ While attribute values without any spaces are not required to have quotes in HTM
     - `beforeDestroy`
     - `destroyed`
 
-10. **비반응적 속성(Non-Reactive Properties)** (시스템의 반응성과 관계 없는 인스턴스 속성을 지정하는 옵션)
+10. **비반응적 속성(Non-Reactive Properties)** (시스템의 반응성과 관계없는 인스턴스 속성을 지정하는 옵션)
   - `methods`
 
 11. **렌더링(Rendering)** (컴포넌트 출력을 선언적으로 지정하는 옵션)
@@ -1595,7 +1594,7 @@ While attribute values without any spaces are not required to have quotes in HTM
 2. **리스트 렌더링(List Rendering)** (같은 엘리먼트의 변형을 여러 개 생성하는 속성)
   - `v-for`
 
-3. **조건부(Conditionals)** (엘리먼트가 렌더링되는지 혹은 보여지는지 여부를 결정하는 속성)
+3. **조건부(Conditionals)** (엘리먼트가 렌더링 되는지 혹은 보여지는지 여부를 결정하는 속성)
   - `v-if`
   - `v-else-if`
   - `v-else`
@@ -1628,7 +1627,7 @@ While attribute values without any spaces are not required to have quotes in HTM
 
 
 
-### 컴포넌트/인스턴스 옵션간 빈 줄 <sup data-p="c">추천함</sup>
+### 컴포넌트/인스턴스 옵션 간 빈 줄 <sup data-p="c">추천함</sup>
 
 **You may want to add one empty line between multi-line properties, particularly if the options can no longer fit on your screen without scrolling.**
 
@@ -1748,11 +1747,11 @@ computed: {
 
 
 
-## 우선순위 D 규칙: 주의요함 (잠재적인 위험을 내포한 패턴)
+## 우선순위 D 규칙: 주의 요함 (잠재적인 위험을 내포한 패턴)
 
 
 
-### `key`가 없는 `v-if`/`v-if-else`/`v-else` <sup data-p="d">주의요함</sup>
+### `key`가 없는 `v-if`/`v-if-else`/`v-else` <sup data-p="d">주의 요함</sup>
 
 **It's usually best to use `key` with `v-if` + `v-else`, if they are the same element type (e.g. both `<div>` elements).**
 
@@ -1792,7 +1791,7 @@ By default, Vue updates the DOM as efficiently as possible. That means when swit
 
 
 
-### `scoped`에서 엘리먼트 셀렉터 사용 <sup data-p="d">주의요함</sup>
+### `scoped`에서 엘리먼트 셀렉터 사용 <sup data-p="d">주의 요함</sup>
 
 **Element selectors should be avoided with `scoped`.**
 
@@ -1845,7 +1844,7 @@ button {
 
 
 
-### 부모-자식간 의사소통 <sup data-p="d">주의요함</sup>
+### 부모-자식 간 의사소통 <sup data-p="d">주의 요함</sup>
 
 **Props and events should be preferred for parent-child component communication, instead of `this.$parent` or mutating props.**
 
@@ -1938,7 +1937,7 @@ Vue.component('TodoItem', {
 
 
 
-### 전역 상태 관리 <sup data-p="d">주의요함</sup>
+### 전역 상태 관리 <sup data-p="d">주의 요함</sup>
 
 **전역 상태 관리에는 `this.$root` 나 글로벌 이벤트 버스(global event bus)보다는 [Vuex](https://github.com/vuejs/vuex)를 이용하는 것이 좋습니다.**
 
