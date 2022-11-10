@@ -322,7 +322,8 @@ In our experience, it's better to _always_ add a unique key, so that you and you
 </summary>
 {% endraw %}
 
-When Vue processes directives, `v-for` has a higher priority than `v-if`, so that this template:
+Vue는 디렉티브를 처리할 때, `v-for`를 `v-if`보다 높은 우선 순위로 처리합니다.
+아래 내용에 따르면,
 
 ``` html
 <ul>
@@ -336,7 +337,7 @@ When Vue processes directives, `v-for` has a higher priority than `v-if`, so tha
 </ul>
 ```
 
-Will be evaluated similar to:
+위 내용은 아래와 비슷합니다.
 
 ``` js
 this.users.map(function (user) {
@@ -346,10 +347,9 @@ this.users.map(function (user) {
 })
 ```
 
-So even if we only render elements for a small fraction of users, we have to iterate over the entire list every time we re-render, whether or not the set of active users has changed.
+위 내용을 따르면 일부 사용자 요소를 렌더링하더라도, active 상태로 변경된 유저의 집합과 상관없이, 매번 다시 렌더링을 해야할 때마다 전체 목록을 반복 계산하게 됩니다.
 
-By iterating over a computed property instead, like this:
-
+아래와 같이 computed 속성을 활용하여 계산을 진행하면,
 ``` js
 computed: {
   activeUsers: function () {
@@ -371,14 +371,13 @@ computed: {
 </ul>
 ```
 
-다음과 같은 이점을 얻을 수 있다:
+다음과 같은 이점을 얻을 수 있습니다.
 
-- The filtered list will _only_ be re-evaluated if there are relevant changes to the `users` array, making filtering much more efficient.
-- Using `v-for="user in activeUsers"`, we _only_ iterate over active users during render, making rendering much more efficient.
-- Logic is now decoupled from the presentation layer, making maintenance (change/extension of logic) much easier.
+- 필터링된 리스트는 `users` 배열에 관련된 변경 사항이 있는 경우에만 다시 계산되므로, 필터링이 더 효율적입니다.
+- `v-for="user in activeUsers"`를 활용하는 것은, 렌더링을 하는 동안 _active 상태의 유저만_ 계산하기에, 좀 더 효율적으로 렌더링합니다.
+- 로직이 표현 계층과 분리되어, 유지 보수(변경/확장) 작업이 좀 더 쉬워집니다.
 
-We get similar benefits from updating:
-
+아래 내용처럼 업데이트를 통해 비슷한 효과를 볼 수 있습니다.
 ``` html
 <ul>
   <li
@@ -391,7 +390,7 @@ We get similar benefits from updating:
 </ul>
 ```
 
-to:
+를 아래 내용으로 변경합니다.
 
 ``` html
 <ul v-if="shouldShowUsers">
@@ -404,8 +403,8 @@ to:
 </ul>
 ```
 
-By moving the `v-if` to a container element, we're no longer checking `shouldShowUsers` for _every_ user in the list. Instead, we check it once and don't even evaluate the `v-for` if `shouldShowUsers` is false.
 
+`v-if`를 컨테이너 요소로 이동함으로써, 더 이상 매번 리스트의 _모든 유저_에서 `shouldShowUsers`를 체크할 필요가 없어졌습니다. 대신에, 우리는 `shouldShowUsers`가 거짓일 때, `v-for`를 한번만 체크하거나 심지어 전혀 계산할 필요가 없습니다!
 {% raw %}</details>{% endraw %}
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
