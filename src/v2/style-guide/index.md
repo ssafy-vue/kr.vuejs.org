@@ -311,9 +311,9 @@ In our experience, it's better to _always_ add a unique key, so that you and you
 
 사용 가능해 보이는 두 가지 일반적인 경우가 있습니다:
 
-- 리스트 목록을 필터링하기 위해서 입니다 (e.g. `v-for="user in users" v-if="user.isActive"`).  이 경우 users을 새로운 computed 속성으로 필더링된 목록으로 대체하십시오(e.g. `activeUsers`).
+- 리스트 목록을 필터링하기 위해서 입니다 (e.g. `v-for="user in users" v-if="user.isActive"`).  이 경우 users을 새로운 computed 속성으로 필터링된 목록으로 대체하십시오(e.g. `activeUsers`).
 
-- 숨기기 위해 리스트의 랜더링을 피할 때 입니다 (e.g. `v-for="user in users" v-if="shouldShowUsers"`). 이 경우 `v-if`를 컨테이너 엘리먼트로 옮기세요 (e.g. `ul`, `ol`).
+- 숨기기 위해 리스트의 렌더링을 피할 때 입니다 (e.g. `v-for="user in users" v-if="shouldShowUsers"`). 이 경우 `v-if`를 컨테이너 엘리먼트로 옮기세요 (e.g. `ul`, `ol`).
 
 {% raw %}
 <details>
