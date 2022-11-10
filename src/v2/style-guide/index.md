@@ -1402,9 +1402,9 @@ computed: {
 
 ### 속성 값에 따옴표 <sup data-p="b">매우 추천함</sup>
 
-**Non-empty HTML attribute values should always be inside quotes (single or double, whichever is not used in JS).**
+**HTML 속성 값이 존재할 때에는 반드시 따옴표 구문을 사용해야 합니다. (작은 따옴표나 큰 따옴표, 혹은 JS에서 쓰이지 않는 것이라도)**
 
-While attribute values without any spaces are not required to have quotes in HTML, this practice often leads to _avoiding_ spaces, making attribute values less readable.
+공백이 필요없는 속성 값에 따옴표를 쓰지 않아도 되지만, _공백을 쓰지 않는 습관_은 가독성을 떨어뜨립니다.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
