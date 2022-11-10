@@ -323,8 +323,7 @@ In our experience, it's better to _always_ add a unique key, so that you and you
 </summary>
 {% endraw %}
 
-Vue는 디렉티브를 처리할 때, `v-for`를 `v-if`보다 높은 우선 순위로 처리합니다.
-아래 내용에 따르면,
+Vue는 디렉티브를 처리할 때, `v-for`를 `v-if`보다 높은 우선 순위로 처리합니다. 아래 내용에 따르면,
 
 ``` html
 <ul>
