@@ -7,9 +7,9 @@ type: style-guide
 
 이 문서는 Vue 코드에 대한 공식 스타일 가이드입니다. 만약 현재 Vue를 사용하여 프로젝트를 진행 중이라면 이 문서는 에러와 바이크쉐딩 (bikeshedding), 안티패턴을 피하는 좋은 참조가 될 것 입니다. 그러나 이 문서에서 제시하는 스타일 가이드가 당신의 프로젝트에 무조건 적합한 것은 아닙니다. 그러므로 당신의 경험과 기술 스택, 개인적 통찰력을 바탕으로 이 스타일 가이드가 적용되는 것을 권장해드립니다.
 
-대부분의 경우 우리는 HTML과 자바스크립트에 대한 제안은 일반적으로 피합니다. 우리는 당신이 세미콜론이나 쉼표(trailing commas)에 대한 사용 여부는 신경 쓰지 않습니다. 우리는 당신이 HTML의 속성값을 위해 작은따옴표를 사용하지는 큰따옴표를 사용하는지 신경 쓰지 않습니다. 그러나 특정 패턴이 뷰 컨텍스트에서 유용하다고 발견된 경우 예외가 존재합니다.
+대부분의 경우 우리는 HTML과 자바스크립트에 대한 제안은 일반적으로 피합니다. 우리는 당신이 세미콜론이나 쉼표(trailing commas)에 대한 사용 여부는 신경 쓰지 않습니다. 우리는 당신이 HTML의 속성값을 위해 작은따옴표를 사용하는지 큰따옴표를 사용하는지 신경 쓰지 않습니다. 그러나 특정 패턴이 뷰 컨텍스트에서 유용하다고 발견된 경우 예외가 존재합니다.
 
-> **Soon, we'll also provide tips for enforcement.** Sometimes you'll simply have to be disciplined, but wherever possible, we'll try to show you how to use ESLint and other automated processes to make enforcement simpler.
+> **곧, 우린 실행에 필요한 팁들도 제공할 예정입니다.** 당신이 단순하게 훈련이 되어 있어야 할 때도 있지만(have to be disciplined), 가능한 한 당신이 ESLint와 다른 자동화된 프로세스들을 더 간단히 실행할 수 있도록 보여주려고 합니다.
 
 마지막으로, 우리는 규칙을 4가지 범주로 분류하였습니다.
 
