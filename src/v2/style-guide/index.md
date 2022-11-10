@@ -1434,7 +1434,7 @@ computed: {
 
 ### 축약형 디렉티브 <sup data-p="b">매우 추천함</sup>
 
-**Directive shorthands (`:` for `v-bind:`, `@` for `v-on:` and `#` for `v-slot`) should be used always or never.**
+** 축약형 디텍티브( ` v-bind:` 의 경우 `:`, `v-on:`의 경우 `@` 및 `v-slot`의 경우 `#`)는 모든 문서에 걸쳐서 일관되게 사용해야 합니다. 즉, 모든 문서에서 항상 사용하거나 전혀 사용하지 않아야 합니다.**
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
