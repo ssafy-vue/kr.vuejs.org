@@ -310,11 +310,11 @@ In our experience, it's better to _always_ add a unique key, so that you and you
 
 **`v-for`가 사용된 엘리먼트에 절대 `v-if`를 사용하지 마세요.**
 
-사용 가능해 보이는 두 가지 일반적인 경우가 있습니다:
+일반적으로 다음과 같은 상황에서 이러한 오류를 범합니다:
 
-- 리스트 목록을 필터링하기 위해서 입니다 (e.g. `v-for="user in users" v-if="user.isActive"`).  이 경우 users을 새로운 computed 속성으로 필터링된 목록으로 대체하십시오(e.g. `activeUsers`).
+- 리스트 목록을 필터링 하려는 경우(e.g. `v-for="user in users" v-if="user.isActive"`).  이 경우 users을 새로운 computed 속성으로 필터링된 목록으로 대체하십시오(e.g. `activeUsers`).
 
-- 숨기기 위해 리스트의 렌더링을 피할 때 입니다 (e.g. `v-for="user in users" v-if="shouldShowUsers"`). 이 경우 `v-if`를 컨테이너 엘리먼트로 옮기세요 (e.g. `ul`, `ol`).
+- 리스트의 일부 요소의 렌더링을 회피하려는 경우(e.g. `v-for="user in users" v-if="shouldShowUsers"`). 이 경우 `v-if`를 컨테이너 엘리먼트로 옮기세요 (e.g. `ul`, `ol`).
 
 {% raw %}
 <details>
