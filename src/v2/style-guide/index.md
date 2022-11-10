@@ -710,9 +710,11 @@ components/
 
 ### 싱글 파일 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup>
 
-**Filenames of [single-file components](../guide/single-file-components.html) should either be always PascalCase or always kebab-case.**
+**[싱글 파일 컴포넌트(SFC)](../guide/single-file-components.html)의 파일명은 항상 PascalCase 또는 kebab-case 형태로 작명되어야 합니다.**
 
-PascalCase works best with autocompletion in code editors, as it's consistent with how we reference components in JS(X) and templates, wherever possible. However, mixed case filenames can sometimes create issues on case-insensitive file systems, which is why kebab-case is also perfectly acceptable.
+PascalCase는 templates과 JS, JSX 파일 내의 컴포넌트를 참조하는 방식과 거의 비슷하므로, 코드 편집기에서 자동 완성을 할 때 가장 효과적입니다.
+
+그러나 여러 가지 형태로 섞여 있는 파일명은 대소문자에 민감한(case-sensitive) 시스템에서 문제를 일으킬 수 있습니다. 이럴 때는 kebab-case가 굉장히 효과적입니다.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
