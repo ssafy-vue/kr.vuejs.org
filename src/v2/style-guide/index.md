@@ -1434,7 +1434,7 @@ While attribute values without any spaces are not required to have quotes in HTM
 
 ### 축약형 디렉티브 <sup data-p="b">매우 추천함</sup>
 
-**Directive shorthands (`:` for `v-bind:`, `@` for `v-on:` and `#` for `v-slot`) should be used always or never.**
+**지시적 약어( ` v-bind:` 의 경우 `:` , `v-on:`의 경우 `@` 및 `v-slot`의 경우 `#` )는 항상 사용하거나 사용하지 않아야 합니다.**
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
