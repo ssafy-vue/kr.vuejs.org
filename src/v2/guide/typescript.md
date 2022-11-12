@@ -10,11 +10,11 @@ order: 403
 
 정적 타입 시스템은 많은 잠재적 런타임 에러를 막는데 도움을 줄 수 있습니다. 특히 애플리케이션이 점점 커져감에 따라 말이죠. 이것이 Vue가 [타입스크립트](https://www.typescriptlang.org/)를 위한 [공식 타입 선언](https://github.com/vuejs/vue/tree/dev/types)을 같이 제공하는 이유입니다. - 이는 Vue 코어에만 국한된 이야기가 아니라, [vue-router](https://github.com/vuejs/vue-router/tree/dev/types)와 [vuex](https://github.com/vuejs/vuex/tree/dev/types)에 동일하게 적용되는 이야기입니다.
 
-이 타입들이 [NPM에 퍼블리시 되었고](https://cdn.jsdelivr.net/npm/vue/types/), 최신 타입스크립트는 NPM 패키지 안에 있는 타입 선언을 어떻게 리졸브 해야하는지 알고 있기 때문에, Vue가 NPM을 통해 설치되었다면, Vue와 타입스크립트를 같이 사용하기 위해 별도의 툴링이 필요 없습니다.
+이 타입들이 [NPM에 퍼블리시 되었고](https://cdn.jsdelivr.net/npm/vue/types/), 최신 타입스크립트는 NPM 패키지 안에 있는 타입 선언을 어떻게 리졸브 해야하는지 알고 있기 때문에, Vue가 NPM을 통해 설치되었다면, Vue와 타입스크립트를 같이 사용하기 위해 별도의 설정이 필요 없습니다.
 
 ## 추천 설정
 
-```js
+``` js
 // tsconfig.json
 {
   "compilerOptions": {
@@ -59,39 +59,39 @@ TypeScript를 사용해 Vue를 개발하려면 [Visual Studio Code](https://code
 
 Vue 컴포넌트 옵션안에서 TypeScript를 사용하려면 `Vue.component` 또는 `Vue.extend`로 컴포넌트를 정의해야합니다.
 
-```ts
-import Vue from "vue";
+``` ts
+import Vue from 'vue'
 
 const Component = Vue.extend({
   // 타입 유추기능 사용
-});
+})
 
 const Component = {
   // 이 방식은 타입 유추가 되지 않습니다.
   // TypeScript가 Vue 컴포넌트에 대한 옵션을 알 수 없기 때문입니다.
-};
+}
 ```
 
 ## 클래스 스타일 Vue 컴포넌트
 
 컴포넌트를 선언할 때 클래스 기반 API를 선호하는 경우 공식 [vue-class-component](https://github.com/vuejs/vue-class-component) 데코레이터를 사용할 수 있습니다.
 
-```ts
-import Vue from "vue";
-import Component from "vue-class-component";
+``` ts
+import Vue from 'vue'
+import Component from 'vue-class-component'
 
 // @Component 데코레이터는 클래스가 Vue 컴포넌트임을 나타냅니다.
 @Component({
   // 모든 컴포넌트 옵션이 이곳에 허용됩니다.
-  template: '<button @click="onClick">Click!</button>',
+  template: '<button @click="onClick">Click!</button>'
 })
 export default class MyComponent extends Vue {
   // 초기 데이터는 인스턴스 속성으로 선언할 수 있습니다.
-  message: string = "Hello!";
+  message: string = 'Hello!'
 
   // 컴포넌트 메소드는 인스턴스 메소드로 선언할 수 있습니다.
-  onClick(): void {
-    window.alert(this.message);
+  onClick (): void {
+    window.alert(this.message)
   }
 }
 ```
@@ -102,16 +102,16 @@ export default class MyComponent extends Vue {
 
 예를 들어, instance property인 `$myProperty`를 `string` 타입으로 선언하고자 하는 경우:
 
-```ts
+``` ts
 // 1. 'vue'를 보충된 타입 선언 전에 import해야 합니다.
-import Vue from "vue";
+import Vue from 'vue'
 
 // 2. 보충하고자 하는 타입이 있는 파일을 지정하세요.
 //    Vue의 constructor type은 types/vue.d.ts에 있습니다.
-declare module "vue/types/vue" {
+declare module 'vue/types/vue' {
   // 3. Vue에 보강할 내용을 선언하세요.
   interface Vue {
-    $myProperty: string;
+    $myProperty: string
   }
 }
 ```
@@ -119,27 +119,27 @@ declare module "vue/types/vue" {
 위의 코드를 선언 파일 형태로 (`my-property.d.ts` 처럼) include하면, `$myProperty`를 Vue 인스턴스 내에서 사용할 수 있습니다.
 
 ```ts
-var vm = new Vue();
-console.log(vm.$myProperty); // This should compile successfully
+var vm = new Vue()
+console.log(vm.$myProperty) // This should compile successfully
 ```
 
 추가적인 전역 property나 컴포넌트 옵션을 선언할 수도 있습니다.
 
 ```ts
-import Vue from "vue";
+import Vue from 'vue'
 
-declare module "vue/types/vue" {
+declare module 'vue/types/vue' {
   // `VueConstructor` 인터페이스에서
   // 전역 속성을 선언할 수 있습니다
   interface VueConstructor {
-    $myGlobal: string;
+    $myGlobal: string
   }
 }
 
 // ComponentOptions는 types/options.d.ts에 선언되어 있습니다.
-declare module "vue/types/options" {
+declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
-    myOption?: string;
+    myOption?: string
   }
 }
 ```
@@ -148,12 +148,12 @@ declare module "vue/types/options" {
 
 ```ts
 // 전역 property
-console.log(Vue.$myGlobal);
+console.log(Vue.$myGlobal)
 
 // 추가적인 component option
 var vm = new Vue({
-  myOption: "Hello",
-});
+  myOption: 'Hello'
+})
 ```
 
 ## 반환 타입 어노테이팅
@@ -161,31 +161,31 @@ var vm = new Vue({
 Vue의 선언 파일의 순환 특성때문에 TypeScript는 특정 메서드의 타입을 추론하는데 어려움이 있을 수 있습니다. 이런 이유로 `render`와 같은 메소드와 `computed`의 메소드에 리턴 타입에 어노테이팅이 필요가 있습니다.
 
 ```ts
-import Vue, { VNode } from "vue";
+import Vue, { VNode } from 'vue'
 
 const Component = Vue.extend({
-  data() {
+  data () {
     return {
-      msg: "Hello",
-    };
+      msg: 'Hello'
+    }
   },
   methods: {
     // `this` 때문에 리턴 타입에 어노테이션이 필요합니다.
-    greet(): string {
-      return this.msg + " world";
-    },
+    greet (): string {
+      return this.msg + ' world'
+    }
   },
   computed: {
     // 어노테이션 필요
     greeting(): string {
-      return this.greet() + "!";
-    },
+      return this.greet() + '!'
+    }
   },
   // `createElement`가 유추되었지만 `render`는 리턴 타입을 필요로 합니다.
-  render(createElement): VNode {
-    return createElement("div", this.greeting);
-  },
-});
+  render (createElement): VNode {
+    return createElement('div', this.greeting)
+  }
+})
 ```
 
 타입 유추를 찾거나 멤버 자동완성이 효과가 없다면 특정 방법에 주석을 달아 이러한 문제를 해결하는데 도움이 될 수 있습니다. `--noImplicitAny` 옵션을 사용하면 많은 주석을 달지 않은 메소드를 찾을 수 있습니다.
