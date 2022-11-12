@@ -365,7 +365,7 @@
 <li>커뮤니티 코드 예제를 수정하기 한고 복사 그리고 붙혀넣기 할 수 있어야 합니다</li>
 <li>적어도 뷰에 있어서는 당신이 선호하는 코딩 스타일을 수용하는 새로운 직원을 자주 찾을 것입니다</li>
 </ol>
-<h3 id="우선순위-D-주의-요함"><a href="#우선순위-D-주의-요함" class="headerlink" title="우선순위 D: 주의 요함"></a>우선순위 D: 주의 요함</h3><p>뷰의 몇 가지 은 특성은 드문 엣지 케이스 또는 레거시 코드로의부터 마이그레이션을 위해 존재합니다. 그러나 그것들을 남용하면 당신의 코드를 유지 보수하기<br>  어렵게 만들거나 버그를 발생시키는 원인이 될 수 있습니다. 이 규칙은 잠재적 위험요소를 인식시켜주고 언제 그리고 왜 피해야 하는지 설명해 줍니다.</p>
+<h3 id="우선순위-D-주의-요함"><a href="#우선순위-D-주의-요함" class="headerlink" title="우선순위 D: 주의 요함"></a>우선순위 D: 주의 요함</h3><p>뷰의 일부 특성은 드문 엣지 케이스 또는 레거시 코드로의부터 마이그레이션을 위해 존재합니다. 그러나 그것들을 남용하면 당신의 코드를 유지 보수하기 어렵게 만들거나 버그를 발생시키는 원인이 될 수 있습니다. 이 규칙은 잠재적 위험요소를 인식시켜주고 언제 그리고 왜 피해야 하는지 설명해 줍니다.</p>
 <h2 id="우선순위-A-규칙-필수-에러-방지"><a href="#우선순위-A-규칙-필수-에러-방지" class="headerlink" title="우선순위 A 규칙: 필수 (에러 방지)"></a>우선순위 A 규칙: 필수 (에러 방지)</h2><h3 id="컴포넌트-이름에-합성어-사용-필수"><a href="#컴포넌트-이름에-합성어-사용-필수" class="headerlink" title="컴포넌트 이름에 합성어 사용 필수"></a>컴포넌트 이름에 합성어 사용 <sup data-p="a">필수</sup></h3><p><strong>root 컴포넌트인 <code>App</code> 과 <code>&lt;transition&gt;</code>, <code>&lt;component&gt;</code>등 Vue에서 제공되는 빌트인 컴포넌트를 제외하고 컴포넌트의 이름은 항상 합성어를 사용해야 한다.</strong></p>
 <p>모든 HTML 엘리먼트의 이름은 한 단어이기 때문에 합성어를 사용하는 것은 기존 그리고 향후 HTML 엘리먼트와의 <a target="_blank" rel="noopener" href="http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name">충돌을 방지해줍니다</a>.</p>
 <div class="style-example example-bad">
@@ -654,16 +654,14 @@
 <h4 id="좋음-13"><a href="#좋음-13" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In single-file components, string templates, and JSX --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>/&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In DOM templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </div>
-<h3 id="템플릿에서-컴포넌트-이름-규칙-지정-casing-매우-추천함"><a href="#템플릿에서-컴포넌트-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="템플릿에서 컴포넌트 이름 규칙 지정(casing) 매우 추천함"></a>템플릿에서 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>In most projects, component names should always be PascalCase in <a href="../guide/single-file-components.html">single-file components</a> and string templates - but kebab-case in DOM templates.</strong></p>
-<p>PascalCase has a few advantages over kebab-case:</p>
+<h3 id="템플릿에서-컴포넌트-이름-규칙-지정-casing-매우-추천함"><a href="#템플릿에서-컴포넌트-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="템플릿에서 컴포넌트 이름 규칙 지정(casing) 매우 추천함"></a>템플릿에서 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>대부분의 프로젝트에서 <a href="../guide/single-file-components.html">싱글 파일 컴포넌트(SFC)</a>와 문자열 템플릿의 컴포넌트 이름은 PascalCase 형태를 갖춰야합니다. DOM 템플릿의 컴포넌트 이름은 kebab-case 형태를 갖추면 됩니다.</strong></p>
+<p>PascalCase는 kebab-case에 비해 몇 가지 이점을 지니고 있습니다 :</p>
 <ul>
-<li>Editors can autocomplete component names in templates, because PascalCase is also used in JavaScript.</li>
-<li><code>&lt;MyComponent&gt;</code> is more visually distinct from a single-word HTML element than <code>&lt;my-component&gt;</code>, because there are two character differences (the two capitals), rather than just one (a hyphen).</li>
-<li>If you use any non-Vue custom elements in your templates, such as a web component, PascalCase ensures that your Vue components remain distinctly visible.</li>
+<li>편집기가 템플릿에서 컴포넌트 이름을 자동완성 기능을 활용할 수 있습니다. 왜냐하면 PascalCase가 JavaScript에서도 쓰이기 때문입니다.</li>
+<li><code>&lt;MyComponent&gt;</code>가 <code>&lt;my-component&gt;</code>보다 한 단어로 된 HTML 요소가 시각적으로 더 잘 구분됩니다. 두 문자(두 대문자)가 하나의 하이픈(-)보다 글자 차이가 많기 때문입니다.</li>
+<li>만약 당신이 템플릿에서 웹 컴포넌트 같은 Vue의 요소가 아닌 커스텀 요소를 사용한다면, PascalCase가 당신의 Vue 컴포넌트를 시각적으로 잘 구분 될 수 있게 만들어줍니다.</li>
 </ul>
-<p>Unfortunately, due to HTML’s case insensitivity, DOM templates must still use kebab-case.</p>
-<p>Also note that if you’ve already invested heavily in kebab-case, consistency with HTML conventions and being able to use the same casing across all your projects may be more important than the advantages listed above. In those cases, <strong>using kebab-case everywhere is also acceptable.</strong></p>
-<div class="style-example example-bad">
+<p>불행하게도, HTML은 대소문자에 민감하지 않기 때문에(case-insensitive), DOM 템플릿은 kebab-case를 여전히 사용해야 합니다.<br>또한, 당신이 kebab-case를 이미 많이 사용하였거나, 투자를 많이 했을 때에는, HTML 표기의 일관성과 모든 프로젝트에 같은 규칙을 이행하는 것이 이점이 좀 더 있을 수 있습니다. <strong>이런 경우는 kebab-case를 어디서든 사용하셔도 됩니다.</strong><br><div class="style-example example-bad"></p>
 <h4 id="나쁨-14"><a href="#나쁨-14" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In single-file components and string templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">mycomponent</span>/&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In single-file components and string templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">myComponent</span>/&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In DOM templates --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">MyComponent</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -674,20 +672,18 @@
 <p>OR</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Everywhere --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </div>
-<h3 id="JS-JSX에서-컴포넌트-이름-규칙-지정-casing-매우-추천함"><a href="#JS-JSX에서-컴포넌트-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="JS/JSX에서 컴포넌트 이름 규칙 지정(casing) 매우 추천함"></a>JS/JSX에서 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>Component names in JS/<a href="../guide/render-function.html#JSX">JSX</a> should always be PascalCase, though they may be kebab-case inside strings for simpler applications that only use global component registration through <code>Vue.component</code>.</strong></p>
-
+<h3 id="JS-JSX에서-컴포넌트-이름-규칙-지정-casing-매우-추천함"><a href="#JS-JSX에서-컴포넌트-이름-규칙-지정-casing-매우-추천함" class="headerlink" title="JS/JSX에서 컴포넌트 이름 규칙 지정(casing) 매우 추천함"></a>JS/JSX에서 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup></h3><p><strong>JS에서의 컴포넌트 이름은 PascalCase 규칙으로 작성되어야 하지만, <code>Vue.component</code>를 통해 전역 컴포넌트만 등록하는 간단한 어플리케이션의 경우, kebab-case로 작성될 수 있습니다.</strong><br>
 <details>
 <summary>
   <h4>자세한 설명</h4>
 </summary>
-
-<p>In JavaScript, PascalCase is the convention for classes and prototype constructors - essentially, anything that can have distinct instances. Vue components also have instances, so it makes sense to also use PascalCase. As an added benefit, using PascalCase within JSX (and templates) allows readers of the code to more easily distinguish between components and HTML elements.</p>
-<p>However, for applications that use <strong>only</strong> global component definitions via <code>Vue.component</code>, we recommend kebab-case instead. The reasons are:</p>
+</p>
+<p>JavaScript에서는, PascalCase는 클래스와 프로토타입 생성자의 표기법입니다. 특히 이는 시각적으로 더 잘 구분됩니다. 또한 Vue 컴포넌트는 인스턴스를 갖고 있으며, 그래서 PascalCase를 쓰는 것이 좀 더 좋은 생각입니다. PascalCase로 작성하여, 얻은 이점 덕분에, JSX(와 템플릿)내에서 PascalCase로 작성하는 것은 코드를 독해하는 사람에게 컴포넌트와 HTML 요소를 좀 더 쉽게 구분할 수 있게 만들어줍니다.<br>그러나 <code>Vue.component</code>를 통해 전역 컴포넌트만 정의한 어플리케이션에서는, 저희는 kebab-case를 대신에 사용하는 것을 권장합니다. 이유는 다음과 같습니다:</p>
 <ul>
-<li>It’s rare that global components are ever referenced in JavaScript, so following a convention for JavaScript makes less sense.</li>
-<li>These applications always include many in-DOM templates, where <a href="#Component-name-casing-in-templates-strongly-recommended">kebab-case <strong>must</strong> be used</a>.</li>
+<li>드물게 전역 컴포넌트가 JavaScript에서 참조될 수 있기에, JavaScript 표기법을 지키는 것은 그렇게 좋은 생각은 아닐 수 있습니다.</li>
+<li>어플리케이션 안에는 항상 많은 내부 DOM 템플릿을 포함하고 있고, 템플릿에서는 <a href="#Component-name-casing-in-templates-strongly-recommended"><strong>반드시</strong> kebab-case가 사용되어야 합니다</a>.</details>
+</li>
 </ul>
-</details>
 <div class="style-example example-bad">
 <h4 id="나쁨-15"><a href="#나쁨-15" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">component</span>(<span class="hljs-string">&#x27;myComponent&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> myComponent <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./MyComponent.vue&#x27;</span><br></code></pre></td></tr></table></figure>
