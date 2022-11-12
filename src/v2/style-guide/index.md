@@ -34,8 +34,7 @@ type: style-guide
 
 ### 우선순위 D: 주의 요함
 
-뷰의 몇 가지 은 특성은 드문 엣지 케이스 또는 레거시 코드로의부터 마이그레이션을 위해 존재합니다. 그러나 그것들을 남용하면 당신의 코드를 유지 보수하기 
-  어렵게 만들거나 버그를 발생시키는 원인이 될 수 있습니다. 이 규칙은 잠재적 위험요소를 인식시켜주고 언제 그리고 왜 피해야 하는지 설명해 줍니다.
+뷰의 일부 특성은 드문 엣지 케이스 또는 레거시 코드로의부터 마이그레이션을 위해 존재합니다. 그러나 그것들을 남용하면 당신의 코드를 유지 보수하기 어렵게 만들거나 버그를 발생시키는 원인이 될 수 있습니다. 이 규칙은 잠재적 위험요소를 인식시켜주고 언제 그리고 왜 피해야 하는지 설명해 줍니다.
 
 
 
@@ -1061,18 +1060,15 @@ Unfortunately, HTML doesn't allow custom elements to be self-closing - only [off
 
 ### 템플릿에서 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup>
 
-**In most projects, component names should always be PascalCase in [single-file components](../guide/single-file-components.html) and string templates - but kebab-case in DOM templates.**
+**대부분의 프로젝트에서 [싱글 파일 컴포넌트(SFC)](../guide/single-file-components.html)와 문자열 템플릿의 컴포넌트 이름은 PascalCase 형태를 갖춰야합니다. DOM 템플릿의 컴포넌트 이름은 kebab-case 형태를 갖추면 됩니다.**
 
-PascalCase has a few advantages over kebab-case:
+PascalCase는 kebab-case에 비해 몇 가지 이점을 지니고 있습니다 :
+- 편집기가 템플릿에서 컴포넌트 이름을 자동완성 기능을 활용할 수 있습니다. 왜냐하면 PascalCase가 JavaScript에서도 쓰이기 때문입니다.
+- `<MyComponent>`가 `<my-component>`보다 한 단어로 된 HTML 요소가 시각적으로 더 잘 구분됩니다. 두 문자(두 대문자)가 하나의 하이픈(-)보다 글자 차이가 많기 때문입니다.
+- 만약 당신이 템플릿에서 웹 컴포넌트 같은 Vue의 요소가 아닌 커스텀 요소를 사용한다면, PascalCase가 당신의 Vue 컴포넌트를 시각적으로 잘 구분 될 수 있게 만들어줍니다.
 
-- Editors can autocomplete component names in templates, because PascalCase is also used in JavaScript.
-- `<MyComponent>` is more visually distinct from a single-word HTML element than `<my-component>`, because there are two character differences (the two capitals), rather than just one (a hyphen).
-- If you use any non-Vue custom elements in your templates, such as a web component, PascalCase ensures that your Vue components remain distinctly visible.
-
-Unfortunately, due to HTML's case insensitivity, DOM templates must still use kebab-case.
-
-Also note that if you've already invested heavily in kebab-case, consistency with HTML conventions and being able to use the same casing across all your projects may be more important than the advantages listed above. In those cases, **using kebab-case everywhere is also acceptable.**
-
+불행하게도, HTML은 대소문자에 민감하지 않기 때문에(case-insensitive), DOM 템플릿은 kebab-case를 여전히 사용해야 합니다.
+또한, 당신이 kebab-case를 이미 많이 사용하였거나, 투자를 많이 했을 때에는, HTML 표기의 일관성과 모든 프로젝트에 같은 규칙을 이행하는 것이 이점이 좀 더 있을 수 있습니다. **이런 경우는 kebab-case를 어디서든 사용하셔도 됩니다.**
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
 
@@ -1117,8 +1113,7 @@ OR
 
 ### JS/JSX에서 컴포넌트 이름 규칙 지정(casing) <sup data-p="b">매우 추천함</sup>
 
-**Component names in JS/[JSX](../guide/render-function.html#JSX) should always be PascalCase, though they may be kebab-case inside strings for simpler applications that only use global component registration through `Vue.component`.**
-
+**JS에서의 컴포넌트 이름은 PascalCase 규칙으로 작성되어야 하지만, `Vue.component`를 통해 전역 컴포넌트만 등록하는 간단한 어플리케이션의 경우, kebab-case로 작성될 수 있습니다.**
 {% raw %}
 <details>
 <summary>
@@ -1126,13 +1121,10 @@ OR
 </summary>
 {% endraw %}
 
-In JavaScript, PascalCase is the convention for classes and prototype constructors - essentially, anything that can have distinct instances. Vue components also have instances, so it makes sense to also use PascalCase. As an added benefit, using PascalCase within JSX (and templates) allows readers of the code to more easily distinguish between components and HTML elements.
-
-However, for applications that use **only** global component definitions via `Vue.component`, we recommend kebab-case instead. The reasons are:
-
-- It's rare that global components are ever referenced in JavaScript, so following a convention for JavaScript makes less sense.
-- These applications always include many in-DOM templates, where [kebab-case **must** be used](#Component-name-casing-in-templates-strongly-recommended).
-
+JavaScript에서는, PascalCase는 클래스와 프로토타입 생성자의 표기법입니다. 특히 이는 시각적으로 더 잘 구분됩니다. 또한 Vue 컴포넌트는 인스턴스를 갖고 있으며, 그래서 PascalCase를 쓰는 것이 좀 더 좋은 생각입니다. PascalCase로 작성하여, 얻은 이점 덕분에, JSX(와 템플릿)내에서 PascalCase로 작성하는 것은 코드를 독해하는 사람에게 컴포넌트와 HTML 요소를 좀 더 쉽게 구분할 수 있게 만들어줍니다.
+그러나 `Vue.component`를 통해 전역 컴포넌트만 정의한 어플리케이션에서는, 저희는 kebab-case를 대신에 사용하는 것을 권장합니다. 이유는 다음과 같습니다:
+- 드물게 전역 컴포넌트가 JavaScript에서 참조될 수 있기에, JavaScript 표기법을 지키는 것은 그렇게 좋은 생각은 아닐 수 있습니다.
+- 어플리케이션 안에는 항상 많은 내부 DOM 템플릿을 포함하고 있고, 템플릿에서는 [**반드시** kebab-case가 사용되어야 합니다](#Component-name-casing-in-templates-strongly-recommended).
 {% raw %}</details>{% endraw %}
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
