@@ -8,9 +8,9 @@ order: 403
 
 ## NPM 패키지 공식 선언
 
-정적 타입 시스템은 많은 잠재적 런타임 에러를 막는데 도움을 줄 수 있습니다. 특히 애플리케이션이 점점 커져감에 따라 말이죠. 이것이 Vue가 [타입스크립트](https://www.typescriptlang.org/)를 위한 [공식 타입 선언](https://github.com/vuejs/vue/tree/dev/types)을 같이 제공하는 이유입니다. - 이는 Vue 코어에만 국한된 이야기가 아니라, [vue-router](https://github.com/vuejs/vue-router/tree/dev/types)와 [vuex](https://github.com/vuejs/vuex/tree/dev/types)에 동일하게 적용되는 이야기입니다.
+정적 타입 시스템은 많은 잠재적 런타임 에러를 막는데 도움을 줄 수 있습니다. 특히 애플리케이션이 점점 커져감에 따라 말이죠. 이것이 Vue가 [Typescript](https://www.typescriptlang.org/)를 위한 [공식 타입 선언](https://github.com/vuejs/vue/tree/dev/types)을 같이 제공하는 이유입니다. - 이는 Vue 코어에만 국한된 이야기가 아니라, [vue-router](https://github.com/vuejs/vue-router/tree/dev/types)와 [vuex](https://github.com/vuejs/vuex/tree/dev/types)에 동일하게 적용되는 이야기입니다.
 
-이 타입들이 [NPM에 퍼블리시 되었고](https://cdn.jsdelivr.net/npm/vue/types/), 최신 타입스크립트는 NPM 패키지 안에 있는 타입 선언을 어떻게 리졸브 해야하는지 알고 있기 때문에, Vue가 NPM을 통해 설치되었다면, Vue와 타입스크립트를 같이 사용하기 위해 별도의 설정이 필요 없습니다.
+이 타입들이 [NPM에 퍼블리시 되었고](https://cdn.jsdelivr.net/npm/vue/types/), 최신 Typescript는 NPM 패키지 안에 있는 타입 선언을 어떻게 리졸브 해야하는지 알고 있기 때문에, Vue가 NPM을 통해 설치되었다면, Vue와 Typescript를 같이 사용하기 위해 별도의 설정이 필요 없습니다.
 
 ## 추천 설정
 
@@ -37,7 +37,7 @@ order: 403
 
 ### 프로젝트 생성
 
-[Vue CLI 3](https://github.com/vuejs/vue-cli) can generate new projects that use TypeScript. To get started:
+[Vue CLI 3](https://github.com/vuejs/vue-cli) 는 Typescript를 사용하는 새로운 프로젝트를 만들 수 있습니다. 시작하려면 :
 
 ```bash
 # 1. Install Vue CLI, if it's not already installed
@@ -53,7 +53,7 @@ TypeScript를 사용해 Vue를 개발하려면 [Visual Studio Code](https://code
 
 [싱글 파일 컴포넌트](./single-file-components.html) (SFCs)를 사용하는 경우 훌륭한 [Vetur extension](https://github.com/vuejs/vetur)를 사용해 TypeScript 유추를 제공합니다. 싱글 파일 컴포넌트 및 기타 많은 훌륭한 기능을 제공합니다.
 
-또한 [WebStorm](https://www.jetbrains.com/webstorm/)은 타입스크립트와 Vue.js를 모두 지원합니다.
+또한 [WebStorm](https://www.jetbrains.com/webstorm/)은 Typescript와 Vue.js를 모두 지원합니다.
 
 ## 기본 사용법
 
