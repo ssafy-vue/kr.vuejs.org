@@ -1,18 +1,19 @@
 ---
-title: Testing
+title: 테스트
 type: guide
 order: 402
 ---
 
-## Introduction
+## 소개
 
-When it comes to building reliable applications, tests can play a critical role in an individual or team's ability to build new features, refactor code, fix bugs, etc. While there are many schools of thought with testing, there are three categories often discussed in the context of web applications:
+신뢰도 높은 애플리케이션을 제작하는데에 있어, 테스트는  새로운 기능을 제작, 코드 리팩토링, 버그 픽스 등등 을 수행하는 개인 혹은 팀에게 중요한 역할을 수행합니다.
+비록 테스트에 대한 여러가지 고찰이 있지만, 웹 응용 프로그램에서는 주로 아래 세 가지 범주를 논의합니다. 
 
-- Unit Testing
-- Component Testing
-- End-To-End (E2E) Testing
+- 유닛 테스팅
+- 컴포넌트 테스팅
+- 종단 (End-To-End / E2E) 테스팅
 
-This section aims to provide guidance to navigating the testing ecosystem and choosing the right tools for your Vue application or component library.
+이 섹션에서는 테스트 생태계와 당신의 Vue 애플리케이션 혹은 컴포넌트 라이브러리에 적합한 도구를 고르는 방법에 대한 가이드를 제공하는 것에 중점을 둡니다.
 
 ## Unit Testing
 
