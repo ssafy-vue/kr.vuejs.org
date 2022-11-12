@@ -1194,9 +1194,9 @@ export default {
 
 ### 전체 이름 컴포넌트 이름 <sup data-p="b">매우 추천함</sup>
 
-**Component names should prefer full words over abbreviations.**
+ **구성 요소 이름은 약어보다 전체 단어를 선호해야 합니다.** 
 
-The autocompletion in editors make the cost of writing longer names very low, while the clarity they provide is invaluable. Uncommon abbreviations, in particular, should always be avoided.
+편집기의 자동 완성 기능은 긴 이름을 작성하는 비용을 매우 낮게 만들지만, 제공하는 명확성은 매우 중요합니다. 특히, 흔하지 않은 약어는 항상 피해야 합니다.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### 나쁨
