@@ -465,7 +465,7 @@ computed: {
 
 **애플리케이션에 있어서, 최상위 `APP` 컴포넌트 및 레이아웃 컴포넌트의 스타일은 전역일 수 있으나, 다른 모든 컴포넌트는 범위가 지정되어야 합니다.**
 
-이는 [싱글 파일 컴포넌트](../guide/single-file-components.html)에만 관련됩니다. [`scoped` 속성](https://vue-loader.vuejs.org/en/features/scoped-css.html)의 사용은 필수는 _아닙니다_. 스코프는 [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html), [BEM](http://getbem.com/)과 같은 클래스 기반 전략, 혹은 다른 라이브러리/관례를 통해 이루어질 수 있습니다.
+이는 [싱글 파일 컴포넌트](../guide/single-file-components.html)에만 관련됩니다. [`scoped` 속성](https://vue-loader.vuejs.org/en/features/scoped-css.html)의 사용은 필수는 **아닙니다**. 스코프는 [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html), [BEM](http://getbem.com/)과 같은 클래스 기반 전략, 혹은 다른 라이브러리/관례를 통해 이루어질 수 있습니다.
 
 **그러나, 컴포넌트 라이브러리에서는 `scoped` 속성을 사용하는 대신에, 클래스 기반 전략이 오히려 바람직합니다.**
 
