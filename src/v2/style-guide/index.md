@@ -478,9 +478,9 @@ computed: {
 </summary>
 {% endraw %}
 
-If you are developing a large project, working with other developers, or sometimes include 3rd-party HTML/CSS (e.g. from Auth0), consistent scoping will ensure that your styles only apply to the components they are meant for.
+대규모 프로젝트를 다른 개발자와 같이 개발하고 있거나, 혹은 Auth0같은 써드파티(3rd-party) HTML/CSS를 이용한다면, 범위 지정 스코프가 컴포넌트를 의도한대로 디자인 할 수 있도록 도와줍니다.
 
-Beyond the `scoped` attribute, using unique class names can help ensure that 3rd-party CSS does not apply to your own HTML. For example, many projects use the `button`, `btn`, or `icon` class names, so even if not using a strategy such as BEM, adding an app-specific and/or component-specific prefix (e.g. `ButtonClose-icon`) can provide some protection.
+상기한 `scoped` 속성 외에도, 유일한 클래스 이름을 사용하는 것은 써드파티 CSS가 HTML에 원치 않게 적용되는 것을 방지할 수 있습니다. 예를 들어, 많은 프로젝트가 `button`, `btn`, 또는 `icon`같은 이름을 이미 사용하고 있습니다. 이를 이행하기 위해, BEM같은 방식을 사용하지 않더라도, 앱 또는 컴포넌트를 특정하는 접두사(e.g. `ButtonClose-icon`)을 사용하는 것이 바람직합니다.
 
 {% raw %}</details>{% endraw %}
 
