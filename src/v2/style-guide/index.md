@@ -463,13 +463,13 @@ computed: {
 
 ### 컴포넌트 스타일 스코프 <sup data-p="a">필수</sup>
 
-**For applications, styles in a top-level `App` component and in layout components may be global, but all other components should always be scoped.**
+**애플리케이션에 있어서, 최상위 `APP` 컴포넌트 및 레이아웃 컴포넌트의 스타일은 전역일 수 있으나, 다른 모든 컴포넌트는 범위가 지정되어야 합니다.**
 
-This is only relevant for [single-file components](../guide/single-file-components.html). It does _not_ require that the [`scoped` attribute](https://vue-loader.vuejs.org/en/features/scoped-css.html) be used. Scoping could be through [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html), a class-based strategy such as [BEM](http://getbem.com/), or another library/convention.
+이는 [싱글 파일 컴포넌트](../guide/single-file-components.html)에만 관련됩니다. [`scoped` 속성](https://vue-loader.vuejs.org/en/features/scoped-css.html)의 사용은 필수는 **아닙니다**. 스코프는 [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html), [BEM](http://getbem.com/)과 같은 클래스 기반 전략, 혹은 다른 라이브러리/관례를 통해 이루어질 수 있습니다.
 
-**Component libraries, however, should prefer a class-based strategy instead of using the `scoped` attribute.**
+**그러나, 컴포넌트 라이브러리에서는 `scoped` 속성을 사용하는 대신에, 클래스 기반 전략이 오히려 바람직합니다.**
 
-This makes overriding internal styles easier, with human-readable class names that don't have too high specificity, but are still very unlikely to result in a conflict.
+이것은 내부 스타일 덮어쓰기를 더 쉽게 만들어주며, 사람이 읽을 수 있는 클래스 이름이 매우 낮은 충돌 가능성과 함께 너무 높은 특이도를 갖지 않게 해 줍니다.
 
 {% raw %}
 <details>
