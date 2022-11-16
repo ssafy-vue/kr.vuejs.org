@@ -539,28 +539,27 @@
 <h4 id="좋음-8"><a href="#좋음-8" class="headerlink" title="좋음"></a>좋음</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">components/<br>|- MyComponent.vue<br></code></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">components/<br>|- my-component.vue<br></code></pre></td></tr></table></figure>
 </div>
-<h3 id="베이스-컴포넌트-이름-매우-추천함"><a href="#베이스-컴포넌트-이름-매우-추천함" class="headerlink" title="베이스 컴포넌트 이름 매우 추천함"></a>베이스 컴포넌트 이름 <sup data-p="b">매우 추천함</sup></h3><p><strong>Base components (a.k.a. presentational, dumb, or pure components) that apply app-specific styling and conventions should all begin with a specific prefix, such as <code>Base</code>, <code>App</code>, or <code>V</code>.</strong></p>
-
+<h3 id="베이스-컴포넌트-이름-매우-추천함"><a href="#베이스-컴포넌트-이름-매우-추천함" class="headerlink" title="베이스 컴포넌트 이름 매우 추천함"></a>베이스 컴포넌트 이름 <sup data-p="b">매우 추천함</sup></h3><p><strong>특정한 앱 스타일과 규약이 적용되는 (presentational, dumb, 혹은 pure components라 불리는) 베이스 컴포넌트는 <code>Base</code>, <code>App</code>, 또는 <code>V</code>와 같은 접두어로 이름이 시작되어야 합니다.</strong><br>
 <details>
 <summary>
   <h4>자세한 설명</h4>
 </summary>
-
-<p>These components lay the foundation for consistent styling and behavior in your application. They may <strong>only</strong> contain:</p>
+</p>
+<p>이러한 요소들은 당신의 어플리케이션에서 스타일링과 행위에 기초를 두고 있습니다. 해당 요소들은 <strong>다음 항목만</strong> 포함할 수 있습니다.</p>
 <ul>
-<li>HTML elements,</li>
-<li>other base components, and</li>
-<li>3rd-party UI components.</li>
+<li>HTML 요소,</li>
+<li>다른 베이스 컴포넌트, 그리고</li>
+<li>써드파티(3rd-Party) UI 컴포넌트.</li>
 </ul>
-<p>But they’ll <strong>never</strong> contain global state (e.g. from a Vuex store).</p>
-<p>Their names often include the name of an element they wrap (e.g. <code>BaseButton</code>, <code>BaseTable</code>), unless no element exists for their specific purpose (e.g. <code>BaseIcon</code>). If you build similar components for a more specific context, they will almost always consume these components (e.g. <code>BaseButton</code> may be used in <code>ButtonSubmit</code>).</p>
-<p>Some advantages of this convention:</p>
+<p>그러나 이 요소들은 전역 상태(Vuex의 store)는 <strong>절대</strong> 포함하지 않습니다.</p>
+<p>컴포넌트 이름에는 특정한 목적(e.g. <code>BaseIcon</code>)을 위한 요소가 있는 경우를 제외하고, <code>BaseButton</code>, <code>BaseTable</code> 같이 컴포넌트가 해당 요소를 감싸는 요소의 이름이 포함되는 경우가 많습니다. 만약 당신이 좀 더 구체적인 컨텍스트에 대해 비슷한 컴포넌트를 구성하는 경우, 컴포넌트들이 거의 항상 이 요소들을 소비하게 될 겁니다. 예를 들면, <code>BaseButton</code>이 <code>BaseSumbit</code>에서 쓰이듯이 말이죠.</p>
+<p>이러한 표기 규약은 몇 가지 이점이 있습니다:</p>
 <ul>
-<li><p>When organized alphabetically in editors, your app’s base components are all listed together, making them easier to identify.</p>
+<li><p>편집기에서 알파벳순으로 정렬할 때, 앱의 기본 요소들이 함께 정리되어, 좀 더 식별하기 쉽습니다.</p>
 </li>
-<li><p>Since component names should always be multi-word, this convention prevents you from having to choose an arbitrary prefix for simple component wrappers (e.g. <code>MyButton</code>, <code>VueButton</code>).</p>
+<li><p>컴포넌트 이름은 여러 단어로 구성되기 때문에, 이러한 규약은 간단한 구성요소 래퍼(e.g. <code>MyButton</code>, <code>VueButton</code>)를 위한 임의 접두사를 붙이는 것을 방지합니다.</p>
 </li>
-<li><p>Since these components are so frequently used, you may want to simply make them global instead of importing them everywhere. A prefix makes this possible with Webpack:</p>
+<li><p>이러한 요소들은 자주 쓰이기 때문에, 어디서든 import해 사용하는 것 대신, 전역적으로 선언하는 것이 권장됩니다. 접두사는 Webpack이 해당 작업을 수행할 수 있도록 합니다:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> requireComponent = <span class="hljs-built_in">require</span>.<span class="hljs-title function_">context</span>(<span class="hljs-string">&quot;./src&quot;</span>, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^Base[A-Z]/</span>)<br>requireComponent.<span class="hljs-title function_">keys</span>().<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">fileName</span>) &#123;<br>  <span class="hljs-keyword">var</span> baseComponentConfig = requireComponent(fileName)<br>  baseComponentConfig = baseComponentConfig.<span class="hljs-property">default</span> || baseComponentConfig<br>  <span class="hljs-keyword">var</span> baseComponentName = baseComponentConfig.<span class="hljs-property">name</span> || (<br>    fileName<br>      .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/^.+\//</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br>      .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/\.\w+$/</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br>  )<br>  <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">component</span>(baseComponentName, baseComponentConfig)<br>&#125;)<br></code></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -696,7 +695,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">MyComponent</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./MyComponent.vue&#x27;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;MyComponent&#x27;</span>,<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
 </div>
-<h3 id="전체-이름-컴포넌트-이름-매우-추천함"><a href="#전체-이름-컴포넌트-이름-매우-추천함" class="headerlink" title="전체 이름 컴포넌트 이름 매우 추천함"></a>전체 이름 컴포넌트 이름 <sup data-p="b">매우 추천함</sup></h3><p> <strong>컴포넌트 이름은 약어보다 전문(full word)을 선호해야 합니다.</strong> </p>
+<h3 id="전체-이름-컴포넌트-이름-매우-추천함"><a href="#전체-이름-컴포넌트-이름-매우-추천함" class="headerlink" title="전체 이름 컴포넌트 이름 매우 추천함"></a>전체 이름 컴포넌트 이름 <sup data-p="b">매우 추천함</sup></h3><p> <strong>컴포넌트 이름은 약어보다 전문(full word)을 선호해야 합니다.</strong></p>
 <p>편집기의 자동완성 기능을 사용하면 긴 변수명을 매우 간편하게 작성할 수 있으므로 긴 변수명을 사용하는데 드는 비용은 거의 없는데 반해, 긴 변수명이 제공하는 명확성은 프로그래밍에 있어 매우 중요하기 때문에 컴포넌트 이름은 약어보다 전문을 사용하는 것이 권장됩니다. 특히 관례적으로 사용되지 않는 특수한 약어는 언제나 피하는 것이 강력하게 권장됩니다.</p>
 <div class="style-example example-bad">
 <h4 id="나쁨-16"><a href="#나쁨-16" class="headerlink" title="나쁨"></a>나쁨</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">components/<br>|- SdSettings.vue<br>|- UProfOpts.vue<br></code></pre></td></tr></table></figure>
