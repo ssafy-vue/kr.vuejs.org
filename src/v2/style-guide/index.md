@@ -746,8 +746,7 @@ components/
 
 ### 베이스 컴포넌트 이름 <sup data-p="b">매우 추천함</sup>
 
-**Base components (a.k.a. presentational, dumb, or pure components) that apply app-specific styling and conventions should all begin with a specific prefix, such as `Base`, `App`, or `V`.**
-
+**특정한 앱 스타일과 규약이 적용되는 (presentational, dumb, 혹은 pure components라 불리는) 베이스 컴포넌트는 `Base`, `App`, 또는 `V`와 같은 접두어로 이름이 시작되어야 합니다.**
 {% raw %}
 <details>
 <summary>
@@ -755,23 +754,23 @@ components/
 </summary>
 {% endraw %}
 
-These components lay the foundation for consistent styling and behavior in your application. They may **only** contain:
+이러한 요소들은 당신의 어플리케이션에서 스타일링과 행위에 기초를 두고 있습니다. 해당 요소들은 **다음 항목만** 포함할 수 있습니다.
 
-- HTML elements,
-- other base components, and
-- 3rd-party UI components.
+- HTML 요소,
+- 다른 베이스 컴포넌트, 그리고
+- 써드파티(3rd-Party) UI 컴포넌트.
 
-But they'll **never** contain global state (e.g. from a Vuex store).
+그러나 이 요소들은 전역 상태(Vuex의 store)는 **절대** 포함하지 않습니다.
 
-Their names often include the name of an element they wrap (e.g. `BaseButton`, `BaseTable`), unless no element exists for their specific purpose (e.g. `BaseIcon`). If you build similar components for a more specific context, they will almost always consume these components (e.g. `BaseButton` may be used in `ButtonSubmit`).
+컴포넌트 이름에는 특정한 목적(e.g. `BaseIcon`)을 위한 요소가 있는 경우를 제외하고, `BaseButton`, `BaseTable` 같이 컴포넌트가 해당 요소를 감싸는 요소의 이름이 포함되는 경우가 많습니다. 만약 당신이 좀 더 구체적인 컨텍스트에 대해 비슷한 컴포넌트를 구성하는 경우, 컴포넌트들이 거의 항상 이 요소들을 소비하게 될 겁니다. 예를 들면, `BaseButton`이 `BaseSumbit`에서 쓰이듯이 말이죠.
 
-Some advantages of this convention:
+이러한 표기 규약은 몇 가지 이점이 있습니다:
 
-- When organized alphabetically in editors, your app's base components are all listed together, making them easier to identify.
+- 편집기에서 알파벳순으로 정렬할 때, 앱의 기본 요소들이 함께 정리되어, 좀 더 식별하기 쉽습니다.
 
-- Since component names should always be multi-word, this convention prevents you from having to choose an arbitrary prefix for simple component wrappers (e.g. `MyButton`, `VueButton`).
+- 컴포넌트 이름은 여러 단어로 구성되기 때문에, 이러한 규약은 간단한 구성요소 래퍼(e.g. `MyButton`, `VueButton`)를 위한 임의 접두사를 붙이는 것을 방지합니다.
 
-- Since these components are so frequently used, you may want to simply make them global instead of importing them everywhere. A prefix makes this possible with Webpack:
+- 이러한 요소들은 자주 쓰이기 때문에, 어디서든 import해 사용하는 것 대신, 전역적으로 선언하는 것이 권장됩니다. 접두사는 Webpack이 해당 작업을 수행할 수 있도록 합니다:
 
   ``` js
   var requireComponent = require.context("./src", true, /^Base[A-Z]/)
@@ -1186,7 +1185,7 @@ export default {
 
 ### 전체 이름 컴포넌트 이름 <sup data-p="b">매우 추천함</sup>
 
- **컴포넌트 이름은 약어보다 전문(full word)을 선호해야 합니다.** 
+ **컴포넌트 이름은 약어보다 전문(full word)을 선호해야 합니다.**
 
 편집기의 자동완성 기능을 사용하면 긴 변수명을 매우 간편하게 작성할 수 있으므로 긴 변수명을 사용하는데 드는 비용은 거의 없는데 반해, 긴 변수명이 제공하는 명확성은 프로그래밍에 있어 매우 중요하기 때문에 컴포넌트 이름은 약어보다 전문을 사용하는 것이 권장됩니다. 특히 관례적으로 사용되지 않는 특수한 약어는 언제나 피하는 것이 강력하게 권장됩니다.
 
