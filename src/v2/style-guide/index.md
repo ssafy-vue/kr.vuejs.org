@@ -463,13 +463,13 @@ computed: {
 
 ### 컴포넌트 스타일 스코프 <sup data-p="a">필수</sup>
 
-**For applications, styles in a top-level `App` component and in layout components may be global, but all other components should always be scoped.**
+**애플리케이션에 있어서, 최상위 `APP` 컴포넌트 및 레이아웃 컴포넌트의 스타일은 전역일 수 있으나, 다른 모든 컴포넌트는 범위가 지정되어야 합니다.**
 
-This is only relevant for [single-file components](../guide/single-file-components.html). It does _not_ require that the [`scoped` attribute](https://vue-loader.vuejs.org/en/features/scoped-css.html) be used. Scoping could be through [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html), a class-based strategy such as [BEM](http://getbem.com/), or another library/convention.
+이는 [싱글 파일 컴포넌트](../guide/single-file-components.html)에만 관련됩니다. [`scoped` 속성](https://vue-loader.vuejs.org/en/features/scoped-css.html)의 사용은 필수는 **아닙니다**. 스코프는 [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html), [BEM](http://getbem.com/)과 같은 클래스 기반 전략, 혹은 다른 라이브러리/관례를 통해 이루어질 수 있습니다.
 
-**Component libraries, however, should prefer a class-based strategy instead of using the `scoped` attribute.**
+**그러나, 컴포넌트 라이브러리에서는 `scoped` 속성을 사용하는 대신에, 클래스 기반 전략이 오히려 바람직합니다.**
 
-This makes overriding internal styles easier, with human-readable class names that don't have too high specificity, but are still very unlikely to result in a conflict.
+이것은 내부 스타일 덮어쓰기를 더 쉽게 만들어주며, 사람이 읽을 수 있는 클래스 이름이 매우 낮은 충돌 가능성과 함께 너무 높은 특이도를 갖지 않게 해 줍니다.
 
 {% raw %}
 <details>
@@ -478,9 +478,9 @@ This makes overriding internal styles easier, with human-readable class names th
 </summary>
 {% endraw %}
 
-If you are developing a large project, working with other developers, or sometimes include 3rd-party HTML/CSS (e.g. from Auth0), consistent scoping will ensure that your styles only apply to the components they are meant for.
+대규모 프로젝트를 다른 개발자와 같이 개발하고 있거나, 혹은 Auth0같은 써드파티(3rd-party) HTML/CSS를 이용한다면, 범위 지정 스코프가 컴포넌트를 의도한대로 디자인 할 수 있도록 도와줍니다.
 
-Beyond the `scoped` attribute, using unique class names can help ensure that 3rd-party CSS does not apply to your own HTML. For example, many projects use the `button`, `btn`, or `icon` class names, so even if not using a strategy such as BEM, adding an app-specific and/or component-specific prefix (e.g. `ButtonClose-icon`) can provide some protection.
+상기한 `scoped` 속성 외에도, 유일한 클래스 이름을 사용하는 것은 써드파티 CSS가 HTML에 원치 않게 적용되는 것을 방지할 수 있습니다. 예를 들어, 많은 프로젝트가 `button`, `btn`, 또는 `icon`같은 이름을 이미 사용하고 있습니다. 이를 이행하기 위해, BEM같은 방식을 사용하지 않더라도, 앱 또는 컴포넌트를 특정하는 접두사(e.g. `ButtonClose-icon`)을 사용하는 것이 바람직합니다.
 
 {% raw %}</details>{% endraw %}
 
@@ -746,8 +746,7 @@ components/
 
 ### 베이스 컴포넌트 이름 <sup data-p="b">매우 추천함</sup>
 
-**Base components (a.k.a. presentational, dumb, or pure components) that apply app-specific styling and conventions should all begin with a specific prefix, such as `Base`, `App`, or `V`.**
-
+**특정한 앱 스타일과 규약이 적용되는 (presentational, dumb, 혹은 pure components라 불리는) 베이스 컴포넌트는 `Base`, `App`, 또는 `V`와 같은 접두어로 이름이 시작되어야 합니다.**
 {% raw %}
 <details>
 <summary>
@@ -755,23 +754,23 @@ components/
 </summary>
 {% endraw %}
 
-These components lay the foundation for consistent styling and behavior in your application. They may **only** contain:
+이러한 요소들은 당신의 어플리케이션에서 스타일링과 행위에 기초를 두고 있습니다. 해당 요소들은 **다음 항목만** 포함할 수 있습니다.
 
-- HTML elements,
-- other base components, and
-- 3rd-party UI components.
+- HTML 요소,
+- 다른 베이스 컴포넌트, 그리고
+- 써드파티(3rd-Party) UI 컴포넌트.
 
-But they'll **never** contain global state (e.g. from a Vuex store).
+그러나 이 요소들은 전역 상태(Vuex의 store)는 **절대** 포함하지 않습니다.
 
-Their names often include the name of an element they wrap (e.g. `BaseButton`, `BaseTable`), unless no element exists for their specific purpose (e.g. `BaseIcon`). If you build similar components for a more specific context, they will almost always consume these components (e.g. `BaseButton` may be used in `ButtonSubmit`).
+컴포넌트 이름에는 특정한 목적(e.g. `BaseIcon`)을 위한 요소가 있는 경우를 제외하고, `BaseButton`, `BaseTable` 같이 컴포넌트가 해당 요소를 감싸는 요소의 이름이 포함되는 경우가 많습니다. 만약 당신이 좀 더 구체적인 컨텍스트에 대해 비슷한 컴포넌트를 구성하는 경우, 컴포넌트들이 거의 항상 이 요소들을 소비하게 될 겁니다. 예를 들면, `BaseButton`이 `BaseSumbit`에서 쓰이듯이 말이죠.
 
-Some advantages of this convention:
+이러한 표기 규약은 몇 가지 이점이 있습니다:
 
-- When organized alphabetically in editors, your app's base components are all listed together, making them easier to identify.
+- 편집기에서 알파벳순으로 정렬할 때, 앱의 기본 요소들이 함께 정리되어, 좀 더 식별하기 쉽습니다.
 
-- Since component names should always be multi-word, this convention prevents you from having to choose an arbitrary prefix for simple component wrappers (e.g. `MyButton`, `VueButton`).
+- 컴포넌트 이름은 여러 단어로 구성되기 때문에, 이러한 규약은 간단한 구성요소 래퍼(e.g. `MyButton`, `VueButton`)를 위한 임의 접두사를 붙이는 것을 방지합니다.
 
-- Since these components are so frequently used, you may want to simply make them global instead of importing them everywhere. A prefix makes this possible with Webpack:
+- 이러한 요소들은 자주 쓰이기 때문에, 어디서든 import해 사용하는 것 대신, 전역적으로 선언하는 것이 권장됩니다. 접두사는 Webpack이 해당 작업을 수행할 수 있도록 합니다:
 
   ``` js
   var requireComponent = require.context("./src", true, /^Base[A-Z]/)
@@ -1186,7 +1185,7 @@ export default {
 
 ### 전체 이름 컴포넌트 이름 <sup data-p="b">매우 추천함</sup>
 
- **컴포넌트 이름은 약어보다 전문(full word)을 선호해야 합니다.** 
+ **컴포넌트 이름은 약어보다 전문(full word)을 선호해야 합니다.**
 
 편집기의 자동완성 기능을 사용하면 긴 변수명을 매우 간편하게 작성할 수 있으므로 긴 변수명을 사용하는데 드는 비용은 거의 없는데 반해, 긴 변수명이 제공하는 명확성은 프로그래밍에 있어 매우 중요하기 때문에 컴포넌트 이름은 약어보다 전문을 사용하는 것이 권장됩니다. 특히 관례적으로 사용되지 않는 특수한 약어는 언제나 피하는 것이 강력하게 권장됩니다.
 
