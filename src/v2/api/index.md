@@ -408,16 +408,16 @@ type: api
 
 ### Vue.observable( object )
 
-> New in 2.6.0+
+> 2.6.0+ 이상에서 사용가능
 
-- **Arguments:**
+- **전달인자:**
   - `{Object} object`
 
-- **Usage:**
+- **사용방법:**
 
-  Make an object reactive. Internally, Vue uses this on the object returned by the `data` function.
+  객체를 반응형으로 만듭니다. Vue 내부에서는 이것을 `data` 함수에 의해 반환된 객체에 사용합니다.
 
-  The returned object can be used directly inside [render functions](../guide/render-function.html) and [computed properties](../guide/computed.html), and will trigger appropriate updates when mutated. It can also be used as a minimal, cross-component state store for simple scenarios:
+  반환된 객체는 [랜더 함수](../guide/render-function.html)와 [계산된 속성](../guide/computed.html) 내부에서 직접적으로 사용될 수 있고, mutate 되었을때 적절히 업데이트를 트리거 합니다. 또한, 간단한 시나리오를 위한 교차-컴포넌트 상태 저장소에서도 최소한으로 사용될 수 있습니다.
 
   ``` js
   const state = Vue.observable({ count: 0 })
@@ -431,9 +431,10 @@ type: api
   }
   ```
 
-  <p class="tip">In Vue 2.x, `Vue.observable` directly mutates the object passed to it, so that it is equivalent to the object returned, as [demonstrated here](../guide/instance.html#Data-and-Methods). In Vue 3.x, a reactive proxy will be returned instead, leaving the original object non-reactive if mutated directly. Therefore, for future compatibility, we recommend always working with the object returned by `Vue.observable`, rather than the object originally passed to it.</p>
+  <p class="tip">Vue 2.x에서는, `Vue.observable`은 전달된 객체를 직접적으로 mutate 하였습니다. 그렇기 때문에 [여기에](../guide/instance.html#Data-and-Methods)설명 된 것 처럼, 원본 객체와 동일합니다. Vue 3.x,에서는 직접 mutate 시킨 경우가 아니라면 원본 객체를 건드리지 않고 반응형 프록시를 반활 할 것입니다. 그렇기 때문에, 추후 호환성을 고려하였을 때, 저희는 원본 객체로 작업하기 보다는 `Vue.observable`로 반환된 객체로 작업하길 권장 드립니다.</p>
 
-- **See also:** [Reactivity in Depth](../guide/reactivity.html)
+
+- **참고:** [반응형에 대해 깊이 알아보기](../guide/reactivity.html)
 
 ### Vue.version
 
@@ -501,7 +502,7 @@ if (version === 2) {
   data: vm => ({ a: vm.myProp })
   ```
 
-- **참고:** [반응형에 대해 깊이 알기](../guide/reactivity.html)
+- **참고:** [반응형에 대해 깊이 알아보기](../guide/reactivity.html)
 
 ### props
 
@@ -511,14 +512,17 @@ if (version === 2) {
 
   부모 컴포넌트의 데이터를 받을 수 있게 노출된 속성의 리스트/해시 입니다. 단순한 배열 기반 구문과 사용자 지정 유효성 검사 및 기본값과 같은 고급 구성을 허용하는 Object 기반 구문이 있습니다.
 
-  With Object-based syntax, you can use following options:
-    - `type`: can be one of the following native constructors: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, any custom constructor function or an array of those. Will check if a prop has a given type, and will throw a warning if it doesn't. [More information](../guide/components-props.html#Prop-Types) on prop types.
+  객체 기반의 문법으로, 아래와 같은 옵션을 사용할 수 있습니다:
+    - `type`: 이러한 네이티브 생성자가 될 수 있습니다. `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol` 그리고 커스텀 생성자 함수 혹은 이것들의 배열 꼴. prop이 지정된 타입인지 체크하고, 지정된 타입이 아니라면 경고를 할 것입니다. prop 타입에 대해 더 자세히 알고 싶다면 [여기를](../guide/components-props.html#Prop-Types) 클릭하세요.
+
     - `default`: `any`
-    Specifies a default value for the prop. If the prop is not passed, this value will be used instead. Object or array defaults must be returned from a factory function.
+    prop을 위한 기본 값을 상술합니다. 만약 prop이 전달되지 않았다면, 이 값이 대신 사용될 것입니다. 객체나 배열 기본 값은 팩토리 함수에 의해 반환된 것을 사용해야 합니다.
+
     - `required`: `Boolean`
-    Defines if the prop is required. In a non-production environment, a console warning will be thrown if this value is truthy and the prop is not passed.
+    prop이 필요 요소인지를 정의합니다. 배포 환경이 아닌 곳에서는, 이 값이 truthy한 값인데, 실제 prop은 전달되지 않았을 경우 콘솔 창에 경고가 뜨게 될 것입니다.
+
     - `validator`: `Function`
-    Custom validator function that takes the prop value as the sole argument. In a non-production environment, a console warning will be thrown if this function returns a falsy value (i.e. the validation fails). You can read more about prop validation [here](../guide/components-props.html#Prop-Validation).
+    prop value를 단일 인자로 받는 사용자 지정 검증 함수입니다. 배포 환경이 아닌 곳에서는, 만약 이 값이 falsy한 값을 반환 할 경우 콘솔 창에 경고가 뜨게 됩니다. [이곳](../guide/components-props.html#Prop-Validation)에서 prop 검증에 대해 더 읽을 수 있습니다.
 
 - **예제:**
 
