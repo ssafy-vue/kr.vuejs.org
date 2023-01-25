@@ -269,9 +269,9 @@ data: function () {
 
 그다음 알파벳순으로 정렬한다. DOM 이 업데이트될 때, Vue는 가능한 적은 DOM 전이(mutations)를 수행하기 위해 렌더링을 최적화한다. 즉, 첫 번째 할 일 엘리먼트를 지우고, 리스트의 마지막에 다시 추가한다.
 
-The problem is, there are cases where it's important not to delete elements that will remain in the DOM. For example, you may want to use `<transition-group>` to animate list sorting, or maintain focus if the rendered element is an `<input>`. In these cases, adding a unique key for each item (e.g. `:key="todo.id"`) will tell Vue how to behave more predictably.
+문제는, DOM에 남아있을 요소를 삭제하지 않는 것이 중요한 경우가 있다는 것입니다. 예를 들어, ``을 사용하여 list 정렬을 활성화하거나, 렌더링 된 요소가 ``인 경우 포커스를 유지하는 경우가 있습니다. 이러한 경우, 각 항목에 대해 고유한 키(예: `:key="todo.id"`)를 추가하면 Vue가 어떻게 행동하는지 더욱 예측이 가능할 것입니다.
 
-In our experience, it's better to _always_ add a unique key, so that you and your team simply never have to worry about these edge cases. Then in the rare, performance-critical scenarios where object constancy isn't necessary, you can make a conscious exception.
+경험에 비추어 볼 때, 당신과 당신의 팀이 이러한 edge case 들에 대해 걱정할 필요가 없도록 _항상_ unique key를 추가하는 것이 좋습니다. 따라서 개체의 항상성이 필요하지 않은 드문 performance-critical 시나리오에서는 의식적으로 예외를 적용할 수 있습니다.
 
 {% raw %}</details>{% endraw %}
 
